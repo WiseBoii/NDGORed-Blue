@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/snorlax.pic", 0, 1 ; sprite dimensions
 	dw SnorlaxPicFront, SnorlaxPicBack
 
-	db HEADBUTT, AMNESIA, REST, NO_MOVE ; level 1 learnset
+	db HEADBUTT, AMNESIA, REST, METRONOME ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
@@ -24,4 +24,4 @@
 	     STRENGTH
 	; end
 
-	db 0 ; padding
+	db BANK(SnorlaxPicFront)

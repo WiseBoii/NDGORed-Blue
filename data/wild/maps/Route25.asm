@@ -3,11 +3,11 @@ Route25WildMons:
 IF DEF(_RED)
 	db  8, WEEDLE
 	db  9, KAKUNA
-	db 13, PIDGEY
+	db 13, BELLSPROUT
 	db 12, ODDISH
-	db 13, ODDISH
+	db 13, PIDGEOTTO
 	db 12, ABRA
-	db 14, ODDISH
+	db 14, VENONAT
 	db 10, ABRA
 	db  7, METAPOD
 	db  8, CATERPIE

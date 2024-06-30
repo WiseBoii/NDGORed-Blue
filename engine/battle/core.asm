@@ -1,4 +1,4 @@
-BattleCore:
+ BattleCore:
 
 INCLUDE "data/battle/residual_effects_1.asm"
 INCLUDE "data/battle/set_damage_effects.asm"
@@ -308,7 +308,7 @@ MainInBattleLoop:
 	and a
 	ret nz ; return if pokedoll was used to escape from battle
 	ld a, [wBattleMonStatus]
-	and (1 << FRZ) | SLP_MASK
+    and (1 << FRZ)
 	jr nz, .selectEnemyMove ; if so, jump
 	ld a, [wPlayerBattleStatus1]
 	and (1 << STORING_ENERGY) | (1 << USING_TRAPPING_MOVE) ; check player is using Bide or using a multi-turn attack like wrap
@@ -367,28 +367,13 @@ MainInBattleLoop:
 .specialMoveNotUsed
 	callfar SwitchEnemyMon
 .noLinkBattle
-	ld a, [wPlayerSelectedMove]
-	cp QUICK_ATTACK
-	jr nz, .playerDidNotUseQuickAttack
-	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .compareSpeed  ; if both used Quick Attack
-	jp .playerMovesFirst ; if player used Quick Attack and enemy didn't
-.playerDidNotUseQuickAttack
-	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .enemyMovesFirst ; if enemy used Quick Attack and player didn't
-	ld a, [wPlayerSelectedMove]
-	cp COUNTER
-	jr nz, .playerDidNotUseCounter
-	ld a, [wEnemySelectedMove]
-	cp COUNTER
+	call HandleMovePriority
+	; c = player priority, e = enemy priority
+	ld a, c
+	cp e
 	jr z, .compareSpeed ; if both used Counter
-	jr .enemyMovesFirst ; if player used Counter and enemy didn't
-.playerDidNotUseCounter
-	ld a, [wEnemySelectedMove]
-	cp COUNTER
-	jr z, .playerMovesFirst ; if enemy used Counter and player didn't
+	jr c, .enemyMovesFirst
+	jr .playerMovesFirst
 .compareSpeed
 	ld de, wBattleMonSpeed ; player speed value
 	ld hl, wEnemyMonSpeed ; enemy speed value
@@ -466,6 +451,50 @@ MainInBattleLoop:
 	call DrawHUDsAndHPBars
 	call CheckNumAttacksLeft
 	jp MainInBattleLoop
+	
+HandleMovePriority:
+; This subroutine modifies registers a, hl, bc, and de
+; The player's priority value will be stored in register c and 
+; the enemy's priority value will be stored in register e.
+; These values will be compared after the 'ret' instruction is called
+
+        ld a, [wPlayerSelectedMove]
+        ld b, a
+        ld hl, PriorityMovesList
+        ld c, 7           ; no priority is 7
+.playerPriorityMoveLoop
+        ld a, [hli]       ; load the move ID from priority list and 
+                          ; increment address to the priority value address
+        cp b              ; compare with move being used
+        jr z, .playerUsingPriorityMove
+        inc a             ; if at end of list: -1 + 1 = 0xFF + 0x01 = 0
+        jr z, .noPlayerPriorityMove
+        inc hl            ; increment address to the next move
+        jr .playerPriorityMoveLoop
+.playerUsingPriorityMove
+        ld c, [hl]        ; get new priority value 
+.noPlayerPriorityMove
+
+; Now check enemy priority 
+        ld a, [wEnemySelectedMove]
+        ld d, a
+        ld hl, PriorityMovesList
+        ld e, 7           ; no priority is 7
+.enemyPriorityMoveLoop
+        ld a, [hli]       ; load the move ID from priority list and 
+                          ; increment address to the priority value address
+        cp d              ; compare with move being used
+        jr z, .enemyUsingPriorityMove
+        inc a             ; if at end of list: -1 + 1 = 0xFF + 0x01 = 0
+        jr z, .noEnemyPriorityMove
+        inc hl            ; increment address to the next move
+        jr .enemyPriorityMoveLoop
+.enemyUsingPriorityMove
+        ld e, [hl]        ; get new priority value 
+.noEnemyPriorityMove
+        ret
+
+INCLUDE "data/battle/priority_moves.asm"
 
 HandlePoisonBurnLeechSeed:
 	ld hl, wBattleMonHP
@@ -562,8 +591,7 @@ HandlePoisonBurnLeechSeed_DecreaseOwnHP:
 	rr c
 	srl b
 	rr c
-	srl c
-	srl c         ; c = max HP/16 (assumption: HP < 1024)
+    srl c         ; c = max HP/8 (assumption: HP < 1024)
 	ld a, c
 	and a
 	jr nz, .nonZeroDamage
@@ -922,8 +950,19 @@ TrainerBattleVictory:
 .gymleader
 	ld a, [wTrainerClass]
 	cp RIVAL3 ; final battle against rival
+	jr z, .special1998
+	cp LORELEI
+	jr z, .special1998
+	cp BRUNO
+	jr z, .special1998
+	cp AGATHA
+	jr z, .special1998
+	cp LANCE
 	jr nz, .notrival
+.special1998
 	ld b, MUSIC_DEFEATED_GYM_LEADER
+	cp RIVAL3 ; final battle against rival
+	jr nz, .notrival
 	ld hl, wFlags_D733
 	set 1, [hl]
 .notrival
@@ -1878,6 +1917,27 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+	;============================== start of code to add the caught symbol
+	push hl
+	ld a, [wEnemyMonSpecies2]
+	ld [wd11e], a
+	ld hl, IndexToPokedex
+	ld b, BANK(IndexToPokedex)
+	call Bankswitch
+	ld a, [wd11e]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	ld hl, wPokedexOwned
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	coord hl, 1, 1 ; horizontal/vertical
+	ld [hl], $72 ; replace this with your Poké Ball icon or other character
+	.notOwned
+	pop hl
+	;============================== end of new code
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
@@ -2086,9 +2146,16 @@ DisplayBattleMenu::
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
 	ld [hl], D_RIGHT | A_BUTTON ; wMenuWatchedKeys
+	ld a, [wIsInBattle]
+	dec a
+	jr nz, .leftColumn_WaitForInput_BPressedIgnore
+	ld [hl], D_RIGHT | A_BUTTON | B_BUTTON ; wMenuWatchedKeys
+.leftColumn_WaitForInput_BPressedIgnore
 	call HandleMenuInput
 	bit BIT_D_RIGHT, a
 	jr nz, .rightColumn
+	bit BIT_B_BUTTON, a
+	jr nz, .BButtonPressed
 	jr .AButtonPressed ; the A button was pressed
 .rightColumn ; put cursor in right column of menu
 	ld a, [wBattleType]
@@ -2118,14 +2185,26 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
+	ld a, [wIsInBattle]
+	dec a
 	ld a, D_LEFT | A_BUTTON
+	jr nz, .rightColumn_WaitForInput_BPressedIgnore
+	ld a, D_LEFT | A_BUTTON | B_BUTTON
+.rightColumn_WaitForInput_BPressedIgnore
 	ld [hli], a ; wMenuWatchedKeys
 	call HandleMenuInput
 	bit 5, a ; check if left was pressed
-	jr nz, .leftColumn ; if left was pressed, jump
+	jp nz, .leftColumn ; if left was pressed, jump
+	bit BIT_B_BUTTON, a
+	jr nz, .BButtonPressed
 	ld a, [wCurrentMenuItem]
 	add $2 ; if we're in the right column, the actual id is +2
 	ld [wCurrentMenuItem], a
+	jr .AButtonPressed
+.BButtonPressed
+	ld a, $1
+	ld [wCurrentMenuItem], a
+	jr .rightColumn
 .AButtonPressed
 	call PlaceUnfilledArrowMenuCursor
 	ld a, [wBattleType]
@@ -3341,6 +3420,7 @@ CheckPlayerStatusConditions:
 .WakeUp
 	ld hl, WokeUpText
 	call PrintText
+    jr z, .FrozenCheck
 .sleepDone
 	xor a
 	ld [wPlayerUsedMove], a
@@ -4165,7 +4245,27 @@ GetDamageVarsForPlayerAttack:
 	ret z ; return if move power is zero
 	ld a, [hl] ; a = [wPlayerMoveType]
 	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+        ld a, [wEnemyMoveNum]
+        ld b, a
+        jr nc, .isSpecialActuallyPhysical
+        jr .isPhysicalActuallySpecial
+.isSpecialActuallyPhysical
+        ld hl, SpecialToPhysicalMoves
+.specialPhysicalLoop
+        ld a, [hli]
+        cp b
+        jr z, .physicalAttack
+        cp $ff ; end of list
+        jr nz, .specialPhysicalLoop ; keep checking list
+        jr .specialAttack ; Not actually a physical move
+.isPhysicalActuallySpecial
+        ld hl, PhysicalToSpecialMoves
+.physicalSpecialLoop
+        ld a, [hli]
+        cp b
+        jr z, .specialAttack ; the physical move is actually special
+        cp $ff ; end of list
+        jr nz, .physicalSpecialLoop ; keep checking list
 .physicalAttack
 	ld hl, wEnemyMonDefense
 	ld a, [hli]
@@ -4278,7 +4378,28 @@ GetDamageVarsForEnemyAttack:
 	ret z ; return if move power is zero
 	ld a, [hl] ; a = [wEnemyMoveType]
 	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+        ld a, [wEnemyMoveNum]
+        ld b, a
+        jr nc, .isSpecialActuallyPhysical
+        jr .isPhysicalActuallySpecial
+.isSpecialActuallyPhysical
+        ld hl, SpecialToPhysicalMoves
+.specialPhysicalLoop
+        ld a, [hli]
+        cp b
+        jr z, .physicalAttack
+        cp $ff ; end of list
+        jr nz, .specialPhysicalLoop ; keep checking list
+        jr .specialAttack ; Not actually a physical move
+.isPhysicalActuallySpecial
+        ld hl, PhysicalToSpecialMoves
+.physicalSpecialLoop
+        ld a, [hli]
+        cp b
+        jr z, .specialAttack ; the physical move is actually special
+        cp $ff ; end of list
+        jr nz, .physicalSpecialLoop ; keep checking list
+        ; fallthrough
 .physicalAttack
 	ld hl, wBattleMonDefense
 	ld a, [hli]
@@ -4378,6 +4499,8 @@ GetDamageVarsForEnemyAttack:
 	and a
 	and a
 	ret
+
+INCLUDE "data/battle/physical_special_split.asm"
 
 ; get stat c of enemy mon
 ; c: stat to get (STAT_* constant)
@@ -5367,25 +5490,26 @@ MoveHitTest:
 .dreamEaterCheck
 	ld a, [de]
 	cp DREAM_EATER_EFFECT
-	jr nz, .swiftCheck
+	jr nz, .checkForDigOrFlyStatus
 	ld a, [bc]
 	and SLP_MASK
 	jp z, .moveMissed
+.checkForDigOrFlyStatus
+	bit INVULNERABLE, [hl]
+	jp nz, .moveMissed
 .swiftCheck
 	ld a, [de]
 	cp SWIFT_EFFECT
 	ret z ; Swift never misses (this was fixed from the Japanese versions)
 	call CheckTargetSubstitute ; substitute check (note that this overwrites a)
-	jr z, .checkForDigOrFlyStatus
+	jr z, .noSubstitute
 ; The fix for Swift broke this code. It's supposed to prevent HP draining moves from working on Substitutes.
 ; Since CheckTargetSubstitute overwrites a with either $00 or $01, it never works.
 	cp DRAIN_HP_EFFECT
 	jp z, .moveMissed
 	cp DREAM_EATER_EFFECT
 	jp z, .moveMissed
-.checkForDigOrFlyStatus
-	bit INVULNERABLE, [hl]
-	jp nz, .moveMissed
+.noSubstitute
 	ldh a, [hWhoseTurn]
 	and a
 	jr nz, .enemyTurn
@@ -5819,6 +5943,7 @@ CheckEnemyStatusConditions:
 .wokeUp
 	ld hl, WokeUpText
 	call PrintText
+	jr z, .checkIfFrozen
 .sleepDone
 	xor a
 	ld [wEnemyUsedMove], a
@@ -6327,14 +6452,23 @@ SwapPlayerAndEnemyLevels:
 LoadPlayerBackPic:
 	ld a, [wBattleType]
 	dec a ; is it the old man tutorial?
-	ld de, RedPicBack
-	jr nz, .next
-	ld de, OldManPicBack
+	ld de, OldManPicBack   ; Load the old man back sprite preemptively
+    ld a, BANK(RedPicBack) ; Default Red back sprite will be used as a means to load in the Old Man back sprite
+   	jr z, .next
+   	ld a, [wPlayerGender]
+  	and a
+  	jr z, .RedBack
+  	ld de, GreenPicBack
+    ld a, BANK(GreenPicBack) ; Load female back sprite
+	jr .next
+.RedBack
+    ld de, RedPicBack ; Load default Red back sprite
+    ld a, BANK(RedPicBack)
 .next
-	ld a, BANK(RedPicBack)
-	ASSERT BANK(RedPicBack) == BANK(OldManPicBack)
+    ASSERT BANK(GreenPicBack) == BANK(OldManPicBack) ; These two ASSERTs make sure to cover
+    ASSERT BANK(RedPicBack) == BANK(OldManPicBack)   ; both sprite cases
 	call UncompressSpriteFromDE
-	predef ScaleSpriteByTwo
+	call LoadBackSpriteUnzoomed
 	ld hl, wShadowOAM
 	xor a
 	ldh [hOAMTile], a ; initial tile number
@@ -6366,8 +6500,6 @@ LoadPlayerBackPic:
 	ld e, a
 	dec b
 	jr nz, .loop
-	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers
 	ld a, $a
 	ld [MBC1SRamEnable], a
 	xor a
@@ -6915,8 +7047,14 @@ _LoadTrainerPic:
 	ld d, a ; de contains pointer to trainer pic
 	ld a, [wLinkState]
 	and a
-	ld a, BANK("Pics 6") ; this is where all the trainer pics are (not counting Red's)
-	jr z, .loadSprite
+	jr nz, .useRed
+	ld a, [wTrainerClass]
+	cp PROF_OAK ; first trainer class in "Trainer Pics 2"
+	ld a, BANK("Trainer Pics 2")
+	jr nc, .loadSprite
+	ld a, BANK("Trainer Pics 1")
+	jr .loadSprite
+.useRed
 	ld a, BANK(RedPicFront)
 .loadSprite
 	call UncompressSpriteFromDE
@@ -7037,12 +7175,16 @@ LoadMonBackPic:
 	call ClearScreenArea
 	ld hl,  wMonHBackSprite - wMonHeader
 	call UncompressMonSprite
-	predef ScaleSpriteByTwo
-	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite
+	call LoadBackSpriteUnzoomed
 	ld hl, vSprites
 	ld de, vBackPic
 	ld c, (2 * SPRITEBUFFERSIZE) / 16 ; count of 16-byte chunks to be copied
 	ldh a, [hLoadedROMBank]
 	ld b, a
 	jp CopyVideoData
+	
+LoadBackSpriteUnzoomed:
+	ld a, $66
+	ld de, vBackPic
+	push de
+	jp LoadUncompressedBackSprite

@@ -1,13 +1,18 @@
 _AIBattleWithdrawText::
 	text_ram wTrainerName
-	text " with-"
-	line "drew @"
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "withdrew"
+	cont "@"
 	text_ram wEnemyMonNick
 	text "!"
 	prompt
 
 _AIBattleUseItemText::
 	text_ram wTrainerName
+	text " @"
+	text_ram wCurTrainerName
 	text_start
 	line "used @"
 	text_ram wcd6d
@@ -16,6 +21,7 @@ _AIBattleUseItemText::
 	text_ram wEnemyMonNick
 	text "!"
 	prompt
+
 
 _TradeWentToText::
 	text_ram wStringBuffer
@@ -872,10 +878,11 @@ _MoneyForWinningText::
 	prompt
 
 _TrainerDefeatedText::
-	text "<PLAYER> defeated"
-	line "@"
 	text_ram wTrainerName
-	text "!"
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "was defeated!"
 	prompt
 
 _PlayerMonFaintedText::
@@ -910,8 +917,10 @@ _LinkBattleLostText::
 
 _TrainerAboutToUseText::
 	text_ram wTrainerName
-	text " is"
-	line "about to use"
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "is about to use"
 	cont "@"
 	text_ram wEnemyMonNick
 	text "!"
@@ -922,8 +931,11 @@ _TrainerAboutToUseText::
 
 _TrainerSentOutText::
 	text_ram wTrainerName
-	text " sent"
-	line "out @"
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "sent out"
+	cont "@"
 	text_ram wEnemyMonNick
 	text "!"
 	done
@@ -1256,8 +1268,10 @@ _EnemyAppearedText::
 
 _TrainerWantsToFightText::
 	text_ram wTrainerName
-	text " wants"
-	line "to fight!"
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "wants to battle!"
 	prompt
 
 _UnveiledGhostText::
@@ -1788,3 +1802,13 @@ _TextIDErrorText::
 _ContCharText::
 	text "<_CONT>@"
 	text_end
+
+_CantUsePCHere:: ; new, for portablePC
+	text "You cannot use"
+	line "this here!"
+	prompt
+	
+_BoyGirlText::
+    text "Play as a boy, or"
+    line "as a girl?"
+    done

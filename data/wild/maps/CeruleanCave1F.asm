@@ -3,17 +3,17 @@ CeruleanCave1FWildMons:
 	db 46, GOLBAT
 	db 46, HYPNO
 	db 46, MAGNETON
-	db 49, DODRIO
-	db 49, VENOMOTH
+	db 49, MR_MIME
+	db 49, WEEZING
 IF DEF(_RED)
-	db 52, ARBOK
+	db 52, DRAGONAIR
 ENDC
 IF DEF(_BLUE)
-	db 52, SANDSLASH
+	db 52, DRAGONAIR
 ENDC
-	db 49, KADABRA
-	db 52, PARASECT
-	db 53, RAICHU
+	db 49, ELECTABUZZ
+	db 52, MAGMAR
+	db 53, TAUROS
 	db 53, DITTO
 	end_grass_wildmons
 

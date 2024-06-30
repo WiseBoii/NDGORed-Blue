@@ -1,0 +1,157 @@
+Start by going to `ram/wram.asm`, and find the label `wTrainerName`
+https://github.com/pret/pokered/blob/master/ram/wram.asm#L1201
+
+Then add a new label below it:
+```
+wCurTrainerName:: ds 13
+```
+
+This is where the individual trainer's name will be stored.
+
+
+
+Go to engine/battle/read_trainer_party.asm and go down to .IterateTrainer
+https://github.com/pret/pokered/blob/master/engine/battle/read_trainer_party.asm#L48
+
+Paste this in between the `.IterateTrainer` label and the `ld a, [hli]` instruction.
+
+```
+; Start by storing the trainer's name
+	ld de, wCurTrainerName
+.loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	cp "@"
+	jr z, .getTrainerType
+	jr .loop
+
+.getTrainerType
+; Determine which type of trainer this is
+```
+
+
+Then go to `data/text/text_2.asm` and adjust a few things in there.
+
+The first two entries should be `_AIBattleWithdrawText` and `_AIBattleUseItemText`
+
+Replace them with this:
+
+```
+_AIBattleWithdrawText::
+	text_ram wTrainerName
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "withdrew"
+	cont "@"
+	text_ram wEnemyMonNick
+	text "!"
+	prompt
+
+_AIBattleUseItemText::
+	text_ram wTrainerName
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "used @"
+	text_ram wcd6d
+	text_start
+	cont "on @"
+	text_ram wEnemyMonNick
+	text "!"
+	prompt
+```
+
+Then scroll down and find `_TrainerDefeatedText` and change it to:
+
+```
+_TrainerDefeatedText::
+	text_ram wTrainerName
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "was defeated!"
+	prompt
+```
+
+Then scroll down a bit more to `_TrainerAboutToUseText` and `_TrainerSentOutText` and change them to:
+
+```
+
+_TrainerAboutToUseText::
+	text_ram wTrainerName
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "is about to use"
+	cont "@"
+	text_ram wEnemyMonNick
+	text "!"
+
+	para "Will <PLAYER>"
+	line "change #MON?"
+	done
+
+_TrainerSentOutText::
+	text_ram wTrainerName
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "sent out"
+	cont "@"
+	text_ram wEnemyMonNick
+	text "!"
+	done
+```
+
+Then scroll down a bit more to `_TrainerWantsToFightText` and change it to:
+
+```
+_TrainerWantsToFightText::
+	text_ram wTrainerName
+	text " @"
+	text_ram wCurTrainerName
+	text_start
+	line "wants to battle!"
+	prompt
+```
+
+
+You will also want to go to `home/trainers.asm` and edit `TrainerEndBattleText::` as well.
+Just comment out the line that says `text_far _TrainerNameText` to keep their end battle text from getting shoved off the screen.
+
+
+
+Unless I missed some, that should handle reading a trainer's name and storing to to ram alongside the trainer class name, and adjust the in battle text to use both names.
+
+Now you have to go to `data/trainers/parties.am` and edit every single trainer party to have a name added at the start of their data.
+
+For example:
+
+```
+YoungsterData:
+; Route 3
+	db "JOEY@", 11, RATTATA, EKANS, 0
+	db "MIKEY@", 14, SPEAROW, 0
+```
+
+Make sure the name is terminated with a `@` like that.
+
+For sanity, you will also want to go to `data/trainers/names.asm` and adjust the trainer classes to avoid redundancy. You want it to say "LEADER BROCK" and not "BROCK BROCK" for example.
+
+
+For the Rival trainer classes, you will probably just want to set their class name to "RIVAL@", and for their individual trainer name, use the `<RIVAL>@` control character, so that it will show as "RIVAL GARY" or whatver you name him.
+
+You will need to go in to `engine/battle/get_trainer_name.asm` and find the lines:
+
+```
+	ld hl, wRivalName
+	ld a, [wTrainerClass]
+	cp RIVAL1
+	jr z, .foundName
+	cp RIVAL2
+	jr z, .foundName
+```
+
+And then delete all of them except for `ld a, [wTrainerClass]` which should stop the rival class from being treated differently.

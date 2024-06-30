@@ -361,4 +361,10 @@ _OaksLabRivalLeaveItAllToMeText::
 _OaksLabScientistText::
 	text "I study #MON as"
 	line "PROF.OAK's AIDE."
+	
+	para "I hope you can"
+	line "fill up as much"
+	
+	para "as you can out of"
+	line "the #DEX!"
 	done

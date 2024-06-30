@@ -6,14 +6,15 @@ TradeMons:
 	; from the Japanese Blue trades, which used species that evolve.
 	; Japanese Red and Green used TRADE_DIALOGSET_CASUAL, and had
 	; the same species as English Red and Blue.
-	db NIDORINO,   NIDORINA,  TRADE_DIALOGSET_CASUAL,    "TERRY@@@@@@"
-	db ABRA,       MR_MIME,   TRADE_DIALOGSET_CASUAL,    "MARCEL@@@@@"
+	db GROWLITHE,  KANGASKHAN,  TRADE_DIALOGSET_CASUAL,  "Goliath@@@@" ; route 11
+	db ABRA,       MR_MIME,   TRADE_DIALOGSET_CASUAL,    "MARCEL@@@@@" ; route 2
 	db BUTTERFREE, BEEDRILL,  TRADE_DIALOGSET_HAPPY,     "CHIKUCHIKU@" ; unused
-	db PONYTA,     SEEL,      TRADE_DIALOGSET_CASUAL,    "SAILOR@@@@@"
-	db SPEAROW,    FARFETCHD, TRADE_DIALOGSET_HAPPY,     "DUX@@@@@@@@"
-	db SLOWBRO,    LICKITUNG, TRADE_DIALOGSET_CASUAL,    "MARC@@@@@@@"
-	db POLIWHIRL,  JYNX,      TRADE_DIALOGSET_EVOLUTION, "LOLA@@@@@@@"
-	db RAICHU,     ELECTRODE, TRADE_DIALOGSET_EVOLUTION, "DORIS@@@@@@"
-	db VENONAT,    TANGELA,   TRADE_DIALOGSET_HAPPY,     "CRINKLES@@@"
-	db NIDORAN_M,  NIDORAN_F, TRADE_DIALOGSET_HAPPY,     "SPOT@@@@@@@"
+	db MAROWAK,     EXEGGUTOR, TRADE_DIALOGSET_CASUAL,   "EggMan@@@@@" ; cinnibar island
+	db EEVEE,      PORYGON,   TRADE_DIALOGSET_HAPPY,     "Duckling@@@" ; vermillion city
+	db CHANSEY,    AERODACTYL, TRADE_DIALOGSET_CASUAL,   "Ptera@@@@@@" ; route 18
+	db TANGELA,    SEADRA,    TRADE_DIALOGSET_EVOLUTION, "Neptune@@@@" ; cerulean city
+	db PRIMEAPE,   RAICHU,    TRADE_DIALOGSET_EVOLUTION, "Sparky@@@@@" ; cinnibar island
+	db JYNX,       HYPNO,     TRADE_DIALOGSET_HAPPY,     "Hypnotic@@@" ; cinnibar island
+	db CUBONE,     GASTLY,    TRADE_DIALOGSET_HAPPY,     "NightShade@" ; route 5
+	db NO_MON,     NO_MON, 	  TRADE_DIALOGSET_SELF,      "Unseen@@@@@"
 	assert_table_length NUM_NPC_TRADES

@@ -12,7 +12,7 @@ TrainerDataPointers:
 	dw BikerData
 	dw BurglarData
 	dw EngineerData
-	dw UnusedJugglerData
+	dw Giovanni2Data
 	dw FisherData
 	dw SwimmerData
 	dw CueBallData
@@ -49,225 +49,759 @@ TrainerDataPointers:
 	dw LanceData
 	assert_table_length NUM_TRAINERS
 
-; if first byte != $FF, then
-	; first byte is level (of all pokemon on this team)
-	; all the next bytes are pokemon species
-	; null-terminated
-; if first byte == $FF, then
-	; first byte is $FF (obviously)
-	; every next two bytes are a level and species
-	; null-terminated
+; Trainer data structure:
+; - db TRAINERTYPE_* constant
+; - 1 to 6 Pokémon:
+;    * for TRAINERTYPE_NORMAL:  db level, species
+;    * for TRAINERTYPE_MOVES:   db level, species, 4 moves
+; - db -1 ; end
+
 
 YoungsterData:
 ; Route 3
-	db 11, RATTATA, EKANS, 0
-	db 14, SPEAROW, 0
+	db "Joey@", TRAINERTYPE_NORMAL
+	db 11, RATTATA
+	db 10, EKANS
+	db -1 ; end
+	
+	db "Max@", TRAINERTYPE_NORMAL
+	db 14, SPEAROW
+	db -1 ; end
+	
 ; Mt. Moon 1F
-	db 10, RATTATA, RATTATA, ZUBAT, 0
+	db "Joe@", TRAINERTYPE_NORMAL
+	db 10, RATTATA
+	db 10, RATTATA
+	db 10, ZUBAT
+	db -1 ; end
+	
 ; Route 24
-	db 14, RATTATA, EKANS, ZUBAT, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 14, RATTATA
+	db 15, EKANS
+	db 14, ZUBAT
+	db -1 ; end
+	
 ; Route 25
-	db 15, RATTATA, SPEAROW, 0
-	db 17, SLOWPOKE, 0
-	db 14, EKANS, SANDSHREW, 0
+	db "Don@", TRAINERTYPE_NORMAL
+	db 15, RATTATA
+	db 16, SPEAROW
+	db -1 ; end
+	
+	db "Jerry@", TRAINERTYPE_NORMAL
+	db 17, SLOWPOKE
+	db -1 ; end
+	
+	db "Sam@", TRAINERTYPE_NORMAL
+	db 14, EKANS
+	db 15, SANDSHREW
+	db -1 ; end
+	
 ; SS Anne 1F Rooms
-	db 21, NIDORAN_M, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 21, NIDORAN_M
+	db -1 ; end
+	
 ; Route 11
-	db 21, EKANS, 0
-	db 19, SANDSHREW, ZUBAT, 0
-	db 17, RATTATA, RATTATA, RATICATE, 0
-	db 18, NIDORAN_M, NIDORINO, 0
+	db "Daryl@", TRAINERTYPE_NORMAL
+	db 22, EKANS
+	db -1 ; end
+	
+	db "Steve@", TRAINERTYPE_NORMAL
+	db 19, SANDSHREW
+	db 20, ZUBAT
+	db -1 ; end
+	
+	db "Joe@", TRAINERTYPE_NORMAL
+	db 17, RATTATA
+	db 18, RATTATA
+	db 20, RATICATE
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Unused
-	db 17, SPEAROW, RATTATA, RATTATA, SPEAROW, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
 
 BugCatcherData:
 ; Viridian Forest
-	db 6, WEEDLE, CATERPIE, 0
-	db 7, WEEDLE, KAKUNA, WEEDLE, 0
-	db 9, WEEDLE, 0
+	db "Don@", TRAINERTYPE_NORMAL
+	db 6, CATERPIE
+	db 6, WEEDLE
+	db -1 ; end
+	
+	db "Cam@", TRAINERTYPE_NORMAL
+	db 7, WEEDLE
+	db 7, KAKUNA
+	db -1 ; end
+	
+	db "Smith@", TRAINERTYPE_NORMAL
+	db 10, BEEDRILL
+	db -1 ; end
+	
 ; Route 3
-	db 10, CATERPIE, WEEDLE, CATERPIE, 0
-	db 9, WEEDLE, KAKUNA, CATERPIE, METAPOD, 0
-	db 11, CATERPIE, METAPOD, 0
+	db "Joe@", TRAINERTYPE_NORMAL
+	db 10, BUTTERFREE
+	db 11, BEEDRILL
+	db -1 ; end
+	
+	db "Wade@", TRAINERTYPE_NORMAL
+	db 9, METAPOD
+	db 10, BEEDRILL
+	db 9, KAKUNA
+	db 10, BUTTERFREE
+	db -1 ; end
+	
+	db "John@", TRAINERTYPE_NORMAL
+	db 11, VENONAT
+	db 12, BEEDRILL
+	db -1 ; end
+	
 ; Mt. Moon 1F
-	db 11, WEEDLE, KAKUNA, 0
-	db 10, CATERPIE, METAPOD, CATERPIE, 0
+	db "Joe@", TRAINERTYPE_NORMAL
+	db 11, VENONAT
+	db 12, PARAS
+	db -1 ; end
+	
+	db "Jon@", TRAINERTYPE_NORMAL
+	db 10, BUTTERFREE
+	db 13, PARAS
+	db 12, BUTTERFREE
+	db -1 ; end
+	
 ; Route 24
-	db 14, CATERPIE, WEEDLE, 0
+	db "Dave@", TRAINERTYPE_NORMAL
+	db 14, BUTTERFREE
+	db 14, VENONAT
+	db -1 ; end
 ; Route 6
-	db 16, WEEDLE, CATERPIE, WEEDLE, 0
-	db 20, BUTTERFREE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 16, BEEDRILL
+	db 15, PARAS
+	db 16, PINSIR
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, BUTTERFREE
+	db -1 ; end
+	
 ; Unused
-	db 18, METAPOD, CATERPIE, VENONAT, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Route 9
-	db 19, BEEDRILL, BEEDRILL, 0
-	db 20, CATERPIE, WEEDLE, VENONAT, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 19, BEEDRILL
+	db 20, SCYTHER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, BUTTERFREE
+	db 19, BEEDRILL
+	db 21, PINSIR
+	db -1 ; end
 
 LassData:
 ; Route 3
-	db 9, PIDGEY, PIDGEY, 0
-	db 10, RATTATA, NIDORAN_M, 0
-	db 14, JIGGLYPUFF, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 9, PIDGEY
+	db 10, ODDISH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 10, RATTATA
+	db 11, VULPIX
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 14, JIGGLYPUFF
+	db 13, CLEFAIRY
+	db -1 ; end
+	
 ; Route 4
-	db 31, PARAS, PARAS, PARASECT, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, PARASECT
+	db 32, VENOMOTH
+	db 31, PINSIR
+	db -1 ; end
+	
 ; Mt. Moon 1F
-	db 11, ODDISH, BELLSPROUT, 0
-	db 14, CLEFAIRY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 11, ODDISH
+	db 12, BELLSPROUT
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 14, CLEFAIRY
+	db 16, CLEFABLE
+	DB -1 ; end
+	
 ; Route 24
-	db 16, PIDGEY, NIDORAN_F, 0
-	db 14, PIDGEY, NIDORAN_F, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 16, PIDGEY
+	db 17, NIDORINA
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 15, PIDGEY
+	db 16, NIDORINO
+	db -1 ; end
+	
 ; Route 25
-	db 15, NIDORAN_M, NIDORAN_F, 0
-	db 13, ODDISH, PIDGEY, ODDISH, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 16, NIDORINA
+	db 16, NIDORINO
+	db -1 ; end
+	
+	db "Dan@",TRAINERTYPE_NORMAL
+	db 14, ODDISH
+	db 14, PIDGEY
+	db 15, ODDISH
+	db -1 ; end
+	
 ; SS Anne 1F Rooms
-	db 18, PIDGEY, NIDORAN_F, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 18, PIDGEOTTO
+	db 19, NIDORINA
+	db -1 ; end
+	
 ; SS Anne 2F Rooms
-	db 18, RATTATA, PIKACHU, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 19, RATICATE
+	db 20, PIKACHU
+	db -1 ; end
+	
 ; Route 8
-	db 23, NIDORAN_F, NIDORINA, 0
-	db 24, MEOWTH, MEOWTH, MEOWTH, 0
-	db 19, PIDGEY, RATTATA, NIDORAN_M, MEOWTH, PIKACHU, 0
-	db 22, CLEFAIRY, CLEFAIRY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 23, NIDORINA
+	db 25, WEEPINBELL
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, MEOWTH
+	db 26, NINETALES
+	db 25, PARASECT
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 19, PIDGEOTTO
+	db 20, RATICATE
+	db 19, NIDORINO
+	db 23, GROWLITHE
+	db 25, RAICHU
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 23, CLEFABLE
+	db 23, CLEFAIRY
+	db -1 ; end
+	
 ; Celadon Gym
-	db 23, BELLSPROUT, WEEPINBELL, 0
-	db 23, ODDISH, GLOOM, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, WEEPINBELL
+	db 24, GLOOM
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 21, ODDISH
+	db 24, EXEGGCUTE
+	db -1 ; end
 
 SailorData:
 ; SS Anne Stern
-	db 18, MACHOP, SHELLDER, 0
-	db 17, MACHOP, TENTACOOL, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 18, POLIWAG
+	db 20, SHELLDER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 17, SEEL
+	db 19, PSYDUCK
+	db -1 ; end
+	
 ; SS Anne B1F Rooms
-	db 21, SHELLDER, 0
-	db 17, HORSEA, SHELLDER, TENTACOOL, 0
-	db 18, TENTACOOL, STARYU, 0
-	db 17, HORSEA, HORSEA, HORSEA, 0
-	db 20, MACHOP, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, SLOWPOKE
+	db 20, HORSEA
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 18, KRABBY
+	db 17, STARYU
+	db 20, GYARADOS
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 19, TENTACOOL
+	db 22, GOLDEEN
+	db 20, PSYDUCK
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, KABUTO
+	db 22, VAPOREON
+	db 20, LAPRAS
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, OMANYTE
+	db 22, SEEL
+	db 20, POLIWAG
+	db -1 ; end
+	
 ; Vermilion Gym
-	db 21, PIKACHU, PIKACHU, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, PIKACHU
+	db 20, MAGNEMITE
+	db -1 ; end
 
 JrTrainerMData:
 ; Pewter Gym
-	db 11, DIGLETT, SANDSHREW, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 9, DIGLETT
+	db 11, SANDSHREW
+	db -1 ; end
+	
 ; Route 24/Route 25
-	db 14, RATTATA, EKANS, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 15, RATTATA
+	db 15, EKANS
+	db -1 ; end
+	
 ; Route 24
-	db 18, MANKEY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 18, MANKEY
+	db 20, MACHOP
+	db -1 ; end
+	
 ; Route 6
-	db 20, SQUIRTLE, 0
-	db 16, SPEAROW, RATICATE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, WARTORTLE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 15, SPEAROW
+	db 18, RATICATE
+	db -1 ; end
+	
 ; Unused
-	db 18, DIGLETT, DIGLETT, SANDSHREW, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
 ; Route 9
-	db 21, GROWLITHE, CHARMANDER, 0
-	db 19, RATTATA, DIGLETT, EKANS, SANDSHREW, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 21, MAGMAR
+	db 22, CHARMELEON
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, RATICATE
+	db 19, DIGLETT
+	db 20, EKANS
+	db 22, SANDSLASH
+	db -1 ; end
+	
 ; Route 12
-	db 29, NIDORAN_M, NIDORINO, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, NIDOKING
+	db 30, NIDOQUEEN
+	db -1 ; end
 
 JrTrainerFData:
 ; Cerulean Gym
-	db 19, GOLDEEN, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 17, POLIWAG
+	db -1 ; end
+	
 ; Route 6
-	db 16, RATTATA, PIKACHU, 0
-	db 16, PIDGEY, PIDGEY, PIDGEY, 0
+	db "Dan@", 16, TRAINERTYPE_NORMAL
+	db 16, NIDORINA
+	db 18, PIKACHU
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 17, PIDGEOTTO
+	db 15, NIDORAN_M
+	db 16, PIKACHU
+	db -1 ; end
+	
 ; Unused
-	db 22, BULBASAUR, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Route 9
-	db 18, ODDISH, BELLSPROUT, ODDISH, BELLSPROUT, 0
-	db 23, MEOWTH, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 18, ODDISH
+	db 20, BELLSPROUT
+	db 19, PARAS
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, MEOWTH
+	db 20, PIKACHU
+	db -1 ; end
+	
 ; Route 10
-	db 20, PIKACHU, CLEFAIRY, 0
-	db 21, PIDGEY, PIDGEOTTO, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, PIKACHU
+	db 20, CLEFABLE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 21, PIDGEOTTO
+	db 20, FEAROW
+	db -1 ; end
+	
 ; Rock Tunnel B1F
-	db 21, JIGGLYPUFF, PIDGEY, MEOWTH, 0
-	db 22, ODDISH, BULBASAUR, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 21, JIGGLYPUFF
+	db 20, PIDGEOTTO
+	db 22, CUBONE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GLOOM
+	db 24, IVYSAUR
+	db -1 ; end
+	
 ; Celadon Gym
-	db 24, BULBASAUR, IVYSAUR, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 23, IVYSAUR
+	db 24, PARASECT
+	db -1 ; end
+	
 ; Route 13
-	db 24, PIDGEY, MEOWTH, RATTATA, PIKACHU, MEOWTH, 0
-	db 30, POLIWAG, POLIWAG, 0
-	db 27, PIDGEY, MEOWTH, PIDGEY, PIDGEOTTO, 0
-	db 28, GOLDEEN, POLIWAG, HORSEA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, PIDGEOTTO
+	db 24, RATICATE
+	db 27, RAICHU
+	db 25, WIGGLYTUFF
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, POLIWHIRL
+	db 32, GOLDUCK
+	db -1 ; end 
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, PIDGEOTTO
+	db 30, PERSIAN
+	db 28, FEAROW
+	db 30, MACHOKE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 33, SEAKING
+	db 31, POLIWHIRL
+	db 32, SEADRA
+	db -1 ; end
+	
 ; Route 20
-	db 31, GOLDEEN, SEAKING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 33, KANGASKHAN
+	db 31, KINGLER
+	db -1 ; end
+	
 ; Rock Tunnel 1F
-	db 22, BELLSPROUT, CLEFAIRY, 0
-	db 20, MEOWTH, ODDISH, PIDGEY, 0
-	db 19, PIDGEY, RATTATA, RATTATA, BELLSPROUT, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, WEEPINBELL
+	db 21, KADABRA
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 23, GLOOM
+	db 21, VULPIX
+	db 22, POLIWAG
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, PIDGEOTTO
+	db 22, NIDORINA
+	db 20, SCYTHER
+	db -1 ; end
+	
 ; Route 15
-	db 28, GLOOM, ODDISH, ODDISH, 0
-	db 29, PIKACHU, RAICHU, 0
-	db 33, CLEFAIRY, 0
-	db 29, BELLSPROUT, ODDISH, TANGELA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, VILEPLUME
+	db 28, WIGGLYTUFF
+	db 31, VENOMOTH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, NIDOQUEEN
+	db 32, RAICHU
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, CLEFABLE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, TANGELA
+	db 32, VILEPLUME
+	db 34, LAPRAS
+	db -1 ; end
+	
 ; Route 20
-	db 30, TENTACOOL, HORSEA, SEEL, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, TENTACRUEL
+	db 30, SEADRA
+	db 34, DEWGONG
+	db -1 ; end
 
 PokemaniacData:
 ; Route 10
-	db 30, RHYHORN, LICKITUNG, 0
-	db 20, CUBONE, SLOWPOKE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, LICKITUNG
+	db 32, RHYHORN
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, KANGASKHAN
+	db 22, MAGMAR
+	db -1 ; end
+	
 ; Rock Tunnel B1F
-	db 20, SLOWPOKE, SLOWPOKE, SLOWPOKE, 0
-	db 22, CHARMANDER, CUBONE, 0
-	db 25, SLOWPOKE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, GYARADOS
+	db 22, PORYGON
+	db 21, KADABRA
+	db -1 ; END
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, CHARMELEON
+	db 24, ARBOK
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 28, PRIMEAPE
+	db -1 ; end
+	
 ; Victory Road 2F
-	db 40, CHARMELEON, LAPRAS, LICKITUNG, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 40, CHARIZARD
+	db 42, KABUTOPS
+	db 41, LICKITUNG
+	db -1 ; end
+	
 ; Rock Tunnel 1F
-	db 23, CUBONE, SLOWPOKE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, OMANYTE
+	db 23, ELECTABUZZ
+	db -1 ; end
 
 SuperNerdData:
 ; Mt. Moon 1F
-	db 11, MAGNEMITE, VOLTORB, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 12, VOLTORB
+	db 10, MAGNEMITE
+	db -1 ; end
+	
 ; Mt. Moon B2F
-	db 12, GRIMER, VOLTORB, KOFFING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 10, GRIMER
+	db 12, PIKACHU
+	db 11, KOFFING
+	db -1 ; end
+	
 ; Route 8
-	db 20, VOLTORB, KOFFING, VOLTORB, MAGNEMITE, 0
-	db 22, GRIMER, MUK, GRIMER, 0
-	db 26, KOFFING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, VOLTORB
+	db 23, PORYGON
+	db 22, KOFFING
+	db 20, MAGNEMITE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GRIMER
+	db 21, PONYTA
+	db 24, PIKACHU
+	db -1 ; end
+	
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, NINETALES
+	db -1 ; end
+	
 ; Unused
-	db 22, KOFFING, MAGNEMITE, WEEZING, 0
-	db 20, MAGNEMITE, MAGNEMITE, KOFFING, MAGNEMITE, 0
-	db 24, MAGNEMITE, VOLTORB, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Cinnabar Gym
-	db 36, VULPIX, VULPIX, NINETALES, 0
-	db 34, PONYTA, CHARMANDER, VULPIX, GROWLITHE, 0
-	db 41, RAPIDASH, 0
-	db 37, GROWLITHE, VULPIX, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 36, FLAREON
+	db 34, NINETALES
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, PONYTA
+	db 34, CHARMELEON
+	db 36, ARCANINE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 41, RAPIDASH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 36, ARCANINE
+	db 36, NINETALES
+	db -1 ; end
 
 HikerData:
 ; Mt. Moon 1F
-	db 10, GEODUDE, GEODUDE, ONIX, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 10, DIGLETT
+	db 10, GEODUDE
+	db 12, ONIX
+	db -1 ; end
+	
 ; Route 25
-	db 15, MACHOP, GEODUDE, 0
-	db 13, GEODUDE, GEODUDE, MACHOP, GEODUDE, 0
-	db 17, ONIX, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 14, MACHOP
+	db 15, RHYHORN
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 14, GEODUDE
+	db 15, MACHOP
+	db 14, SANDSHREW
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 19, ONIX
+	db -1 ; end
+	
 ; Route 9
-	db 21, GEODUDE, ONIX, 0
-	db 20, GEODUDE, MACHOP, GEODUDE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, SANDSLASH
+	db 24, ONIX
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, GEODUDE
+	db 20, NIDORINO
+	db 21, DIGLETT
+	db -1 ; end
+	
 ; Route 10
-	db 21, GEODUDE, ONIX, 0
-	db 19, ONIX, GRAVELER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 21, CUBONE
+	db 20, ONIX
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, ONIX
+	db 22, SANDSLASH
+	db 21, NIDORINA
+	db -1 ; end
+	
+	
 ; Rock Tunnel B1F
-	db 21, GEODUDE, GEODUDE, GRAVELER, 0
-	db 25, GEODUDE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 23, SANDSLASH
+	db 21, GEODUDE
+	db 25, NIDORINO
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, ONIX
+	db -1 ; end
+	
 ; Route 9/Rock Tunnel B1F
-	db 20, MACHOP, ONIX, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, MACHOP
+	db 22, RHYHORN
+	db -1 ; end
+	
 ; Rock Tunnel 1F
-	db 19, GEODUDE, MACHOP, GEODUDE, GEODUDE, 0
-	db 20, ONIX, ONIX, GEODUDE, 0
-	db 21, GEODUDE, GRAVELER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 19, GEODUDE
+	db 20, MACHOP
+	db 20, NIDORINO
+	db 22, SANDSLASH
+	db -1 ; end
+
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, ONIX
+	db 22, CUBONE
+	db 21, NIDORINA
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 21, GEODUDE
+	db 21, GRAVELER
+	db -1 ; end
 
 BikerData:
 ; Route 13
-	db 28, KOFFING, KOFFING, KOFFING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 28, KOFFING
+	db 32, WEEZING
+	db 28, GRIMER
+	db -1 ; end
+	
 ; Route 14
-	db 29, KOFFING, GRIMER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 29, VENOMOTH
+	db 30, WEEZING
+	db -1 ; end
+	
 ; Route 15
-	db 25, KOFFING, KOFFING, WEEZING, KOFFING, GRIMER, 0
-	db 28, KOFFING, GRIMER, WEEZING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 25, KOFFING
+	db 25, GLOOM
+	db 29, WEEZING
+	db 31, VENOMOTH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 28, KOFFING
+	db 30, VICTREEBEL
+	db 29, VENOMOTH
+	db -1 ; end
+	
 ; Route 16
-	db 29, GRIMER, KOFFING, 0
-	db 33, WEEZING, 0
-	db 26, GRIMER, GRIMER, GRIMER, GRIMER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 29, GRIMER
+	db 30, ELECTRODE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 33, VILEPLUME
+	db 30, WEEZING
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 26, GRIMER
+	db 26, GRIMER
+	db 30, ELECTRODE
+	db 29, ELECTABUZZ
+	db -1 ; end
+	
 ; Route 17
 	; From https://www.smogon.com/smog/issue27/glitch:
 	; 0E:5FC2 is offset of the ending 0 for this first Biker on Route 17.
@@ -277,468 +811,1696 @@ BikerData:
 	; Finally, PokedexOrder lists 0 as the dex ID for every MissingNo.
 	; The result is that this data gets interpreted as the base stats
 	; for MissingNo: 0, 33, MUK, 0, 29, VOLTORB, VOLTORB, 0, ..., 28, GRIMER, GRIMER.
-	db 28, WEEZING, KOFFING, WEEZING, 0
-	db 33, MUK, 0
-	db 29, VOLTORB, VOLTORB, 0
-	db 29, WEEZING, MUK, 0
-	db 25, KOFFING, WEEZING, KOFFING, KOFFING, WEEZING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, WEEZING
+	db 28, KOFFING
+	db 29, VENOMOTH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 33, MUK
+	db 30, ELECTRODE
+	db 30, ELECTABUZZ
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, ELECTRODE
+	db 30, ELECTRODE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, WEEZING
+	db 31, VILEPLUME
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 26, KOFFING
+	db 30, WEEZING
+	db 27, GRIMER
+	db 30, MUK
+	db 32, VENOMOTH
+	db -1 ; end
+	
 ; Route 14
-	db 26, KOFFING, KOFFING, GRIMER, KOFFING, 0
-	db 28, GRIMER, GRIMER, KOFFING, 0
-	db 29, KOFFING, MUK, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, KOFFING
+	db 30, VENOMOTH
+	db 28, WEEPINBELL
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, ELECTRODE
+	db 28, GRIMER
+	db 28, GRIMER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, WEEZING
+	db 32, MUK
+	db -1 ; end
 
 BurglarData:
 ; Unused
-	db 29, GROWLITHE, VULPIX, 0
-	db 33, GROWLITHE, 0
-	db 28, VULPIX, CHARMANDER, PONYTA, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Cinnabar Gym
-	db 36, GROWLITHE, VULPIX, NINETALES, 0
-	db 41, PONYTA, 0
-	db 37, VULPIX, GROWLITHE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 38, MAGMAR
+	db 37, NINETALES
+	db 39, RAPIDASH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 41, FLAREON
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 37, NINETALES
+	db 39, MAGMAR
+	db -1 ; end
+	
 ; Mansion 2F
-	db 34, CHARMANDER, CHARMELEON, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, CHARMELEON
+	db 36, PORYGON
+	db 35, MAGMAR
+	db -1 ; end
+	
 ; Mansion 3F
-	db 38, NINETALES, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 38, NINETALES
+	db -1 ; end
+	
 ; Mansion B1F
-	db 34, GROWLITHE, PONYTA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, GROWLITHE
+	db 36, RAPIDASH
+	db -1 ; end
 
 EngineerData:
 ; Unused
-	db 21, VOLTORB, MAGNEMITE, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Route 11
-	db 21, MAGNEMITE, 0
-	db 18, MAGNEMITE, MAGNEMITE, MAGNETON, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 21, MAGNEMITE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 18, VOLTORB
+	db 19, PIKACHU
+	db 18, MAGNEMITE
+	db -1 ; end
 
-UnusedJugglerData:
-; none
+Giovanni2Data:
+; Viridian Gym
+	db "Giovanni@", TRAINERTYPE_NORMAL
+	db 45, RHYHORN
+	db 42, DUGTRIO
+	db 44, NIDOQUEEN
+	db 43, KANGASKHAN
+	db 45, NIDOKING
+	db 50, RHYDON
+	db -1 ; end
+	
 
 FisherData:
 ; SS Anne 2F Rooms
-	db 17, GOLDEEN, TENTACOOL, GOLDEEN, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 17, GOLDEEN
+	db 16, PSYDUCK
+	db 18, POLIWAG
+	db -1 ; end
+	
 ; SS Anne B1F Rooms
-	db 17, TENTACOOL, STARYU, SHELLDER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 17, POLIWAG
+	db 17, SHELLDER
+	db 18, SLOWPOKE
+	db -1 ; end
+	
 ; Route 12
-	db 22, GOLDEEN, POLIWAG, GOLDEEN, 0
-	db 24, TENTACOOL, GOLDEEN, 0
-	db 27, GOLDEEN, 0
-	db 21, POLIWAG, SHELLDER, GOLDEEN, HORSEA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GOLDEEN
+	db 21, GYARADOS
+	db 23, HORSEA
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, TENTACOOL
+	db 23, SLOWPOKE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 25, LAPRAS
+	db 30, POLIWHIRL
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 21, SLOWPOKE
+	db 23, HORSEA
+	db 22, POLIWHIRL
+	db 25, GYARADOS
+	db -1 ; end
+	
 ; Route 21
-	db 28, SEAKING, GOLDEEN, SEAKING, SEAKING, 0
-	db 31, SHELLDER, CLOYSTER, 0
-	db 27, MAGIKARP, MAGIKARP, MAGIKARP, MAGIKARP, MAGIKARP, MAGIKARP, 0
-	db 33, SEAKING, GOLDEEN, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 28, SEAKING
+	db 30, SLOWBRO
+	db 30, LAPRAS
+	db 28, GYARADOS
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 31, KINGLER
+	db 34, CLOYSTER
+	db -1 ; end
+	
+	db "Sinister@", TRAINERTYPE_NORMAL
+	db 27, GYARADOS
+	db 28, POLIWHIRL
+	db 29, KINGLER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 33, SEAKING
+	db 37, SLOWBRO
+	db -1 ; end
+	
 ; Route 12
-	db 24, MAGIKARP, MAGIKARP, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, LAPRAS
+	db 26, POLIWHIRL
+	db -1 ; end
 
 SwimmerData:
 ; Cerulean Gym
-	db 16, HORSEA, SHELLDER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 16, HORSEA
+	db 14, SHELLDER
+	db 15, KRABBY
+	db -1 ; end
+	
 ; Route 19
-	db 30, TENTACOOL, SHELLDER, 0
-	db 29, GOLDEEN, HORSEA, STARYU, 0
-	db 30, POLIWAG, POLIWHIRL, 0
-	db 27, HORSEA, TENTACOOL, TENTACOOL, GOLDEEN, 0
-	db 29, GOLDEEN, SHELLDER, SEAKING, 0
-	db 30, HORSEA, HORSEA, 0
-	db 27, TENTACOOL, TENTACOOL, STARYU, HORSEA, TENTACRUEL, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, TENTACRUEL
+	db 34, CLOYSTER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, SEAKING
+	db 30, SEADRA
+	db 31, STARMIE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 31, POLIWHIRL
+	db 34, POLIWRATH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 28, HORSEA
+	db 30, TENTACRUEL
+	db 29, SLOWPOKE
+	db 30, GOLDUCK
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, SEAKING
+	db 29, KINGLER
+	db 30, STARMIE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, SEADRA
+	db 32, DEWGONG
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, TENTACRUEL
+	db 32, STARMIE
+	db 30, LAPRAS
+	db 31, GYARADOS
+	db 33, SEADRA
+	db -1 ; end
+	
 ; Route 20
-	db 31, SHELLDER, CLOYSTER, 0
-	db 35, STARYU, 0
-	db 28, HORSEA, HORSEA, SEADRA, HORSEA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, CLOYSTER
+	db 30, GOLDUCK
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 36, STARMIE
+	db 35, LAPRAS
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 31, SEADRA
+	db 30, SEAKING
+	db 31, KINGLER
+	db -1 ; end
+	
 ; Route 21
-	db 33, SEADRA, TENTACRUEL, 0
-	db 37, STARMIE, 0
-	db 33, STARYU, WARTORTLE, 0
-	db 32, POLIWHIRL, TENTACOOL, SEADRA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, DEWGONG
+	db 35, STARMIE
+	db 34, POLIWRATH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 39, GYARADOS
+	db 37, DEWGONG
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, STARMIE
+	db 37, BLASTOISE
+	db 38, SLOWBRO
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, POLIWHIRL
+	db 34, TENTACRUEL
+	db 33, KINGLER
+	db -1 ; end
 
 CueBallData:
 ; Route 16
-	db 28, MACHOP, MANKEY, MACHOP, 0
-	db 29, MANKEY, MACHOP, 0
-	db 33, MACHOP, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 29, MACHOKE
+	db 30, PRIMEAPE
+	db 28, MACHOKE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, MACHOKE
+	db 32, HITMONCHAN
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, HITMONLEE
+	db 33, MACHOKE
+	db -1 ; end
+	
+	
 ; Route 17
-	db 29, MANKEY, PRIMEAPE, 0
-	db 29, MACHOP, MACHOKE, 0
-	db 33, MACHOKE, 0
-	db 26, MANKEY, MANKEY, MACHOKE, MACHOP, 0
-	db 29, PRIMEAPE, MACHOKE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, MACHOKE
+	db 32, PRIMEAPE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, MACHOKE
+	db 34, POLIWRATH
+	db 32, HITMONCHAN
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, HITMONCHAN
+	db 34, HITMONLEE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, MANKEY
+	db 28, PRIMEAPE
+	db 26, MACHOP
+	db 29, MACHOKE
+	db 36, MACHAMP
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, PRIMEAPE
+	db 32, POLIWRATH
+	db 30, HITMONLEE
+	db -1 ; end
+	
 ; Route 21
-	db 31, TENTACOOL, TENTACOOL, TENTACRUEL, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, GYARADOS
+	db 34, PORYGON
+	db 36, PIDGEOT
+	db -1 ; end
 
 GamblerData:
 ; Route 11
-	db 18, POLIWAG, HORSEA, 0
-	db 18, BELLSPROUT, ODDISH, 0
-	db 18, VOLTORB, MAGNEMITE, 0
-	db 18, GROWLITHE, VULPIX, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 17, SLOWPOKE
+	db 19, IVYSAUR
+	db -1 ; end 
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, GLOOM
+	db 19, CHARMELEON
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 19, PIKACHU
+	db 22, PINSIR
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, WARTORTLE
+	db 22, SCYTHER
+	db -1 ; end
+
 ; Route 8
-	db 22, POLIWAG, POLIWAG, POLIWHIRL, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 25, POLIWHIRL
+	db 24, WEEPINBELL
+	db 25, NINETALES
+	db -1 ; end
+	
 ; Unused
-	db 22, ONIX, GEODUDE, GRAVELER, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Route 8
-	db 24, GROWLITHE, VULPIX, 0
+	db "tgeki@", TRAINERTYPE_NORMAL
+	db 24, HAUNTER
+	db 22, BUTTERFREE
+	db 23, SCYTHER
+	db 25, ELECTABUZZ
+	db -1 ; end
+	
 
 BeautyData:
 ; Celadon Gym
-	db 21, ODDISH, BELLSPROUT, ODDISH, BELLSPROUT, 0
-	db 24, BELLSPROUT, BELLSPROUT, 0
-	db 26, EXEGGCUTE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GLOOM
+	db 23, WEEPINBELL
+	db 21, PARAS
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, PARASECT
+	db 24, TANGELA
+	db 22, GLOOM
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 25, EXEGGCUTE
+	db 24, GLOOM
+	db -1 ; end
+	
 ; Route 13
-	db 27, RATTATA, PIKACHU, RATTATA, 0
-	db 29, CLEFAIRY, MEOWTH, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, RATICATE
+	db 30, RAICHU
+	db 30, RAPIDASH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 29, CLEFABLE
+	db 32, PERSIAN
+	db -1 ; end
+	
 ; Route 20
-	db 35, SEAKING, 0
-	db 30, SHELLDER, SHELLDER, CLOYSTER, 0
-	db 31, POLIWAG, SEAKING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, STARMIE
+	db 35, SEAKING
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, SHELLDER
+	db 32, CLOYSTER
+	db 32, SEADRA
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, POLIWHIRL
+	db 32, SLOWBRO
+	db -1 ; end
+	
 ; Route 15
-	db 29, PIDGEOTTO, WIGGLYTUFF, 0
-	db 29, BULBASAUR, IVYSAUR, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, PIDGEOTTO
+	db 30, WIGGLYTUFF
+	db 34, NIDOQUEEN
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, VENUSAUR
+	db 30, JOLTEON
+	db 31, SCYTHER
+	db -1 ; end
+	
 ; Unused
-	db 33, WEEPINBELL, BELLSPROUT, WEEPINBELL, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Route 19
-	db 27, POLIWAG, GOLDEEN, SEAKING, GOLDEEN, POLIWAG, 0
-	db 30, GOLDEEN, SEAKING, 0
-	db 29, STARYU, STARYU, STARYU, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 26, POLIWHIRL
+	db 25, GOLDEEN
+	db 26, PSYDUCK
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, SEAKING
+	db 32, KINGLER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, STARMIE
+	db 30, WARTORTLE
+	db 29, VAPOREON
+	db -1 ; end
+	
 ; Route 20
-	db 30, SEADRA, HORSEA, SEADRA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, SEADRA
+	db 30, HORSEA
+	db 31, SEEL
+	db -1 ; end
 
 PsychicData:
 ; Saffron Gym
-	db 31, KADABRA, SLOWPOKE, MR_MIME, KADABRA, 0
-	db 34, MR_MIME, KADABRA, 0
-	db 33, SLOWPOKE, SLOWPOKE, SLOWBRO, 0
-	db 38, SLOWBRO, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 31, KADABRA
+	db 30, STARMIE
+	db 32, MR_MIME
+	db 31, HYPNO
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, MR_MIME
+	db 32, EXEGGUTOR
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, SLOWBRO
+	db 33, HYPNO
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 38, SLOWBRO
+	db 35, JYNX
+	db -1 ; end
+	
 
 RockerData:
 ; Vermilion Gym
-	db 20, VOLTORB, MAGNEMITE, VOLTORB, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, PIKACHU
+	db 22, VOLTORB
+	db 21, MAGNEMITE
+	db -1 ; end
+	
 ; Route 12
-	db 29, VOLTORB, ELECTRODE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, ELECTRODE
+	db 31, ELECTABUZZ
+	db -1 ; end
+	
 
 JugglerData:
 ; Silph Co. 5F
-	db 29, KADABRA, MR_MIME, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 29, PORYGON
+	db 30, MR_MIME
+	db -1 ; end
+	
 ; Victory Road 2F
-	db 41, DROWZEE, HYPNO, KADABRA, KADABRA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 40, ELECTRODE
+	db 41, HYPNO
+	db 43, ALAKAZAM
+	db 41, ELECTRODE
+	db -1 ; end
+	
 ; Fuchsia Gym
-	db 31, DROWZEE, DROWZEE, KADABRA, DROWZEE, 0
-	db 34, DROWZEE, HYPNO, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 31, VENOMOTH
+	db 32, HYPNO
+	db 31, MUK
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, HYPNO
+	db 34, VILEPLUME
+	db -1 ; end
+	
 ; Victory Road 2F
-	db 48, MR_MIME, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 48, MACHOKE
+	db 45, MR_MIME
+	db 47, ELECTRODE
+	db -1 ; end
+	
 ; Unused
-	db 33, HYPNO, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Fuchsia Gym
-	db 38, HYPNO, 0
-	db 34, DROWZEE, KADABRA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 38, HYPNO
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, VENOMOTH
+	db 32, KADABRA
+	db -1 ; end
 
 TamerData:
 ; Fuchsia Gym
-	db 34, SANDSLASH, ARBOK, 0
-	db 33, ARBOK, SANDSLASH, ARBOK, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, SANDSLASH
+	db 35, ARBOK
+	db 34, VILEPLUME
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, MUK
+	db 34, WEEZING
+	db 35, VICTREEBEL
+	db -1 ; end
+	
 ; Viridian Gym
-	db 43, RHYHORN, 0
-	db 39, ARBOK, TAUROS, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 44, TAUROS
+	db 43, ARCANINE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 40, KANGASKHAN
+	db 42, RAPIDASH
+	db -1 ; end
+	
 ; Victory Road 2F
-	db 44, PERSIAN, GOLDUCK, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 43, PERSIAN
+	db 45, POLIWRATH
+	db -1 ; end
+	
 ; Unused
-	db 42, RHYHORN, PRIMEAPE, ARBOK, TAUROS, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
 
 BirdKeeperData:
 ; Route 13
-	db 29, PIDGEY, PIDGEOTTO, 0
-	db 25, SPEAROW, PIDGEY, PIDGEY, SPEAROW, SPEAROW, 0
-	db 26, PIDGEY, PIDGEOTTO, SPEAROW, FEAROW, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 29, PIDGEOTTO
+	db 32, FEAROW
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, FEAROW
+	db 26, PIDGEOTTO
+	db 30, FARFETCHD
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 26, DODUO
+	db 27, FARFETCHD
+	db 22, PIDGEOTTO
+	db -1 ; end
+	
 ; Route 14
-	db 33, FARFETCHD, 0
-	db 29, SPEAROW, FEAROW, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 33, FARFETCHD
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 31, DODRIO
+	db 30, FARFETCHD
+	db -1 ; end
+	
 ; Route 15
-	db 26, PIDGEOTTO, FARFETCHD, DODUO, PIDGEY, 0
-	db 28, DODRIO, DODUO, DODUO, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 26, PIDGEOTTO
+	db 30, FEAROW
+	db 31, DODRIO
+	db 30, FARFETCHD
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 31, DODRIO
+	db 30, PIDGEOTTO
+	db -1 ; end
+	
 ; Route 18
-	db 29, SPEAROW, FEAROW, 0
-	db 34, DODRIO, 0
-	db 26, SPEAROW, SPEAROW, FEAROW, SPEAROW, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, FEAROW
+	db 32, FARFETCHD
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, DODRIO
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, FEAROW
+	db 29, PIDGEOTTO
+	db 31, DODRIO
+	db -1 ; end
+	
 ; Route 20
-	db 30, FEAROW, FEAROW, PIDGEOTTO, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, DODRIO
+	db 34, FARFETCHD
+	db 36, PIDGEOT
+	db -1 ; end
+	
 ; Unused
-	db 39, PIDGEOTTO, PIDGEOTTO, PIDGEY, PIDGEOTTO, 0
-	db 42, FARFETCHD, FEAROW, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Route 14
-	db 28, PIDGEY, DODUO, PIDGEOTTO, 0
-	db 26, PIDGEY, SPEAROW, PIDGEY, FEAROW, 0
-	db 29, PIDGEOTTO, FEAROW, 0
-	db 28, SPEAROW, DODUO, FEAROW, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 29, PIDGEOTTO
+	db 28, DODUO
+	db 30, FARFETCHD
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 26, PIDGEOTTO
+	db 30, FEAROW
+	db 29, DODUO
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 29, PIDGEOTTO
+	db 30, FEAROW
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 28, DODUO
+	db 30, FARFETCHD
+	db -1 ; end
+	
 
 BlackbeltData:
 ; Fighting Dojo
-	db 37, HITMONLEE, HITMONCHAN, 0
-	db 31, MANKEY, MANKEY, PRIMEAPE, 0
-	db 32, MACHOP, MACHOKE, 0
-	db 36, PRIMEAPE, 0
-	db 31, MACHOP, MANKEY, PRIMEAPE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 38, HITMONCHAN
+	db 38, POLIWRATH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, PRIMEAPE
+	db 33, HITMONLEE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, MACHOKE
+	db 36, POLIWRATH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 37, PRIMEAPE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, MACHOKE
+	db 29, MANKEY
+	db 31, POLIWHIRL
+	db -1 ; end
+	
 ; Viridian Gym
-	db 40, MACHOP, MACHOKE, 0
-	db 43, MACHOKE, 0
-	db 38, MACHOKE, MACHOP, MACHOKE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 42, MACHAMP
+	db 40, POLIWRATH
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 44, MACHAMP
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 39, HITMONCHAN
+	db 39, HITMONLEE
+	db -1 ; end
+	
 ; Victory Road 2F
-	db 43, MACHOKE, MACHOP, MACHOKE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 45, POLIWRATH
+	db 43, MACHAMP
+	db 46, PRIMEAPE
+	db -1 ; end
+	
 
 Green1Data:
-	db 5, SQUIRTLE, 0
-	db 5, BULBASAUR, 0
-	db 5, CHARMANDER, 0
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 5, SQUIRTLE
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 5, BULBASAUR
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 5, CHARMANDER
+	db -1 ; end
+	
 ; Route 22
-	db $FF, 9, PIDGEY, 8, SQUIRTLE, 0
-	db $FF, 9, PIDGEY, 8, BULBASAUR, 0
-	db $FF, 9, PIDGEY, 8, CHARMANDER, 0
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 9, PIDGEY
+	db 10, SQUIRTLE
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 9, PIDGEY
+	db 10, BULBASAUR
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 9, PIDGEY
+	db 10, CHARMANDER
+	db -1 ; end
+	
 ; Cerulean City
-	db $FF, 18, PIDGEOTTO, 15, ABRA, 15, RATTATA, 17, SQUIRTLE, 0
-	db $FF, 18, PIDGEOTTO, 15, ABRA, 15, RATTATA, 17, BULBASAUR, 0
-	db $FF, 18, PIDGEOTTO, 15, ABRA, 15, RATTATA, 17, CHARMANDER, 0
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 18, PIDGEOTTO
+	db 15, ABRA
+	db 16, RATTATA
+	db 17, WARTORTLE
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 18, PIDGEOTTO
+	db 15, ABRA
+	db 16, RATTATA
+	db 17, IVYSAUR
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 18, PIDGEOTTO
+	db 15, ABRA
+	db 16, RATTATA
+	db 17, CHARMELEON
+	db -1 ; end
+	
 
 ProfOakData:
-; Unused
-	db $FF, 66, TAUROS, 67, EXEGGUTOR, 68, ARCANINE, 69, BLASTOISE, 70, GYARADOS, 0
-	db $FF, 66, TAUROS, 67, EXEGGUTOR, 68, ARCANINE, 69, VENUSAUR, 70, GYARADOS, 0
-	db $FF, 66, TAUROS, 67, EXEGGUTOR, 68, ARCANINE, 69, CHARIZARD, 70, GYARADOS, 0
-
+; Unused - want to use in the future
+	db "Oak@", TRAINERTYPE_NORMAL
+	db 80, TAUROS
+	db 76, SNORLAX
+	db 79, ARCANINE
+	db 84, BLASTOISE
+	db 82, KABUTOPS
+	db 85, ZAPDOS
+	db -1 ; end
+	
+	db "Oak@", TRAINERTYPE_NORMAL
+	db 80, TAUROS
+	db 76, EXEGGUTOR
+	db 79, GENGAR
+	db 84, VENUSAUR
+	db 82, AERODACTYL
+	db 85, MOLTRES
+	db -1 ; end
+	
+	db "Oak@", TRAINERTYPE_NORMAL
+	db 80, KANGASKHAN
+	db 76, EXEGGUTOR
+	db 79, ALAKAZAM
+	db 84, CHARIZARD
+	db 82, OMASTAR
+	db 85, ARTICUNO
+	db -1 ; end
+	
 ChiefData:
 ; none
 
 ScientistData:
 ; Unused
-	db 34, KOFFING, VOLTORB, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Silph Co. 2F
-	db 26, GRIMER, WEEZING, KOFFING, WEEZING, 0
-	db 28, MAGNEMITE, VOLTORB, MAGNETON, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 27, PORYGON
+	db 30, WEEZING
+	db 32, MAROWAK
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 28, MAGNEMITE
+	db 30, ELECTRODE
+	db 32, MAGNETON
+	db -1 ; end
+	
 ; Silph Co. 3F/Mansion 1F
-	db 29, ELECTRODE, WEEZING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, MAGMAR
+	db 30, ELECTABUZZ
+	db 30, JYNX
+	db -1 ; end
+	
 ; Silph Co. 4F
-	db 33, ELECTRODE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 33, SCYTHER
+	db 32, ONIX
+	db -1 ; end
+	
 ; Silph Co. 5F
-	db 26, MAGNETON, KOFFING, WEEZING, MAGNEMITE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 32, MAGNETON
+	db 31, MUK
+	db 33, VILEPLUME
+	db -1 ; end
+	
 ; Silph Co. 6F
-	db 25, VOLTORB, KOFFING, MAGNETON, MAGNEMITE, KOFFING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, ARBOK
+	db 34, VICTREEBEL
+	db 36, FLAREON
+	db -1 ; end
+	
 ; Silph Co. 7F
-	db 29, ELECTRODE, MUK, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, MAGMAR
+	db 35, MUK
+	db -1 ; end
+	
 ; Silph Co. 8F
-	db 29, GRIMER, ELECTRODE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 36, JYNX
+	db 35, KANGASKHAN
+	db -1 ; end
+	
 ; Silph Co. 9F
-	db 28, VOLTORB, KOFFING, MAGNETON, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, ELECTRODE
+	db 34, HITMONLEE
+	db -1 ; end
+	
 ; Silph Co. 10F
-	db 29, MAGNEMITE, KOFFING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, HITMONCHAN
+	db 37, LICKITUNG
+	db 38, SLOWBRO
+	db -1 ; end
+	
 ; Mansion 3F
-	db 33, MAGNEMITE, MAGNETON, VOLTORB, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, SLOWBRO
+	db 34, MAGNETON
+	db 36, JOLTEON
+	db -1 ; end
+	
 ; Mansion B1F
-	db 34, MAGNEMITE, ELECTRODE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, MAGNETON
+	db 37, LICKITUNG
+	db -1 ; end
+	
 
 GiovanniData:
-; Rocket Hideout B4F
-	db $FF, 25, ONIX, 24, RHYHORN, 29, KANGASKHAN, 0
-; Silph Co. 11F
-	db $FF, 37, NIDORINO, 35, KANGASKHAN, 37, RHYHORN, 41, NIDOQUEEN, 0
-; Viridian Gym
-	db $FF, 45, RHYHORN, 42, DUGTRIO, 44, NIDOQUEEN, 45, NIDOKING, 50, RHYDON, 0
-
+; Rocket Hideout B4F - give moves
+	db "Giovanni@", TRAINERTYPE_NORMAL
+	db 26, ONIX
+	db 28, RHYHORN
+	db 31, KANGASKHAN
+	db 30, NIDORINA
+	db 30, NIDORINO
+	db -1 ; end
+	
+; Silph Co. 11F - give moves
+	db "Giovanni@", TRAINERTYPE_NORMAL
+	db 40, NIDOKING
+	db 38, KANGASKHAN
+	db 41, RHYDON
+	db 40, NIDOQUEEN
+	db 39, ONIX
+	db 43, TAUROS
+	db -1 ; end
+	
 RocketData:
 ; Mt. Moon B2F
-	db 13, RATTATA, ZUBAT, 0
-	db 11, SANDSHREW, RATTATA, ZUBAT, 0
-	db 12, ZUBAT, EKANS, 0
-	db 16, RATICATE, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 13, EKANS
+	db 12, ZUBAT
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 11, DROWZEE
+	db 12, SANDSHREW
+	db 10, ODDISH
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 12, KOFFING
+	db 13, EKANS
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 17, MEOWTH
+	db 16, KOFFING
+	db -1 ; end
+	
 ; Cerulean City
-	db 17, MACHOP, DROWZEE, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 17, MACHOP
+	db 18, DODUO
+	db -1 ; end
+	
 ; Route 24
-	db 15, EKANS, ZUBAT, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 16, KADABRA
+	db 15, EEVEE
+	db 16, PONYTA
+	db -1 ; end
+	
 ; Game Corner
-	db 20, RATICATE, ZUBAT, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 22, GLOOM
+	db 20, VOLTORB
+	db -1 ; end
+	
 ; Rocket Hideout B1F
-	db 21, DROWZEE, MACHOP, 0
-	db 21, RATICATE, RATICATE, 0
-	db 20, GRIMER, KOFFING, KOFFING, 0
-	db 19, RATTATA, RATICATE, RATICATE, RATTATA, 0
-	db 22, GRIMER, KOFFING, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 22, DRATINI
+	db 20, SLOWPOKE
+	db 23, WEEPINBELL
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 23, PONYTA
+	db 24, GRIMER
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 21, MEOWTH
+	db 23, TANGELA
+	db 23, KOFFING
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 20, RATICATE
+	db 22, GOLBAT
+	db 21, PSYDUCK
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 22, EKANS
+	db 20, DIGLETT
+	db -1 ; end
+	
 ; Rocket Hideout B2F
-	db 17, ZUBAT, KOFFING, GRIMER, ZUBAT, RATICATE, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 21, ZUBAT
+	db 20, KOFFING
+	db 23, VULPIX
+	db -1 ; end
+	
 ; Rocket Hideout B3F
-	db 20, RATTATA, RATICATE, DROWZEE, 0
-	db 21, MACHOP, MACHOP, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 23, NIDORINO
+	db 22, DROWZEE
+	db 24, NINETALES
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 23, NIDORINA
+	db 22, SLOWPOKE
+	db 24, FLAREON
+	db -1 ; end
+	
 ; Rocket Hideout B4F
-	db 23, SANDSHREW, EKANS, SANDSLASH, 0
-	db 23, EKANS, SANDSHREW, ARBOK, 0
-	db 21, KOFFING, ZUBAT, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 22, SANDSLASH
+	db 21, GRIMER
+	db 23, PORYGON
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 22, EKANS
+	db 21, KOFFING
+	db 23, MEOWTH
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 23, GOLBAT
+	db 23, MANKEY
+	db -1 ; end
+	
 ; Pokémon Tower 7F
-	db 25, ZUBAT, ZUBAT, GOLBAT, 0
-	db 26, KOFFING, DROWZEE, 0
-	db 23, ZUBAT, RATTATA, RATICATE, ZUBAT, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 25, KOFFING
+	db 24, GRIMER
+	db 26, WEEPINBELL
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 26, MEOWTH
+	db 25, GLOOM
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 24, LICKITUNG
+	db 26, MR_MIME
+	db 25, FARFETCHD
+	db -1 ; end
+	
 ; Unused
-	db 26, DROWZEE, KOFFING, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Silph Co. 2F
-	db 29, CUBONE, ZUBAT, 0
-	db 25, GOLBAT, ZUBAT, ZUBAT, RATICATE, ZUBAT, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 30, MAROWAK
+	db 29, GOLBAT
+	db -1 ; end
+	
+	db "Grunt@",TRAINERTYPE_NORMAL
+	db 26, TANGELA
+	db 25, NIDORINO
+	db 26, MACHOKE
+	db -1 ; end
+	
 ; Silph Co. 3F
-	db 28, RATICATE, HYPNO, RATICATE, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 29, RATICATE
+	db 30, MR_MIME
+	db 28, LICKITUNG
+	db -1 ; end
+	
 ; Silph Co. 4F
-	db 29, MACHOP, DROWZEE, 0
-	db 28, EKANS, ZUBAT, CUBONE, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 30, MACHOKE
+	db 31, KADABRA
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 30, FLAREON
+	db 29, MAGNETON
+	db -1 ; end
+	
 ; Silph Co. 5F
-	db 33, ARBOK, 0
-	db 33, HYPNO, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 34, ARBOK
+	db 33, VILEPLUME
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 34, HYPNO
+	db 35, WEEZING
+	db -1 ; end
+	
 ; Silph Co. 6F
-	db 29, MACHOP, MACHOKE, 0
-	db 28, ZUBAT, ZUBAT, GOLBAT, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 30, MACHOKE
+	db 31, MUK
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 30, GOLBAT
+	db 32, MACHOKE
+	db 31, RAPIDASH
+	db -1 ; end
+	
 ; Silph Co. 7F
-	db 26, RATICATE, ARBOK, KOFFING, GOLBAT, 0
-	db 29, CUBONE, CUBONE, 0
-	db 29, SANDSHREW, SANDSLASH, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 27, DRATINI
+	db 28, ARBOK
+	db 29, GOLBAT
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 30, MAROWAK
+	db 29, MACHOKE
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 30, SANDSLASH
+	db 31, NIDORINA
+	db -1 ; end
+	
 ; Silph Co. 8F
-	db 26, RATICATE, ZUBAT, GOLBAT, RATTATA, 0
-	db 28, WEEZING, GOLBAT, KOFFING, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 27, RATICATE
+	db 30, ELECTRODE
+	db 31, PINSIR
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 29, SCYTHER
+	db 30, GOLBAT
+	db 29, DUGTRIO
+	db -1 ; end
+	
 ; Silph Co. 9F
-	db 28, DROWZEE, GRIMER, MACHOP, 0
-	db 28, GOLBAT, DROWZEE, HYPNO, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 30, TANGELA
+	db 29, HYPNO
+	db 31, MUK
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 28, MAGMAR
+	db 30, MAGNETON
+	db 29, ARBOK
+	db -1 ; end
+	
 ; Silph Co. 10F
-	db 33, MACHOKE, 0
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 34, MACHAMP
+	db 33, DUGTRIO
+	db -1 ; end
+	
 ; Silph Co. 11F
-	db 25, RATTATA, RATTATA, ZUBAT, RATTATA, EKANS, 0
-	db 32, CUBONE, DROWZEE, MAROWAK, 0
-
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 26, RATICATE
+	db 28, GYARADOS
+	db 30, WEEZING
+	db -1 ; end
+	
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 32, MAROWAK
+	db 30, HYPNO
+	db 31, DUGTRIO
+	db -1 ; end
+	
 CooltrainerMData:
 ; Viridian Gym
-	db 39, NIDORINO, NIDOKING, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 38, NIDORINA
+	db 38, NIDORINO
+	db -1 ; end
+
 ; Victory Road 3F
-	db 43, EXEGGUTOR, CLOYSTER, ARCANINE, 0
-	db 43, KINGLER, TENTACRUEL, BLASTOISE, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 43, EXEGGUTOR
+	db 44, CLOYSTER
+	db 43, ARCANINE
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 43, KINGLER
+	db 45, TENTACRUEL
+	db 44, KANGASKHAN
+	db -1 ; end
+	
 ; Unused
-	db 45, KINGLER, STARMIE, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Victory Road 1F
-	db 42, IVYSAUR, WARTORTLE, CHARMELEON, CHARIZARD, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 42, VENUSAUR
+	db 42, CHARIZARD
+	db 42, BLASTOISE
+	db 45, PIKACHU
+	db -1 ; end
+	
 ; Unused
-	db 44, IVYSAUR, WARTORTLE, CHARMELEON, 0
-	db 49, NIDOKING, 0
-	db 44, KINGLER, CLOYSTER, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Viridian Gym
-	db 39, SANDSLASH, DUGTRIO, 0
-	db 43, RHYHORN, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 40, SANDSLASH
+	db 41, DUGTRIO
+	db 40, RHYDON
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 45, LICKITUNG
+	db 43, ONIX
+	db 45, MAROWAK
+	db -1 ; end
 
 CooltrainerFData:
 ; Celadon Gym
-	db 24, WEEPINBELL, GLOOM, IVYSAUR, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, WEEPINBELL
+	db 24, GLOOM
+	db 23, IVYSAUR
+	db -1 ; end
+	
 ; Victory Road 3F
-	db 43, BELLSPROUT, WEEPINBELL, VICTREEBEL, 0
-	db 43, PARASECT, DEWGONG, CHANSEY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 45, VICTREEBEL
+	db 43, VILEPLUME
+	db 45, NIDOQUEEN
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 45, PARASECT
+	db 46, DEWGONG
+	db 45, CHANSEY
+	db -1 ; end
+	
 ; Unused
-	db 46, VILEPLUME, BUTTERFREE, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Victory Road 1F
-	db 44, PERSIAN, NINETALES, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 46, RAPIDASH
+	db 47, RAICHU
+	db 45, EXEGGUTOR
+	db -1 ; end
+	
 ; Unused
-	db 45, IVYSAUR, VENUSAUR, 0
-	db 45, NIDORINA, NIDOQUEEN, 0
-	db 43, PERSIAN, NINETALES, RAICHU, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
 
-BrunoData:
-	db $FF, 53, ONIX, 55, HITMONCHAN, 55, HITMONLEE, 56, ONIX, 58, MACHAMP, 0
-
+BrunoData: ; - give moves
+	db "Hagene@", TRAINERTYPE_NORMAL
+	db 55, FLAREON
+	db 56, EXEGGUTOR
+	db 54, SLOWBRO
+	db 55, NIDOKING
+	db 54, TAUROS
+	db 60, ARTICUNO
+	db -1 ; end
+	
 BrockData:
-	db $FF, 12, GEODUDE, 14, ONIX, 0
-
+	db "Brock@", TRAINERTYPE_NORMAL
+	db 13, GEODUDE
+	db 15, ONIX
+	db -1 ; end
+	
 MistyData:
-	db $FF, 18, STARYU, 21, STARMIE, 0
+	db "Misty@", TRAINERTYPE_NORMAL
+	db 18, STARYU
+	db 22, STARMIE
+	db -1 ; end
 
 LtSurgeData:
-	db $FF, 21, VOLTORB, 18, PIKACHU, 24, RAICHU, 0
+	db "LtSurge@", TRAINERTYPE_NORMAL
+	db 21, VOLTORB
+	db 20, PIKACHU
+	db 24, RAICHU
+	db 26, ELECTABUZZ
+	db -1 ; end
 
 ErikaData:
-	db $FF, 29, VICTREEBEL, 24, TANGELA, 29, VILEPLUME, 0
+	db "Erika@", TRAINERTYPE_NORMAL
+	db 29, VILEPLUME
+	db 31, VICTREEBEL
+	db 30, TANGELA
+	db 34, VENUSAUR
+	db -1 ; end
 
-KogaData:
-	db $FF, 37, KOFFING, 39, MUK, 37, KOFFING, 43, WEEZING, 0
+KogaData: ; - give moves
+	db "NorthWind@", TRAINERTYPE_NORMAL
+	db 37, VENOMOTH
+	db 35, GENGAR
+	db 36, GOLBAT
+	db 38, NIDOKING
+	db 40, TENTACRUEL
+	db 42, VICTREEBEL
+	db -1 ; end
 
 BlaineData:
-	db $FF, 42, GROWLITHE, 40, PONYTA, 42, RAPIDASH, 47, ARCANINE, 0
+	db "Blaine@", TRAINERTYPE_NORMAL
+	db 44, ARCANINE
+	db 46, RAPIDASH
+	db 45, NINETALES
+	db 48, FLAREON
+	db 50, CHARIZARD
+	db 47, MAGMAR
+	db -1 ; end
 
 SabrinaData:
-	db $FF, 38, KADABRA, 37, MR_MIME, 38, VENOMOTH, 43, ALAKAZAM, 0
-
+	db "Sabrina@", TRAINERTYPE_NORMAL
+	db 37, KADABRA
+	db 39, MR_MIME
+	db 38, VENOMOTH
+	db 42, ALAKAZAM
+	db 40, STARMIE
+	db 41, JYNX
+	db -1 ; end
+	
 GentlemanData:
 ; SS Anne 1F Rooms
-	db 18, GROWLITHE, GROWLITHE, 0
-	db 19, NIDORAN_M, NIDORAN_F, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, ELECTABUZZ
+	db 22, LICKITUNG
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, MAGMAR
+	db 22, CHANSEY
+	db -1 ; end
+	
 ; SS Anne 2F Rooms/Vermilion Gym
-	db 23, PIKACHU, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 23, PIKACHU
+	db 20, CUBONE
+	db -1 ; end
+	
 ; Unused
-	db 48, PRIMEAPE, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; SS Anne 2F Rooms
-	db 17, GROWLITHE, PONYTA, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, DITTO
+	db 22, SCYTHER
+	db -1 ; end
 
 Green2Data:
 ; SS Anne 2F
-	db $FF, 19, PIDGEOTTO, 16, RATICATE, 18, KADABRA, 20, WARTORTLE, 0
-	db $FF, 19, PIDGEOTTO, 16, RATICATE, 18, KADABRA, 20, IVYSAUR, 0
-	db $FF, 19, PIDGEOTTO, 16, RATICATE, 18, KADABRA, 20, CHARMELEON, 0
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 20, PIDGEOTTO
+	db 16, RATICATE
+	db 19, KADABRA
+	db 22, WARTORTLE
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 20, PIDGEOTTO
+	db 16, RATICATE
+	db 19, KADABRA
+	db 22, IVYSAUR
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 20, PIDGEOTTO
+	db 16, RATICATE
+	db 19, KADABRA
+	db 22, CHARMELEON
+	db -1 ; end
+	
 ; Pokémon Tower 2F
-	db $FF, 25, PIDGEOTTO, 23, GROWLITHE, 22, EXEGGCUTE, 20, KADABRA, 25, WARTORTLE, 0
-	db $FF, 25, PIDGEOTTO, 23, GYARADOS, 22, GROWLITHE, 20, KADABRA, 25, IVYSAUR, 0
-	db $FF, 25, PIDGEOTTO, 23, EXEGGCUTE, 22, GYARADOS, 20, KADABRA, 25, CHARMELEON, 0
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 26, PIDGEOTTO
+	db 24, GROWLITHE
+	db 23, EXEGGCUTE
+	db 22, KADABRA
+	db 26, WARTORTLE
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 26, PIDGEOTTO
+	db 24, GROWLITHE
+	db 23, EXEGGCUTE
+	db 22, KADABRA
+	db 26, IVYSAUR
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 26, PIDGEOTTO
+	db 24, GROWLITHE
+	db 23, EXEGGCUTE
+	db 22, KADABRA
+	db 26, CHARMELEON
+	db -1 ; end
+	
 ; Silph Co. 7F
-	db $FF, 37, PIDGEOT, 38, GROWLITHE, 35, EXEGGCUTE, 35, ALAKAZAM, 40, BLASTOISE, 0
-	db $FF, 37, PIDGEOT, 38, GYARADOS, 35, GROWLITHE, 35, ALAKAZAM, 40, VENUSAUR, 0
-	db $FF, 37, PIDGEOT, 38, EXEGGCUTE, 35, GYARADOS, 35, ALAKAZAM, 40, CHARIZARD, 0
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 39, PIDGEOT
+	db 40, ARCANINE
+	db 36, EXEGGUTOR
+	db 37, ALAKAZAM
+	db 42, BLASTOISE
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 39, PIDGEOT
+	db 40, ARCANINE
+	db 36, EXEGGUTOR
+	db 37, ALAKAZAM
+	db 42, VENUSAUR
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 39, PIDGEOT
+	db 40, ARCANINE
+	db 36, EXEGGUTOR
+	db 37, ALAKAZAM
+	db 42, CHARIZARD
+	db -1 ; end
+
 ; Route 22
-	db $FF, 47, PIDGEOT, 45, RHYHORN, 45, GROWLITHE, 47, EXEGGCUTE, 50, ALAKAZAM, 53, BLASTOISE, 0
-	db $FF, 47, PIDGEOT, 45, RHYHORN, 45, GYARADOS, 47, GROWLITHE, 50, ALAKAZAM, 53, VENUSAUR, 0
-	db $FF, 47, PIDGEOT, 45, RHYHORN, 45, EXEGGCUTE, 47, GYARADOS, 50, ALAKAZAM, 53, CHARIZARD, 0
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 48, PIDGEOT
+	db 46, RHYDON
+	db 46, ARCANINE
+	db 48, EXEGGUTOR
+	db 50, ALAKAZAM
+	db 53, BLASTOISE
+	db -1 ; end
+
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 48, PIDGEOT
+	db 46, RHYDON
+	db 46, ARCANINE
+	db 48, GYARADOS
+	db 50, ALAKAZAM
+	db 53, VENUSAUR
+	db -1 ; end
+
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 48, PIDGEOT
+	db 46, RHYDON
+	db 46, EXEGGUTOR
+	db 48, GYARADOS
+	db 50, ALAKAZAM
+	db 53, VENUSAUR
+	db -1 ; end
 
 Green3Data:
-	db $FF, 61, PIDGEOT, 59, ALAKAZAM, 61, RHYDON, 61, ARCANINE, 63, EXEGGUTOR, 65, BLASTOISE, 0
-	db $FF, 61, PIDGEOT, 59, ALAKAZAM, 61, RHYDON, 61, GYARADOS, 63, ARCANINE, 65, VENUSAUR, 0
-	db $FF, 61, PIDGEOT, 59, ALAKAZAM, 61, RHYDON, 61, EXEGGUTOR, 63, GYARADOS, 65, CHARIZARD, 0
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 65, PIDGEOT
+	db 60, ALAKAZAM
+	db 62, RHYDON
+	db 63, ARCANINE
+	db 62, EXEGGUTOR
+	db 66, BLASTOISE
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 65, PIDGEOT
+	db 60, ALAKAZAM
+	db 62, RHYDON
+	db 63, GYARADOS
+	db 62, ARCANINE
+	db 65, VENUSAUR
+	db -1 ; end
+	
+	db "<RIVAL>@", TRAINERTYPE_NORMAL
+	db 65, PIDGEOT
+	db 60, ALAKAZAM
+	db 62, RHYDON
+	db 63, EXEGGUTOR
+	db 62, GYARADOS
+	db 65, CHARIZARD
+	db -1 ; end
+	
 
-LoreleiData:
-	db $FF, 54, DEWGONG, 53, CLOYSTER, 54, SLOWBRO, 56, JYNX, 56, LAPRAS, 0
-
+LoreleiData: ; - give moves
+	db "Canada@", TRAINERTYPE_NORMAL
+	db 54, LAPRAS
+	db 53, VAPOREON
+	db 55, DITTO
+	db 54, DITTO
+	db 56, DITTO
+	db 60, ARTICUNO
+	db -1 ; end
+	
 ChannelerData:
 ; Unused
-	db 22, GASTLY, 0
-	db 24, GASTLY, 0
-	db 23, GASTLY, GASTLY, 0
-	db 24, GASTLY, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Pokémon Tower 3F
-	db 23, GASTLY, 0
-	db 24, GASTLY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 20, GASTLY
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, HAUNTER
+	db -1 ; end
+	
 ; Unused
-	db 24, HAUNTER, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Pokémon Tower 3F
-	db 22, GASTLY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db 23, HAUNTER
+	db -1 ; end
+	
 ; Pokémon Tower 4F
-	db 24, GASTLY, 0
-	db 23, GASTLY, GASTLY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, HAUNTER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db 25, HAUNTER
+	db -1 ; end
+	
 ; Unused
-	db 24, GASTLY, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Pokémon Tower 4F
-	db 22, GASTLY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db -1 ; end 
+	
 ; Unused
-	db 24, GASTLY, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Pokémon Tower 5F
-	db 23, HAUNTER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, HAUNTER
+	db -1 ; end
+	
 ; Unused
-	db 24, GASTLY, 0
+	db "Bill@", TRAINERTYPE_NORMAL
+	db 18, NIDORAN_M
+	db 20, NIDORINO
+	db -1 ; end
+	
 ; Pokémon Tower 5F
-	db 22, GASTLY, 0
-	db 24, GASTLY, 0
-	db 22, HAUNTER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 24, HAUNTER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db 24, HAUNTER
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 25, HAUNTER
+	db -1 ; end
+	
 ; Pokémon Tower 6F
-	db 22, GASTLY, GASTLY, GASTLY, 0
-	db 24, GASTLY, 0
-	db 24, GASTLY, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 22, GASTLY
+	db 22, GASTLY
+	db 22, GASTLY
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 25, HAUNTER
+	db 22, GASTLY
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 30, GENGAR
+	db -1 ; end
+	
 ; Saffron Gym
-	db 34, GASTLY, HAUNTER, 0
-	db 38, HAUNTER, 0
-	db 33, GASTLY, GASTLY, HAUNTER, 0
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 35, GENGAR
+	db 34, HYPNO
+	db 35, MR_MIME
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 37, GENGAR
+	db 36, EXEGGUTOR
+	db -1 ; end
+	
+	db "Dan@", TRAINERTYPE_NORMAL
+	db 34, MR_MIME
+	db 36, STARMIE
+	db -1 ; end
 
 AgathaData:
-	db $FF, 56, GENGAR, 56, GOLBAT, 55, HAUNTER, 58, ARBOK, 60, GENGAR, 0
-
+	db "Agatha@", TRAINERTYPE_NORMAL
+	db 56, GENGAR
+	db 55, GOLBAT
+	db 56, GENGAR
+	db 58, ARBOK
+	db 60, HYPNO
+	db 57, VILEPLUME
+	db -1 ; end
+	
 LanceData:
-	db $FF, 58, GYARADOS, 56, DRAGONAIR, 56, DRAGONAIR, 60, AERODACTYL, 62, DRAGONITE, 0
+	db "Scott@", TRAINERTYPE_NORMAL
+	db 58, DRAGONITE
+	db 60, GYARADOS
+	db 59, ARBOK
+	db 61, CHARIZARD
+	db 60, AERODACTYL
+	db 65, ZAPDOS
+	db -1 ; end

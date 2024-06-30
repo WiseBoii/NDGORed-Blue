@@ -281,11 +281,8 @@ INCLUDE "data/trainers/names.asm"
 
 INCLUDE "engine/battle/misc.asm"
 
-INCLUDE "engine/battle/read_trainer_party.asm"
-
 INCLUDE "data/trainers/special_moves.asm"
 
-INCLUDE "data/trainers/parties.asm"
 
 TrainerAI:
 	and a
@@ -345,7 +342,7 @@ CooltrainerFAI:
 	; The intended 25% chance to consider switching will not apply.
 	; Uncomment the line below to fix this.
 	cp 25 percent + 1
-	; ret nc
+	ret nc
 	ld a, 10
 	call AICheckIfHPBelowFraction
 	jp c, AIUseHyperPotion

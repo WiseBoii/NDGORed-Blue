@@ -5,21 +5,21 @@ Route9WildMons:
 	db 14, RATTATA
 IF DEF(_RED)
 	db 11, EKANS
-	db 13, SPEAROW
+	db 13, DODUO
 	db 15, EKANS
 	db 17, RATTATA
-	db 17, SPEAROW
-	db 13, EKANS
-	db 17, EKANS
+	db 17, FEAROW
+	db 13, TANGELA
+	db 17, VOLTORB
 ENDC
 IF DEF(_BLUE)
-	db 11, SANDSHREW
-	db 13, SPEAROW
-	db 15, SANDSHREW
+	db 11, EKANS
+	db 13, DODUO
+	db 15, EKANS
 	db 17, RATTATA
-	db 17, SPEAROW
-	db 13, SANDSHREW
-	db 17, SANDSHREW
+	db 17, FEAROW
+	db 13, TANGELA
+	db 17, VOLTORB
 ENDC
 	end_grass_wildmons
 

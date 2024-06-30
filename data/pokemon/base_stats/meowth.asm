@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/meowth.pic", 0, 1 ; sprite dimensions
 	dw MeowthPicFront, MeowthPicBack
 
-	db SCRATCH, GROWL, NO_MOVE, NO_MOVE ; level 1 learnset
+	db SCRATCH, GROWL, PAY_DAY, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
@@ -20,4 +20,4 @@
 	     REST,         SUBSTITUTE
 	; end
 
-	db 0 ; padding
+	db BANK(MeowthPicFront)

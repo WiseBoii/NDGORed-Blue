@@ -377,7 +377,15 @@ wSlotMachineSevenAndBarModeChance:: db
 	ds 2
 ; ROM back to return to when the player is done with the slot machine
 wSlotMachineSavedROMBank:: db
-	ds 166
+	
+; Move Buffer stuff for Mateo's code
+wMoveBuffer::
+wRelearnableMoves::
+	ds 164
+; Try not to use this stack. 
+; A good amount of space is needed to store data for the move relearner.
+; If it's like, 2, it'll lag like crazy and show garbage from elsewhere.	
+
 wLuckySlotHiddenObjectIndex:: db
 
 NEXTU
@@ -1199,6 +1207,7 @@ wMissableObjectCounter:: db
 ; the name is terminated with $50 with possible
 ; unused trailing letters
 wTrainerName:: ds 13
+wCurTrainerName:: ds 13
 
 ; lost battle, this is -1
 ; no battle, this is 0
@@ -1529,7 +1538,7 @@ wMonHBackSprite:: dw
 wMonHMoves:: ds NUM_MOVES
 wMonHGrowthRate:: db
 wMonHLearnset:: flag_array NUM_TMS + NUM_HMS
-	ds 1
+wMonHPicBank:: db
 wMonHeaderEnd::
 
 ; saved at the start of a battle and then written back at the end of the battle
@@ -2036,7 +2045,13 @@ wRoute18Gate1FCurScript:: db
 	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+wPlayerGender::
+	; $00 = male
+	; $01 = female
+	ds 1
+
+	; unused
+	ds 55
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 

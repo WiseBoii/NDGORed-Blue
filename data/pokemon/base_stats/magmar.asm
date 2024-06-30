@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/magmar.pic", 0, 1 ; sprite dimensions
 	dw MagmarPicFront, MagmarPicBack
 
-	db EMBER, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db EMBER, SMOG, SMOKESCREEN, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
@@ -21,4 +21,4 @@
 	     PSYWAVE,      SUBSTITUTE,   STRENGTH
 	; end
 
-	db 0 ; padding
+	db BANK(MagmarPicFront)

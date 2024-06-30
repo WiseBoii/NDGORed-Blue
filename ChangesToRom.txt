@@ -1,0 +1,289 @@
+NdgoBlue/NdgoRed
+Shared Features:
+Running Shoes [x]
+Turn to face enemys when seen by them [x]
+Physical Special Split [x]
+Already Caught icon to Battle hud [x]
+Restored "GameFreak Presents" from original Red/Green Release on intro [x]
+Tradeback NPC in Celedon City mart 1f [x]
+E4 Plays Gym Music not Trainer Music [x]
+Attack on wake-up turn after sleeping/GEN2 sleep turns (max 6) [x]
+Poison, burn and leech seed do an 8th of max HP [x]
+Remove 25% chance for enemy stat down moves to miss [x]
+Swift will not hit through fly or dig [x]
+Implement move priority system [x]
+Push B In wild battle moves to run [x]
+Portable PC in the Start Menu [x]
+Remove Redundant TrainerName Pointers [x]
+DEFAULT NAMES CHANGED
+Intro Nidorino changed to lapras
+
+POKEMART CHANGES:
+Celedon Mart 4f: added moon stone
+GAME CORNER PRIZES CHANGED
+
+InGame Trade Changes:
+Route 5:  Cubone for GASTLY
+ROUTE 11: GROWLITHE FOR KANGASKHAN
+VERMILLION: EEVEE FOR PORYGON
+ROUTE 18: CHANSEY FOR AERODACTYL
+CERULEAN CITY: TANGELA FOR SEADRA
+CINNIBAR1: MAROWAK FOR EXEGGUTOR
+CINNIBAR2: JYNX FOR HYPNO
+CINNIBAR3: PRIMEAPE FOR RAICHU
+
+BIG OVERHAUL:
+LEARNSETS CHANGED TO BDSP/Custom!
+PROGRESS:
+Bulbasaur: done
+ivysaur: done
+venusaur: done
+charmander: done
+charmeleon: done
+charizard: done
+squirtle: done
+wartortle: done
+blastoise: done
+caterpie:
+metapod:
+butterfree: done
+weedle:
+kakuna:
+beedrill: done 
+pidgey: done
+pidgeotto: done
+pidgeot: done
+rattata: done
+raticate: done
+spearow: done
+fearow: done
+ekans: done
+arbok: done
+pikachu: done
+raichu: done	
+sandshrew: done
+sandslash: done
+nidoran_f: done
+nidorina: done
+nidoqueen: done
+nidoran_m: done
+nidorino: done
+nidoking: done
+clefairy: done
+clefable: done
+vulpix: done
+ninetales: done
+jigglypuff: done
+wigglytuff: done
+zubat: done
+golbat: done
+oddish: done
+gloom: done
+vileplume: done
+paras: DONE
+parasect: DONE
+venonat: done
+venomoth: done
+diglett: DONE
+dugtrio: DONE
+meowth: done
+persian: done
+psyduck: done
+golduck: done
+mankey: DONE
+primape: DONE
+growlithe: done
+arcanine: done
+poliwag: done
+poliwhirl: done
+poliwrath: done
+abra: done
+kadabra: done
+alakazam: done
+machop: done
+machoke: done
+machamp: done
+bellsprout: done
+weepingbell: done
+victreebel: done
+tentacool: done
+tentacruel: done
+geodude: done
+graveler: done
+golem: done
+ponyta: done
+rapidash: done
+slowpoke: done
+slowbro: done
+magnemite: done
+magneton: done
+farfetch'd: DONE
+doduo: done
+dodrio: done
+seel: done
+dewgong: done
+grimer: done
+muk: done
+shellder: done
+cloyster: done
+gastly: done
+haunter: done
+gengar: done
+onix:done
+drowzee: done
+hypno: done
+krabby: done
+kingler: done
+voltorb: done
+electrode: done
+exeggcute: done
+exeggutor: done
+cubone: done
+marowak done
+hitmonlee:
+hitmonchan:
+lickitung: done
+koffing:
+weezing:
+rhyhorn: DONE
+rhydon: DONE
+chansey: done
+tangela: done
+kangaskhan: done
+horsea: DONE
+seadra: DONE
+goldeen: DONE
+seaking: DONE
+staryu: done
+starmie: done
+Mr. Mime: done
+scyther: done
+jynx:
+electabuzz: DONE
+magmar: DONE
+pinsir: DONE
+tauros: done
+magikarp: done
+gyarados: done
+lapras: 
+ditto:
+eevee:done
+vaporeon: done
+jolteon: done
+flareon: done
+porygon: done
+omanyte: done
+omastar: done
+kabuto: done
+kabutops: done
+aerodactyl: done
+snorlax: done
+articuno: DONE
+zapdos: DONE
+moltres: DONE
+dratini: done
+dragonair: done
+dragonite: done
+mewtwo: done
+mew: done
+
+Wild Mon Changes:(GRASS) (water routes (See sea routes) )
+
+https://www.reddit.com/r/pokemon/comments/47wrxs/here_is_a_map_i_made_with_the_location_and_info/#lightbox
+ 
+Route 22: added Mankey to grass
+Route 22: added poliwhirl to super rod
+Route 2: added weedle/caterpie nidorans
+Viridian forest: added pidgey/pidgeotto/ekans/PARAS
+Route 3: added Mankey/sandshrew/vulpix/
+MtMoon 1f: added machop/rhyhorn/sandshrew/onix
+MtMoon B1f: Added diglett
+MtMoon B2F: Added cubone
+Route 4: added sandshrew, mankey, ekans, ABRA
+route 24, added pidgeotto, venonat, bellsprout, growlithe
+ROUTE 25: ADDED VENONAT, BELLSPROUT, PIDGEOTTO
+ROUTE 5: Added oddish/brllsprout/EEVEE/mankey/meowth/abra/jigglypuff/pidgeotto
+Route 6: added pidgeotto/eevee/jigglypuff/oddish/meowth/mankey/bellsprout/ abra/ magnemite
+route 11: ADDED SANDSHREW/RATICATE/MAGNEMITE/scyther
+ROUTE 9: FEAROW/VOLTORB/TANGELA/DODUO
+ROUTE 10: FEAROW/VOLTORB/TANGELA/DODUO/FARFETCHD
+ROCK TUNNEL 1F: CUBONE/PARAS
+ROCK TUNNEL B1F: RHYHORN/ SANDSLASH/CUBONE/ PARAS
+POWER PLANT: JOLTEON/RAICHU/ELECTABUZZ/
+POKEMON TOWER: ?
+ROUTE 8: GROWLITHE/VULPIX/PIDGEOTTO/TANGELA/KADABRA
+ROUTE 7: PONYTA/GLOOM/WEEPINBELL
+ROUTE 16: TAUROS/FARFETCHD/TANGELA/FEAROW/PIDGEOTTO/RATICATE/MAGNEMITE
+ROUTE 17: EEVEE/GRIMER/MUK/POLIWHIRL/LICKKITUNG
+ROUTE 18: TAUROS/KOFFING/WEEZING/KANGASKHAN/LICKITUNG
+SAFFARI CENTER:NIDORINO/PINSIR/IVYSAUR
+SAFFARI EAST: CHARMELEON/MAROWAK/CHANSEY
+SAFFARI NORTH: WARTORTLE/TAUROS/PORYGON
+SAFFARI WEST: KADABRA/MACHOKE/GRAVELER/CHARMANDER/BULBASAUR/SQUIRTLE/HAUNTER/POLIWHIRL
+route 15: GLOON/WEEPINBELL/CHANSEY/TANGELA
+route 14: WEEPINBELL/GLOOM/CLEFABLE/VENOMOTH/KANGASKHAN
+route 13: BELLSPROUT/DITTO/FARFETCHD/GLOOM/WEEPINBELL
+route 12: FARFETCHD/BELLSPROUT/WEEPINBELL
+ROUTE 19 surf: (see sea routes)
+ROUTE 20 SURF: (see sea routes)
+sea routes: Added goldeen/staryu/horsea/magikarp/shellder/tentacruel/poliwhirl
+seafoam island1f: PSYDUCK/KRABBY
+sf b1f: KRABBY/KINGLER/PSYDUCK
+sf b2f: VAPOREON/ GOLDUCK/ STARMIE/ PSYDUCK / JYNX
+sf b3f: VAPOREON/ DEWGONG/ LAPRAS/POLIWHIRL/ SLOWBRO
+sf b4f: POLIWHIRL/KABUTO/OMANYTE/LAPRAS/WARTORTLE
+CINNIBAR MANSION 1f: GROWLITHE/VULPIX/HAUNTER
+cm 2f: HYPNO/PONYTA/RAPIDASH/GROWLITHE/VULPIX
+cm 3f: ARCANINE/MAGMAR/RAPIDASH/ARCANINE/VULPIX
+cm b1f: CHARMANDER/ MAGMAR / ARCANINE / RAPIDASH
+ROUTE 21: SNORLAX/TAUROS/ TANGELA/KANGASKHAN (GRASS) | (WATER) SHELLDER/HORSEA/STARYU/STARMIE/ SEAKING/ TENTACRUEL/POLIWAG/
+ROUTE 23: PRIMEAPE/ NIDORINO/NIDORINA/NIDOKING/NIDOQUEEN
+VICTORY ROAD1f: SANDSLASH/RHYHORN/MANKEY
+vr2f: SANDSLASH/RHYHORN/MANKEY/HITMONLEE/HITMONCHAN
+vr3f: SANDSLASH/RHYDON/LICKITUNG/TAUROS
+CERULEAN CAVE 1F: ELECTABUZZ/MAGMAR/TAUROS/DRAGONAIR/WEEZING/MR MIME
+CERULEAN CAVE 2F: KABUTOPS/OMASTAR/AERODACTYL
+CERULEAN CAVE B1F:MR MIME/SNORLAX/PORYGON/
+
+Rod Changes:
+Good Rod:
+
+
+Super Rod:
+PALLET TOWN/VIRIDIAN: ADDED STARYU
+SAFFARI ZONE: ADDED DRAGONAIR
+CINNIBAR ISLAND: OMANYTE/KABUTO
+FUSCHIA: GYARADOS
+VERMILLION: SEEL/STARYU/HORSEA/SHELLDER/
+CERULEAN CITY: HORSEA
+
+(stopped at line 900/1120)
+Trainer Edits: GEN 2 NAME/PARTY SYSTEM ADDED! CAN ADD MOVES/NAMES
+data/trainer/names all trainer classes have been Lowercased
+ALL TRAINERS HAVE BEEN GIVEN NAMES! NOW TO REPLACE THEM!
+Added gender selection! play as red or leaf!
+
+ROUTE 8:
+; Route 8
+	db "tgeki@", 24, HAUNTER, 22, BUTTERFREE, 23, SCYTHER, 25, ELECTABUZZ, 0
+Elite Four:
+Lance #4: ScottToji - scott
+Bruno #2 - Hagene
+
+rival team: (w.i.p)
+If Squirtle (picked charmander): Blastoise,Moltres,Exeggucute,Alakazam,Chansey,Rhydon
+If Bulbasaur (picked squirtle):  Venusaur, Zapdos, Starmie,Tauros, Jynx, Ninetails
+If Charmander (picked bulbasaur): Charizard, Articuno,Cloyster, Gengar, Dragonite, Snorlax
+
+
+Route 22 (rival 1): IF PICKED CHARMANDER: ADDED ABRA / IF PICKED SQUIRTLE: ADDED VULPIX / IF PICKED BULBASAUR: ADDED GASTLY
+Nugget Bridge Rival (rival 2):
+S.S Anne Rival (rival 3):
+Pokemon Tower Rival (Rival 4):
+Sliph Co Rival (Rival 5):
+Route 22 Rival OTW TO E4 (Rival 6):
+Champion (rival 7):
+
+
+
+CREDITS: Luna for helping code, Rangi42 for explaining some code, Rosie(bloodless) for Trainer Sprites

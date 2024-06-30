@@ -125,6 +125,9 @@ ViridianMart_Blocks: INCBIN "maps/ViridianMart.blk"
 INCLUDE "data/maps/headers/ViridianSchoolHouse.asm"
 INCLUDE "scripts/ViridianSchoolHouse.asm"
 INCLUDE "data/maps/objects/ViridianSchoolHouse.asm"
+; Mateo's move relearner/deleter files
+INCLUDE "scripts/move_deleter.asm"
+INCLUDE "scripts/move_relearner.asm"
 
 INCLUDE "data/maps/headers/ViridianNicknameHouse.asm"
 	ds 1

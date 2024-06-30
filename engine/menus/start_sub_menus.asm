@@ -478,7 +478,13 @@ StartMenu_TrainerInfo::
 DrawTrainerInfo:
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $01
-	predef DisplayPicCenteredOrUpperRight
+	ld a, [wPlayerGender]
+   	and a
+   	jr z, .AreBoy
+    ld de, GreenPicFront
+    lb bc, BANK(GreenPicFront), $01
+.AreBoy
+    predef DisplayPicCenteredOrUpperRight
 	call DisableLCD
 	hlcoord 0, 2
 	ld a, " "
@@ -806,3 +812,29 @@ SwitchPartyMon_InitVarOrSwapData:
 	pop de
 	pop hl
 	ret
+
+StartMenu_PortablePC:: ; new
+	ld a, [wCurMap] ; we don't want to cheese the Elite4, do we?
+	cp LORELEIS_ROOM
+	jr z, .cantUseItHere
+	cp BRUNOS_ROOM
+	jr z, .cantUseItHere
+	cp AGATHAS_ROOM
+	jr z, .cantUseItHere
+	cp LANCES_ROOM
+	jr z, .cantUseItHere
+; if none of the above cp is met, let's open the pc and do the things
+	callfar ActivatePC ; main part
+	jr .done
+.cantUseItHere ; no cheese!
+	ld hl, CantUsePCHere
+	call PrintText
+.done
+	call LoadScreenTilesFromBuffer2 ; restore saved screen
+	call LoadTextBoxTilePatterns
+	call UpdateSprites
+	jp RedisplayStartMenu
+
+CantUsePCHere:
+	text_far _CantUsePCHere
+	text_end

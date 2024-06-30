@@ -5,22 +5,22 @@ Route21WildMons:
 	db 30, RATICATE
 	db 23, RATTATA
 	db 21, PIDGEY
-	db 30, PIDGEOTTO
+	db 30, SNORLAX
 	db 32, PIDGEOTTO
-	db 28, TANGELA
+	db 28, KANGASKHAN
 	db 30, TANGELA
-	db 32, TANGELA
+	db 32, TAUROS
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
 	db  5, TENTACOOL
 	db 10, TENTACOOL
-	db 15, TENTACOOL
-	db  5, TENTACOOL
-	db 10, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACOOL
+	db 15, POLIWAG
+	db  5, SHELLDER
+	db 10, GOLDEEN
+	db 15, HORSEA
+	db 20, STARYU
+	db 30, STARMIE
+	db 35, SEAKING
 	db 40, TENTACOOL
 	end_water_wildmons

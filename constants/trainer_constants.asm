@@ -27,7 +27,7 @@ ENDM
 	trainer_const BIKER          ; $0A
 	trainer_const BURGLAR        ; $0B
 	trainer_const ENGINEER       ; $0C
-	trainer_const UNUSED_JUGGLER ; $0D
+	trainer_const GIOVANNI2 ; $0D UNUSED_JUGGLER
 	trainer_const FISHER         ; $0E
 	trainer_const SWIMMER        ; $0F
 	trainer_const CUE_BALL       ; $10
@@ -63,3 +63,10 @@ ENDM
 	trainer_const AGATHA         ; $2E
 	trainer_const LANCE          ; $2F
 DEF NUM_TRAINERS EQU const_value - 1
+
+
+; trainer type constants
+; used in data/trainers/parties.asm to define trainer party info
+DEF const_value = 0
+	const TRAINERTYPE_NORMAL
+	const TRAINERTYPE_MOVES

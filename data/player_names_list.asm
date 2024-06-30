@@ -1,27 +1,39 @@
 IF DEF(_RED)
 DefaultNamesPlayerList:
 	db "NEW NAME@"
-	db "RED@"
-	db "ASH@"
-	db "JACK@"
+	db "WiseBoi@"
+	db "Canada@"
+	db "Scott@"
+
+DefaultNamesGirlList:
+    db "NEW NAME@"
+   	db "Lynthia@"
+   	db "Furret@"
+    db "Suki@"
 
 DefaultNamesRivalList:
 	db "NEW NAME@"
-	db "BLUE@"
-	db "GARY@"
-	db "JOHN@"
+	db "Hjort@"
+	db "Sheesh@"
+	db "Babulal@"
 ENDC
 
 IF DEF(_BLUE)
 DefaultNamesPlayerList:
 	db "NEW NAME@"
-	db "BLUE@"
-	db "GARY@"
-	db "JOHN@"
+	db "WiseBoi@"
+	db "Canada@"
+	db "Scott@"
+	
+DefaultNamesGirlList:
+    db "NEW NAME@"
+   	db "Lynthia@"
+   	db "Furret@"
+    db "Suki@"
 
 DefaultNamesRivalList:
 	db "NEW NAME@"
-	db "RED@"
-	db "ASH@"
-	db "JACK@"
+	db "Hjort@"
+	db "Sheesh@"
+	db "Babulal@"
 ENDC
