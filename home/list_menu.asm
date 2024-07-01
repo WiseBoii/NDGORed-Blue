@@ -130,13 +130,13 @@ DisplayListMenuIDLoop::
 	jr z, .pokemonList
 	push hl
 	call GetItemPrice
+	pop hl
+	ld a, [wListMenuID]
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;needed to make Mateo's move deleter/relearner work
 	cp a, MOVESLISTMENU
 	jr z, .skipStoringItemName
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-	pop hl
-	ld a, [wListMenuID]
 	cp ITEMLISTMENU
 	jr nz, .skipGettingQuantity
 ; if it's an item menu

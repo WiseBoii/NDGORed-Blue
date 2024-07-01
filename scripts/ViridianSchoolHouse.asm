@@ -7,9 +7,9 @@ ViridianSchoolHouse_TextPointers:
 	dw_const ViridianSchoolHouseCooltrainerFText, TEXT_VIRIDIANSCHOOLHOUSE_COOLTRAINER_F
 
 ViridianSchoolHouseBrunetteGirlText:
-	text_far _ViridianSchoolHouseBrunetteGirlText
+	text_far MoveDeleterText1
 	text_end
 
 ViridianSchoolHouseCooltrainerFText:
-	text_far _ViridianSchoolHouseCooltrainerFText
+	text_far MoveRelearnerText1
 	text_end
