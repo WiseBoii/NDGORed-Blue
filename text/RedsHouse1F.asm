@@ -24,12 +24,19 @@ _RedsHouse1FMomLookingGreatText::
 	done
 
 _RedsHouse1FTVStandByMeMovieText::
-	text "There's a movie"
-	line "on TV. Four boys"
-	cont "are walking on"
-	cont "railroad tracks."
-
-	para "I better go too."
+	text "#MON are by our"
+	line "side, always, I"
+	cont "hope you will"
+	cont" understand the"
+	cont "meaning of those"
+	cont "words."
+	
+	para "That was the"
+	line "comment left by"
+	cont "Prof. Rowan, who"
+	cont "has returned to"
+	cont "Sinnoh from the"
+	cont "Kanto region."
 	done
 
 _RedsHouse1FTVWrongSideText::
