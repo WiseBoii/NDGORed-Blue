@@ -27,13 +27,12 @@ _PalletTownGirlText::
 	done
 
 _PalletTownFisherText::
-	text "Technology is"
-	line "incredible!"
+	text "Hello <PLAYER>"
+	line "did you know?"
 
-	para "You can now store"
-	line "and recall items"
-	cont "and #MON as"
-	cont "data via PC!"
+	para "you're playing a"
+	line "game made by your"
+	cont "friend WiseBoi!"
 	done
 
 _PalletTownOaksLabSignText::
