@@ -20,7 +20,7 @@ IF DEF(_BLUE)
 	db  4, EKANS
 	db  3, PARAS
 ENDC
-	db  5, PIKACHU
+	db  5, PICHU
 	db  5, PIKACHU
 	end_grass_wildmons
 
