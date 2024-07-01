@@ -297,7 +297,17 @@ _TangelaDexEntry::
 	next "weed. Its vines"
 	next "shake as it walks"
 	dex
+	
+_PichuDexEntry::
+	text "It is unskilled at"
+	next "storing electric"
+	next "power. Any kind of"
 
+	page "shock causes it to"
+	next "discharge energy"
+	next "spontaneously."
+	dex
+	
 _GrowlitheDexEntry::
 	text "Very protective"
 	next "of its territory."

@@ -40,7 +40,7 @@ EvosMovesPointerTable:
 	dw BlastoiseEvosMoves
 	dw PinsirEvosMoves
 	dw TangelaEvosMoves
-	dw MissingNo1FEvosMoves
+	dw PichuEvosMoves
 	dw MissingNo20EvosMoves
 	dw GrowlitheEvosMoves
 	dw OnixEvosMoves
@@ -654,10 +654,26 @@ TangelaEvosMoves:
 	db 49, GROWTH
 	db 0
 
-MissingNo1FEvosMoves:
+PichuEvosMoves:
 ; Evolutions
-	db 0
+	db EVOLVE_LEVEL, 15, PIKACHU
 ; Learnset
+	db 6, THUNDERSHOCK
+	db 8, THUNDER_WAVE
+	db 10, DOUBLE_TEAM
+	db 12, THUNDERSHOCK
+	db 14, DOUBLE_TEAM
+	db 16, QUICK_ATTACK
+	db 18, AGILITY
+	db 20, TAKE_DOWN
+	db 21, SLAM
+	db 22, SUBSTITUTE
+	db 24, THUNDERBOLT
+	db 27, BODY_SLAM
+	db 30, THUNDER
+	db 33, DOUBLE_EDGE
+	db 36, MEGA_PUNCH
+	db 40, MIMIC
 	db 0
 
 MissingNo20EvosMoves:

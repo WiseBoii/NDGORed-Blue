@@ -74,6 +74,8 @@ KadabraPicFront::     INCBIN "gfx/pokemon/front/kadabra.pic"
 KadabraPicBack::      INCBIN "gfx/pokemon/back/kadabrab.pic"
 GravelerPicFront::    INCBIN "gfx/pokemon/front/graveler.pic"
 GravelerPicBack::     INCBIN "gfx/pokemon/back/gravelerb.pic"
+PichuPicFront::		  INCBIN "gfx/pokemon/front/pichu.pic"
+PichuPicBack::		  INCBIN "gfx/pokemon/back/pichub.pic"
 
 SECTION "Pics 3", ROMX
 ChanseyPicFront::     INCBIN "gfx/pokemon/front/chansey.pic"
@@ -329,6 +331,8 @@ WeepinbellPicFront::   INCBIN "gfx/pokemon/front/weepinbell.pic"
 WeepinbellPicBack::    INCBIN "gfx/pokemon/back/weepinbellb.pic"
 VictreebelPicFront::   INCBIN "gfx/pokemon/front/victreebel.pic"
 VictreebelPicBack::    INCBIN "gfx/pokemon/back/victreebelb.pic"
+MewPicFront:: 		   INCBIN "gfx/pokemon/front/mew.pic"
+MewPicBack::  		   INCBIN "gfx/pokemon/back/mewb.pic"
 
 
 SECTION "Trainer Pics 1", ROMX
