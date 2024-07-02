@@ -257,8 +257,10 @@ ClefablePicFront::     INCBIN "gfx/pokemon/front/clefable.pic"
 ClefablePicBack::      INCBIN "gfx/pokemon/back/clefableb.pic"
 WeezingPicFront::      INCBIN "gfx/pokemon/front/weezing.pic"
 WeezingPicBack::       INCBIN "gfx/pokemon/back/weezingb.pic"
-IgglybuffPicFront::	  INCBIN "gfx/pokemon/front/igglybuff.pic"
-IgglybuffPicBack::	  INCBIN "gfx/pokemon/back/igglybuffb.pic"
+IgglybuffPicFront::	   INCBIN "gfx/pokemon/front/igglybuff.pic"
+IgglybuffPicBack::	   INCBIN "gfx/pokemon/back/igglybuffb.pic"
+SmoochumPicFront::	   INCBIN "gfx/pokemon/front/smoochum.pic"
+SmoochumPicBack::	   INCBIN "gfx/pokemon/back/smoochumb.pic"
 
 SECTION "Pics 9", ROMX
 PersianPicFront::      INCBIN "gfx/pokemon/front/persian.pic"

@@ -160,5 +160,6 @@
 	const DEX_ELEKID	 ; 154
 	const DEX_CLEFFA	 ; 155
 	const DEX_IGGLYBUFF  ; 156
+	const DEX_SMOOCHUM   ; 157
 
 DEF NUM_POKEMON EQU const_value - 1

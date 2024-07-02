@@ -6,8 +6,8 @@ Route3WildMons:
 	db  6, SANDSHREW
 	db  7, VULPIX
 	db  8, MANKEY
-	db  8, RATTATA
-	db  3, JIGGLYPUFF
+	db  4, IGGLYBUFF
+	db  3, IGGLYBUFF
 	db  5, JIGGLYPUFF
 	db  7, JIGGLYPUFF
 	end_grass_wildmons

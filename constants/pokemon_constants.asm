@@ -67,7 +67,7 @@
 	const SEEL               ; $3A
 	const DIGLETT            ; $3B
 	const TAUROS             ; $3C
-	const_skip               ; $3D
+	const SMOOCHUM           ; $3D
 	const_skip               ; $3E
 	const_skip               ; $3F
 	const FARFETCHD          ; $40

@@ -60,7 +60,7 @@ PokedexOrder:
 	db DEX_SEEL
 	db DEX_DIGLETT
 	db DEX_TAUROS
-	db 0 ; MISSINGNO.
+	db DEX_SMOOCHUM
 	db 0 ; MISSINGNO.
 	db 0 ; MISSINGNO.
 	db DEX_FARFETCHD

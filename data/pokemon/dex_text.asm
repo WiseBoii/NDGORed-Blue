@@ -597,6 +597,16 @@ _TaurosDexEntry::
 	next "body with its"
 	next "long tails"
 	dex
+	
+_SmoochumDexEntry::
+	text  "The sensitivity of"
+	next "its lips develops"
+	next "most quickly."
+
+	page "It uses them to"
+	next "try to identify"
+	next "unknown objects.@"
+	dex
 
 _FarfetchdDexEntry::
 	text "The sprig of"

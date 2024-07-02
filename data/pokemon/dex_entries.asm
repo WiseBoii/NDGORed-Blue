@@ -60,7 +60,7 @@ PokedexEntryPointers:
 	dw SeelDexEntry
 	dw DiglettDexEntry
 	dw TaurosDexEntry
-	dw MissingNoDexEntry
+	dw SmoochumDexEntry
 	dw MissingNoDexEntry
 	dw MissingNoDexEntry
 	dw FarfetchdDexEntry
@@ -615,6 +615,13 @@ TaurosDexEntry:
 	db 4,7
 	dw 1950
 	text_far _TaurosDexEntry
+	text_end
+	
+SmoochumDexEntry:
+	db "HUMANSHAPE@"
+	db 1,4
+	dw 450
+	text_far _SmoochumDexEntry
 	text_end
 
 FarfetchdDexEntry:

@@ -70,7 +70,7 @@ EvosMovesPointerTable:
 	dw SeelEvosMoves
 	dw DiglettEvosMoves
 	dw TaurosEvosMoves
-	dw MissingNo3DEvosMoves
+	dw SmoochumEvosMoves
 	dw MissingNo3EEvosMoves
 	dw MissingNo3FEvosMoves
 	dw FarfetchdEvosMoves
@@ -1085,10 +1085,16 @@ TaurosEvosMoves:
 	db 55, EARTHQUAKE
 	db 0
 
-MissingNo3DEvosMoves:
+SmoochumEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 25, JYNX
 	db 0
 ; Learnset
+	db 6, POUND
+	db 10, CONFUSION
+	db 14, SING
+	db 20, SLAM
+	db 24, BODY_SLAM
 	db 0
 
 MissingNo3EEvosMoves:
