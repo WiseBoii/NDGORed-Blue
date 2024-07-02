@@ -31,7 +31,7 @@ PokedexOrder:
 	db DEX_PINSIR
 	db DEX_TANGELA
 	db DEX_PICHU
-	db 0 ; MISSINGNO.
+	db DEX_MAGBY
 	db DEX_GROWLITHE
 	db DEX_ONIX
 	db DEX_FEAROW
@@ -49,7 +49,7 @@ PokedexOrder:
 	db DEX_PSYDUCK
 	db DEX_DROWZEE
 	db DEX_GOLEM
-	db 0 ; MISSINGNO.
+	db DEX_ELEKID
 	db DEX_MAGMAR
 	db 0 ; MISSINGNO.
 	db DEX_ELECTABUZZ

@@ -41,7 +41,7 @@ EvosMovesPointerTable:
 	dw PinsirEvosMoves
 	dw TangelaEvosMoves
 	dw PichuEvosMoves
-	dw MissingNo20EvosMoves
+	dw MagbyEvosMoves
 	dw GrowlitheEvosMoves
 	dw OnixEvosMoves
 	dw FearowEvosMoves
@@ -59,7 +59,7 @@ EvosMovesPointerTable:
 	dw PsyduckEvosMoves
 	dw DrowzeeEvosMoves
 	dw GolemEvosMoves
-	dw MissingNo32EvosMoves
+	dw ElekidEvosMoves
 	dw MagmarEvosMoves
 	dw MissingNo34EvosMoves
 	dw ElectabuzzEvosMoves
@@ -657,6 +657,7 @@ TangelaEvosMoves:
 PichuEvosMoves:
 ; Evolutions
 	db EVOLVE_LEVEL, 15, PIKACHU
+	db 0
 ; Learnset
 	db 6, THUNDERSHOCK
 	db 8, THUNDER_WAVE
@@ -676,11 +677,19 @@ PichuEvosMoves:
 	db 40, MIMIC
 	db 0
 
-MissingNo20EvosMoves:
+MagbyEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 25, MAGMAR
 	db 0
 ; Learnset
+	db 6, SMOG
+	db 8, QUICK_ATTACK
+	db 10, POISON_GAS
+	db 13, SLAM
+	db 17, TAKE_DOWN
+	db 22, FIRE_PUNCH
 	db 0
+	
 
 GrowlitheEvosMoves:
 ; Evolutions
@@ -924,22 +933,30 @@ GolemEvosMoves:
 	db 36, EXPLOSION
 	db 0
 
-MissingNo32EvosMoves:
+ElekidEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 25, ELECTABUZZ
 	db 0
 ; Learnset
-	db 0
+	db 6, THUNDER_WAVE
+	db 10, THUNDERSHOCK
+	db 13, TAKE_DOWN
+	db 16, THUNDERPUNCH
+	db 18, KARATE_CHOP
+	db 20, SWIFT
+	db 24, THUNDERBOLT
+	db 0	
 
 MagmarEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 36, BODY_SLAM
-	db 39, CONFUSE_RAY
-	db 43, FIRE_PUNCH
-	db 45, FLAMETHROWER
-	db 52, DOUBLE_EDGE
-	db 55, FIRE_BLAST
+	db 26, BODY_SLAM
+	db 28, CONFUSE_RAY
+	db 30, FIRE_PUNCH
+	db 32, FLAMETHROWER
+	db 38, DOUBLE_EDGE
+	db 40, FIRE_BLAST
 	db 0
 
 MissingNo34EvosMoves:
@@ -953,9 +970,9 @@ ElectabuzzEvosMoves:
 	db 0
 ; Learnset
 	db 30, BODY_SLAM
-	db 34, THUNDERBOLT
+	db 34, REST
 	db 37, DOUBLE_EDGE
-	db 42, THUNDERPUNCH
+	db 42, ROLLING_KICK
 	db 49, LIGHT_SCREEN
 	db 54, THUNDER
 	db 0

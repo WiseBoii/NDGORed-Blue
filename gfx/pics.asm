@@ -78,6 +78,10 @@ PichuPicFront::		  INCBIN "gfx/pokemon/front/pichu.pic"
 PichuPicBack::		  INCBIN "gfx/pokemon/back/pichub.pic"
 
 SECTION "Pics 3", ROMX
+MagbyPicFront::		  INCBIN "gfx/pokemon/front/magby.pic"
+MagbyPicBack::		  INCBIN "gfx/pokemon/back/magbyb.pic"
+ElekidPicFront::	  INCBIN "gfx/pokemon/front/elekid.pic"
+ElekidPicBack::		  INCBIN "gfx/pokemon/back/elekidb.pic"
 ChanseyPicFront::     INCBIN "gfx/pokemon/front/chansey.pic"
 ChanseyPicBack::      INCBIN "gfx/pokemon/back/chanseyb.pic"
 MachokePicFront::     INCBIN "gfx/pokemon/front/machoke.pic"

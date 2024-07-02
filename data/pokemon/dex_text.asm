@@ -308,6 +308,16 @@ _PichuDexEntry::
 	next "spontaneously."
 	dex
 	
+_MagbyDexEntry::
+	text "It naturally spits"
+	next "an 1100-degree"
+	next "flame. It is said"
+
+	page "when many appear,"
+	next "it heralds a"
+	next "volcanic eruption."
+	dex
+	
 _GrowlitheDexEntry::
 	text "Very protective"
 	next "of its territory."
@@ -476,6 +486,16 @@ _GolemDexEntry::
 	page "easily withstand"
 	next "dynamite blasts"
 	next "without damage"
+	dex
+	
+_ElekidDexEntry::
+	text "It loves violent"
+	next "thunder. The space"
+	next "between its horns"
+
+	page "flickers bluish-"
+	next "white when it is"
+	next "charging energy.@"
 	dex
 
 _MagmarDexEntry::

@@ -153,4 +153,6 @@ MonsterPalettes:
 	db PAL_MEWMON    ; MEWTWO
 	db PAL_MEWMON    ; MEW
 	db PAL_YELLOWMON ; PICHU
+	db PAL_REDMON	 ; MAGBY
+	db PAL_YELLOWMON ; ELEKID
 	assert_table_length NUM_POKEMON + 1
