@@ -157,4 +157,5 @@ INCLUDE "data/pokemon/base_stats/elekid.asm"
 INCLUDE "data/pokemon/base_stats/cleffa.asm"
 INCLUDE "data/pokemon/base_Stats/igglybuff.asm"
 INCLUDE "data/pokemon/base_stats/smoochum.asm"
+INCLUDE "data/pokemon/base_stats/bellossom.asm"
 	assert_table_length NUM_POKEMON

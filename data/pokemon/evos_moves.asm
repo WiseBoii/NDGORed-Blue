@@ -71,7 +71,7 @@ EvosMovesPointerTable:
 	dw DiglettEvosMoves
 	dw TaurosEvosMoves
 	dw SmoochumEvosMoves
-	dw MissingNo3EEvosMoves
+	dw BellossomEvosMoves
 	dw MissingNo3FEvosMoves
 	dw FarfetchdEvosMoves
 	dw VenonatEvosMoves
@@ -1097,10 +1097,16 @@ SmoochumEvosMoves:
 	db 24, BODY_SLAM
 	db 0
 
-MissingNo3EEvosMoves:
+BellossomEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 22, RAZOR_LEAF
+	db 24, TOXIC
+	db 28, VINE_WHIP
+	db 30, BODY_SLAM
+	db 33, PETAL_DANCE
+	db 46, SOLARBEAM
 	db 0
 
 MissingNo3FEvosMoves:
@@ -2512,6 +2518,7 @@ OddishEvosMoves:
 GloomEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, LEAF_STONE, 1, VILEPLUME
+	db EVOLVE_ITEM, SUN_STONE, 1, BELLOSSOM
 	db 0
 ; Learnset
 	db 22, RAZOR_LEAF

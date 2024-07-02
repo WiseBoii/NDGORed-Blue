@@ -261,6 +261,8 @@ IgglybuffPicFront::	   INCBIN "gfx/pokemon/front/igglybuff.pic"
 IgglybuffPicBack::	   INCBIN "gfx/pokemon/back/igglybuffb.pic"
 SmoochumPicFront::	   INCBIN "gfx/pokemon/front/smoochum.pic"
 SmoochumPicBack::	   INCBIN "gfx/pokemon/back/smoochumb.pic"
+BellossomPicFront::	   INCBIN "gfx/pokemon/front/bellossom.pic"
+BellossomPicBack::	   INCBIN "gfx/pokemon/back/bellossomb.pic"
 
 SECTION "Pics 9", ROMX
 PersianPicFront::      INCBIN "gfx/pokemon/front/persian.pic"

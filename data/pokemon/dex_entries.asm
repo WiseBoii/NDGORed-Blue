@@ -623,6 +623,13 @@ SmoochumDexEntry:
 	dw 450
 	text_far _SmoochumDexEntry
 	text_end
+	
+BellossomDexEntry:
+	db "FLOWER@"
+	db 2,9
+	dw 390
+	text_far _BellossomDexEntry
+	text_end
 
 FarfetchdDexEntry:
 	db "WILD DUCK@"

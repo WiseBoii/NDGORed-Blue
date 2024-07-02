@@ -157,4 +157,5 @@ MonPartyData:
 	nybble ICON_MON		  ; Cleffa
 	nybble ICON_MON       ; Igglybuff
 	nybble ICON_MON		  ; Smoochum
+	nybble ICON_MON		  ; Bellossom
 	end_nybble_array NUM_POKEMON

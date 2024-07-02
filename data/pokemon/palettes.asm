@@ -158,4 +158,5 @@ MonsterPalettes:
 	db PAL_PINKMON   ; CLEFFA
 	db PAL_PINKMON   ; IGGLYBUFF
 	db PAL_MEWMON    ; SMOOCHUM
+	db PAL_GREENMON  ; BELLOSSOM
 	assert_table_length NUM_POKEMON + 1

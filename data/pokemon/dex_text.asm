@@ -607,6 +607,16 @@ _SmoochumDexEntry::
 	next "try to identify"
 	next "unknown objects.@"
 	dex
+	
+_BellossomDexEntry::
+	text "When these dance"
+	next "together, their"
+	next "petals rub against"
+
+	page "each other,"
+	next "making pretty,"
+	next "relaxing sounds.@"
+	dex
 
 _FarfetchdDexEntry::
 	text "The sprig of"
