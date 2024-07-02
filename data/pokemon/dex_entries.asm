@@ -61,7 +61,7 @@ PokedexEntryPointers:
 	dw DiglettDexEntry
 	dw TaurosDexEntry
 	dw SmoochumDexEntry
-	dw MissingNoDexEntry
+	dw BellossomDexEntry
 	dw MissingNoDexEntry
 	dw FarfetchdDexEntry
 	dw VenonatDexEntry
