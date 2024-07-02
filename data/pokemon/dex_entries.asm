@@ -51,11 +51,11 @@ PokedexEntryPointers:
 	dw GolemDexEntry
 	dw ElekidDexEntry
 	dw MagmarDexEntry
-	dw MissingNoDexEntry
+	dw CleffaDexEntry
 	dw ElectabuzzDexEntry
 	dw MagnetonDexEntry
 	dw KoffingDexEntry
-	dw MissingNoDexEntry
+	dw IgglybuffDexEntry
 	dw MankeyDexEntry
 	dw SeelDexEntry
 	dw DiglettDexEntry
@@ -553,6 +553,13 @@ MagmarDexEntry:
 	dw 980
 	text_far _MagmarDexEntry
 	text_end
+	
+CleffaDexEntry:
+	db "FAIRY@"
+	db 1,4
+	dw 110
+	text_far _CleffaDexEntry
+	text_end
 
 ElectabuzzDexEntry:
 	db "ELECTRIC@"
@@ -573,6 +580,13 @@ KoffingDexEntry:
 	db 2,0
 	dw 20
 	text_far _KoffingDexEntry
+	text_end
+	
+IgglybuffDexEntry:
+	db "BALLOON@"
+	db 1,0
+	dw 090
+	text_far _IgglybuffDexEntry
 	text_end
 
 MankeyDexEntry:

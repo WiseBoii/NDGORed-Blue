@@ -155,4 +155,6 @@ MonsterPalettes:
 	db PAL_YELLOWMON ; PICHU
 	db PAL_REDMON	 ; MAGBY
 	db PAL_YELLOWMON ; ELEKID
+	db PAL_PINKMON   ; CLEFFA
+	db PAL_PINKMON   ; IGGLYBUFF
 	assert_table_length NUM_POKEMON + 1

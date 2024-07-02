@@ -154,4 +154,6 @@ MonPartyData:
 	nybble ICON_MON       ; Pichu
 	nybble ICON_MON		  ; Magby
 	nybble ICON_MON		  ; Elekid
+	nybble ICON_MON		  ; Cleffa
+	nybble ICON_MON       ; Igglybuff
 	end_nybble_array NUM_POKEMON

@@ -174,9 +174,10 @@ ROMX $2A
 	"Text 11"
 ROMX $2B
 	"Pokédex Text"
-	"Move Names"
 ROMX $2C
 	"Tilesets 2"
+ROMX $2D
+	"Move Names"
 WRAM0
 	"Audio RAM"
 	org $c100

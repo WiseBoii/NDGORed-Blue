@@ -4,7 +4,7 @@ PowerPlantWildMons:
 	db 21, MAGNEMITE
 	db 20, PIKACHU
 	db 24, RAICHU
-	db 23, MAGNEMITE
+	db 15, ELEKID
 	db 23, JOLTEON
 	db 32, ELECTABUZZ
 	db 35, MAGNETON

@@ -507,6 +507,16 @@ _MagmarDexEntry::
 	next "hide perfectly"
 	next "among flames"
 	dex
+	
+_CleffaDexEntry::
+	text "If the impact site"
+	next "of a meteorite is"
+	next "found, this"
+
+	page "#MON is certain"
+	next "to be within the"
+	next "immediate area.@"
+	dex
 
 _ElectabuzzDexEntry::
 	text "Normally found"
@@ -536,6 +546,16 @@ _KoffingDexEntry::
 	page "its body, it is"
 	next "prone to exploding"
 	next "without warning"
+	dex
+	
+_IgglybuffDexEntry::
+	text   "Instead of walking"
+	next "with its short"
+	next "legs, it moves"
+
+	page "around by bouncing"
+	next "on its soft,"
+	next "tender body.@"
 	dex
 
 _MankeyDexEntry::

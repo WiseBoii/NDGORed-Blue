@@ -61,11 +61,11 @@ EvosMovesPointerTable:
 	dw GolemEvosMoves
 	dw ElekidEvosMoves
 	dw MagmarEvosMoves
-	dw MissingNo34EvosMoves
+	dw CleffaEvosMoves
 	dw ElectabuzzEvosMoves
 	dw MagnetonEvosMoves
 	dw KoffingEvosMoves
-	dw MissingNo38EvosMoves
+	dw IgglybuffEvosMoves
 	dw MankeyEvosMoves
 	dw SeelEvosMoves
 	dw DiglettEvosMoves
@@ -959,10 +959,17 @@ MagmarEvosMoves:
 	db 40, FIRE_BLAST
 	db 0
 
-MissingNo34EvosMoves:
+CleffaEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 12, CLEFAIRY
 	db 0
 ; Learnset
+	db 6, SING
+	db 8, DOUBLESLAP
+	db 14, BODY_SLAM
+	db 18, METRONOME
+	db 22, MINIMIZE
+	db 25, MIMIC
 	db 0
 
 ElectabuzzEvosMoves:
@@ -999,10 +1006,14 @@ KoffingEvosMoves:
 	db 48, EXPLOSION
 	db 0
 
-MissingNo38EvosMoves:
+IgglybuffEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 12, JIGGLYPUFF
 	db 0
 ; Learnset
+	db 7, POUND
+	db 9, SING
+	db 11, DEFENSE_CURL
 	db 0
 
 MankeyEvosMoves:
