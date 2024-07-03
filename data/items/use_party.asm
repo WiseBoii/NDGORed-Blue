@@ -37,4 +37,5 @@ UsableItems_PartyMenu:
 	db MAX_ETHER
 	db ELIXER
 	db MAX_ELIXER
+	db KINGS_ROCK
 	db -1 ; end

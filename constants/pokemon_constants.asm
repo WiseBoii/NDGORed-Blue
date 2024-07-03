@@ -74,7 +74,7 @@
 	const VENONAT            ; $41
 	const DRAGONITE          ; $42
 	const SCIZOR             ; $43
-	const_skip               ; $44
+	const POLITOED           ; $44
 	const_skip               ; $45
 	const DODUO              ; $46
 	const POLIWAG            ; $47

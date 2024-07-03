@@ -67,7 +67,7 @@ PokedexEntryPointers:
 	dw VenonatDexEntry
 	dw DragoniteDexEntry
 	dw ScizorDexEntry
-	dw MissingNoDexEntry
+	dw PolitoedDexEntry
 	dw MissingNoDexEntry
 	dw DoduoDexEntry
 	dw PoliwagDexEntry
@@ -664,6 +664,13 @@ ScizorDexEntry:
 	db 4,11
 	dw 1400
 	text_far _ScizorDexEntry
+	text_end
+	
+PolitoedDexEntry:
+	db "TADPOLE@"
+	db 3,7
+	dw 1190
+	text_far _PolitoedDexEntry
 	text_end
 
 DoduoDexEntry:

@@ -160,4 +160,5 @@ INCLUDE "data/pokemon/base_stats/smoochum.asm"
 INCLUDE "data/pokemon/base_stats/bellossom.asm"
 INCLUDE "data/pokemon/base_stats/steelix.asm"
 INCLUDE "data/pokemon/base_stats/scizor.asm"
+INCLUDE "data/pokemon/base_stats/politoed.asm"
 	assert_table_length NUM_POKEMON

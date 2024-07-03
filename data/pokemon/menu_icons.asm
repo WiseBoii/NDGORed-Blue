@@ -160,4 +160,5 @@ MonPartyData:
 	nybble ICON_MON		  ; Bellossom
 	nybble ICON_MON       ; Steelix
 	nybble ICON_MON       ; Scizor
+	nybble ICON_MON       ; Politoed
 	end_nybble_array NUM_POKEMON

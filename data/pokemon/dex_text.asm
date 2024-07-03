@@ -667,6 +667,17 @@ _ScizorDexEntry::
 	next "object it gets a"
 	next "hold of into bits."
 	dex
+	
+_PolitoedDexEntry::
+	text "When it expands"
+	next "its throat to"
+	next "croak out a tune,"
+
+	page "nearby POLIWAG and"
+	next "POLIWHIRL gather"
+	next "immediately."
+	dex
+	
 _DoduoDexEntry::
 	text "A bird that makes"
 	next "up for its poor"

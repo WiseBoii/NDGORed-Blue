@@ -77,7 +77,7 @@ EvosMovesPointerTable:
 	dw VenonatEvosMoves
 	dw DragoniteEvosMoves
 	dw ScizorEvosMoves
-	dw MissingNo44EvosMoves
+	dw PolitoedEvosMoves
 	dw MissingNo45EvosMoves
 	dw DoduoEvosMoves
 	dw PoliwagEvosMoves
@@ -1186,10 +1186,18 @@ ScizorEvosMoves:
 	db 40, SUBSTITUTE
 	db 0
 
-MissingNo44EvosMoves:
+PolitoedEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 28, MEGA_PUNCH
+	db 30, SUBMISSION
+	db 32, ICE_PUNCH
+	db 34, DREAM_EATER
+	db 36, AMNESIA
+	db 39, ICE_BEAM
+	db 40, DOUBLE_EDGE
+	db 42, HYDRO_PUMP
 	db 0
 
 MissingNo45EvosMoves:
@@ -1743,6 +1751,7 @@ ParasEvosMoves:
 PoliwhirlEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, WATER_STONE, 1, POLIWRATH
+	db EVOLVE_ITEM, KINGS_ROCK, 1, POLITOED
 	db 0
 ; Learnset
 	db 28, MEGA_PUNCH

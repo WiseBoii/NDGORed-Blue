@@ -161,4 +161,5 @@ MonsterPalettes:
 	db PAL_GREENMON  ; BELLOSSOM
 	db PAL_GREYMON   ; STEELIX
 	db PAL_REDMON    ; SCIZOR
+	db PAL_GREENMON  ; Politoed
 	assert_table_length NUM_POKEMON + 1
