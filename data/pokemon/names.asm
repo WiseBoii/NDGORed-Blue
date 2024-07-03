@@ -85,7 +85,7 @@ MonsterNames::
 	db "NINETALES@"
 	db "PIKACHU@@@"
 	db "RAICHU@@@@"
-	db "MISSINGNO."
+	db "CROBAT@@@@"
 	db "MISSINGNO."
 	db "DRATINI@@@"
 	db "DRAGONAIR@"

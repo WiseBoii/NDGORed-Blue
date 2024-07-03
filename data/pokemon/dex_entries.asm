@@ -792,6 +792,13 @@ RaichuDexEntry:
 	text_far _RaichuDexEntry
 	text_end
 
+CrobatDexEntry:
+	db "Bat@"
+	db 5,11
+	dw 1650
+	text_far _CrobatDexEntry
+	text_end
+
 DratiniDexEntry:
 	db "DRAGON@"
 	db 5,11

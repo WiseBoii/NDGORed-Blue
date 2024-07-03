@@ -847,7 +847,17 @@ _RaichuDexEntry::
 	next "own high voltage"
 	next "power"
 	dex
+	
+_CrobatDexEntry::
+	text "As a result of its"
+	next "pursuit of faster,"
+	next "yet more silent"
 
+	page "flight, a new set"
+	next "of wings grew on"
+	next "its hind legs.@"
+	dex
+	
 _DratiniDexEntry::
 	text "Long considered a"
 	next "mythical #MON"

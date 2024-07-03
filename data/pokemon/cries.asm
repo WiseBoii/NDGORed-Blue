@@ -91,7 +91,7 @@ CryData::
 	mon_cry SFX_CRY_24, $88, $60 ; Ninetales
 	mon_cry SFX_CRY_0F, $EE, $01 ; Pikachu
 	mon_cry SFX_CRY_09, $EE, $08 ; Raichu
-	mon_cry SFX_CRY_00, $00, $00 ; MissingNo.
+	mon_cry SFX_CRY_1D, $FA, $80 ; Crobat
 	mon_cry SFX_CRY_00, $00, $00 ; MissingNo.
 	mon_cry SFX_CRY_0F, $60, $40 ; Dratini
 	mon_cry SFX_CRY_0F, $40, $80 ; Dragonair

@@ -95,7 +95,7 @@ EvosMovesPointerTable:
 	dw NinetalesEvosMoves
 	dw PikachuEvosMoves
 	dw RaichuEvosMoves
-	dw MissingNo56EvosMoves
+	dw CrobatEvosMoves
 	dw MissingNo57EvosMoves
 	dw DratiniEvosMoves
 	dw DragonairEvosMoves
@@ -1444,10 +1444,12 @@ RaichuEvosMoves:
 	db 40, THRASH
 	db 0
 
-MissingNo56EvosMoves:
+CrobatEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 35, SKY_ATTACK
+	db 40, SLUDGE
 	db 0
 
 MissingNo57EvosMoves:
@@ -1970,16 +1972,12 @@ HypnoEvosMoves:
 
 GolbatEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 33, CROBAT
 	db 0
 ; Learnset
-	db 10, SUPERSONIC
-	db 13, BITE
-	db 16, CONFUSE_RAY
-	db 20, WING_ATTACK
 	db 24, HAZE
 	db 28, TOXIC
 	db 32, DOUBLE_EDGE
-	db 35, SKY_ATTACK
 	db 0
 
 MewtwoEvosMoves:

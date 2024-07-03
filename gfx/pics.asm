@@ -277,6 +277,8 @@ KingdraPicFront::	   INCBIN "gfx/pokemon/front/kingdra.pic"
 KingdraPicBack::	   INCBIN "gfx/pokemon/back/kingdrab.pic"
 BlisseyPicFront::      INCBIN "gfx/pokemon/front/blissey.pic"
 BlisseyPicBack::       INCBIN "gfx/pokemon/back/blisseyb.pic"
+CrobatPicFront::       INCBIN "gfx/pokemon/front/crobat.pic"
+CrobatPicBack::		   INCBIN "gfx/pokemon/back/crobatb.pic"
 
 SECTION "Pics 9", ROMX
 PersianPicFront::      INCBIN "gfx/pokemon/front/persian.pic"
