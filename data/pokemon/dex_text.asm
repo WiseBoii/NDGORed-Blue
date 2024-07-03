@@ -658,6 +658,15 @@ _DragoniteDexEntry::
 	next "that of humans"
 	dex
 
+_ScizorDexEntry::
+	text "This #MON's"
+	next "pincers, which"
+	next "contain steel, can"
+
+	page "crush any hard"
+	next "object it gets a"
+	next "hold of into bits.@"
+	dex
 _DoduoDexEntry::
 	text "A bird that makes"
 	next "up for its poor"

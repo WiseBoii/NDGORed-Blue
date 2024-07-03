@@ -66,7 +66,7 @@ PokedexEntryPointers:
 	dw FarfetchdDexEntry
 	dw VenonatDexEntry
 	dw DragoniteDexEntry
-	dw MissingNoDexEntry
+	dw ScizorDexEntry
 	dw MissingNoDexEntry
 	dw MissingNoDexEntry
 	dw DoduoDexEntry
@@ -632,7 +632,7 @@ BellossomDexEntry:
 	text_end
 	
 SteelixDexEntry:
-	db "STEEL SNAKE@"
+	db "IRON SNAKE@"
 	db 30,10
 	dw 563
 	text_far _SteelixDexEntry
@@ -657,6 +657,13 @@ DragoniteDexEntry:
 	db 7,3
 	dw 4630
 	text_far _DragoniteDexEntry
+	text_end
+	
+ScizorDexEntry:
+	db "SCISSORS@"
+	db 4,11
+	dw 1400
+	text_far _ScizorDexEntry
 	text_end
 
 DoduoDexEntry:

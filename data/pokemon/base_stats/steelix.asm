@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sPC
 
 	db STEEL, GROUND ; type
-	db 25 ; catch rate
+	db 35 ; catch rate
 	db 196 ; base exp
 	
 	INCBIN "gfx/pokemon/front/steelix.pic", 0, 1 ; sprite dimensions

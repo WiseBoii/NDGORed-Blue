@@ -76,7 +76,7 @@ EvosMovesPointerTable:
 	dw FarfetchdEvosMoves
 	dw VenonatEvosMoves
 	dw DragoniteEvosMoves
-	dw MissingNo43EvosMoves
+	dw ScizorEvosMoves
 	dw MissingNo44EvosMoves
 	dw MissingNo45EvosMoves
 	dw DoduoEvosMoves
@@ -590,6 +590,7 @@ GastlyEvosMoves:
 
 ScytherEvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, METAL_COAT, 1, SCIZOR
 	db 0
 ; Learnset
 	db 15, AGILITY
@@ -1170,10 +1171,19 @@ DragoniteEvosMoves:
 	db 67, BLIZZARD
 	db 0
 
-MissingNo43EvosMoves:
+ScizorEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, AGILITY
+	db 17, FURY_ATTACK
+	db 20, TAKE_DOWN
+	db 22, AGILITY
+	db 24, DOUBLE_TEAM
+	DB 28, FURY_SWIPES
+	db 30, SLASH
+	db 35, SWORDS_DANCE
+	db 40, SUBSTITUTE
 	db 0
 
 MissingNo44EvosMoves:

@@ -66,7 +66,7 @@ MonsterNames::
 	db "FARFETCH'D"
 	db "VENONAT@@@"
 	db "DRAGONITE@"
-	db "MISSINGNO."
+	db "SCIZOR@@@@"
 	db "MISSINGNO."
 	db "MISSINGNO."
 	db "DODUO@@@@@"

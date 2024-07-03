@@ -163,5 +163,5 @@
 	const DEX_SMOOCHUM   ; 157
 	const DEX_BELLOSSOM  ; 158
 	const DEX_STEELIX    ; 159
-
+	const DEX_SCIZOR     ; 160
 DEF NUM_POKEMON EQU const_value - 1
