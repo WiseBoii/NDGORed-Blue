@@ -79,7 +79,7 @@ PokedexEntryPointers:
 	dw MeowthDexEntry
 	dw KrabbyDexEntry
 	dw Porygon2DexEntry
-	dw MissingNoDexEntry
+	dw KingdraDexEntry
 	dw MissingNoDexEntry
 	dw VulpixDexEntry
 	dw NinetalesDexEntry
@@ -748,6 +748,13 @@ Porygon2DexEntry:
 	db 2,9
 	dw 800
 	text_far _Porygon2DexEntry
+	text_end
+	
+KingdraDexEntry:
+	db "DRAGON@"
+	db 4,5
+	dw 1550
+	text_far _KingdraDexEntry
 	text_end
 
 VulpixDexEntry:

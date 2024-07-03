@@ -102,6 +102,7 @@ ItemUsePtrTable:
 	dw ItemUsePPRestore  ; MAX_ELIXER
 	dw ItemUseEvoStone   ; KINGS_ROCK
 	dw ItemUseEvoStone   ; UPGRADE
+	dw ItemUseEvoStone   ; DRAGON_SCALE
 
 ItemUseBall:
 

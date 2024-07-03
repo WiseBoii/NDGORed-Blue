@@ -164,4 +164,5 @@ MonsterPalettes:
 	db PAL_GREENMON  ; Politoed
 	db PAL_PINKMON   ; Slowking
 	db PAL_GREYMON   ; Porygon2
+	db PAL_BLUEMON   ; Kingdra
 	assert_table_length NUM_POKEMON + 1

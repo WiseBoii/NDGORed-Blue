@@ -79,7 +79,7 @@ MonsterNames::
 	db "MEOWTH@@@@"
 	db "KRABBY@@@@"
 	db "PORYGON2@@"
-	db "MISSINGNO."
+	db "KINGDRA@@@"
 	db "MISSINGNO."
 	db "VULPIX@@@@"
 	db "NINETALES@"

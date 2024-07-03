@@ -85,4 +85,5 @@ KeyItemFlags:
 	dbit FALSE ; MAX_ELIXER
 	dbit FALSE ; KINGS_ROCK
 	dbit FALSE ; UPGRADE
+	dbit FALSE ; DRAGON_SCALE
 	end_bit_array NUM_ITEMS

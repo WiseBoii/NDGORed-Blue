@@ -273,6 +273,8 @@ SlowkingPicFront::	   INCBIN "gfx/pokemon/front/slowking.pic"
 SlowkingPicBack::      INCBIN "gfx/pokemon/back/slowkingb.pic"
 Porygon2PicFront::     INCBIN "gfx/pokemon/front/porygon2.pic"
 Porygon2PicBack::      INCBIN "gfx/pokemon/back/porygon2b.pic"
+KingdraPicFront::	   INCBIN "gfx/pokemon/front/kingdra.pic"
+KingdraPicBack::	   INCBIN "gfx/pokemon/back/kingdrab.pic"
 
 SECTION "Pics 9", ROMX
 PersianPicFront::      INCBIN "gfx/pokemon/front/persian.pic"

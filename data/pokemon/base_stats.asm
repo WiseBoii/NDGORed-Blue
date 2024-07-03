@@ -163,4 +163,5 @@ INCLUDE "data/pokemon/base_stats/scizor.asm"
 INCLUDE "data/pokemon/base_stats/politoed.asm"
 INCLUDE "data/pokemon/base_stats/slowking.asm"
 INCLUDE "data/pokemon/base_stats/porygon2.asm"
+INCLUDE "data/pokemon/base_stats/kingdra.asm"
 	assert_table_length NUM_POKEMON

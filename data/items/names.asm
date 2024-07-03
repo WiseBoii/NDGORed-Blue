@@ -85,6 +85,7 @@ ItemNames::
 	li "MAX ELIXER"
 	li "KINGS ROCK"
 	li "UPGRADE"
+	li "DRAGON SCALE"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"

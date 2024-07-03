@@ -39,4 +39,5 @@ UsableItems_PartyMenu:
 	db MAX_ELIXER
 	db KINGS_ROCK
 	db UPGRADE
+	db DRAGON_SCALE
 	db -1 ; end

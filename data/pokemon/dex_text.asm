@@ -788,6 +788,16 @@ _Porygon2DexEntry::
 	next "rammed reactions."
 	dex
 
+_KingdraDexEntry::
+	text "It stores energy"
+	next "by sleeping at"
+	next "underwater depths"
+
+	page "at which no other"
+	next "life forms can"
+	next "survive."
+	dex
+	
 _VulpixDexEntry::
 	text "At the time of"
 	next "birth, it has"

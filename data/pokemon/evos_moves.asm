@@ -89,7 +89,7 @@ EvosMovesPointerTable:
 	dw MeowthEvosMoves
 	dw KrabbyEvosMoves
 	dw Porygon2EvosMoves
-	dw MissingNo50EvosMoves
+	dw KingdraEvosMoves
 	dw MissingNo51EvosMoves
 	dw VulpixEvosMoves
 	dw NinetalesEvosMoves
@@ -1343,10 +1343,15 @@ Porygon2EvosMoves:
 	db 42, TRI_ATTACK
 	db 0
 
-MissingNo50EvosMoves:
+KingdraEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 34, DOUBLE_EDGE
+	db 37, HYDRO_PUMP
+	db 40, ICE_BEAM
+	db 45, HYPER_BEAM
+	db 50, BLIZZARD
 	db 0
 
 MissingNo51EvosMoves:
@@ -1509,7 +1514,8 @@ HorseaEvosMoves:
 	db 15, WATER_GUN
 	db 17, TAKE_DOWN
 	db 19, SMOKESCREEN
-	db 22, SMOG
+	db 21, DRAGON_RAGE
+	db 23, SMOG
 	db 24, BUBBLEBEAM
 	db 27, BODY_SLAM
 	db 30, AGILITY
@@ -1520,6 +1526,7 @@ HorseaEvosMoves:
 
 SeadraEvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, DRAGON_SCALE, 1, KINGDRA
 	db 0
 ; Learnset
 	db 34, DOUBLE_EDGE
