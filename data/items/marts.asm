@@ -2,7 +2,7 @@
 ; they are texts
 
 ViridianMartClerkText::
-	script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
+	script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL, METAL_COAT, SUN_STONE
 
 PewterMartClerkText::
 	script_mart POKE_BALL, POTION, ESCAPE_ROPE, ANTIDOTE, BURN_HEAL, AWAKENING, PARLYZ_HEAL

@@ -495,7 +495,7 @@ _ElekidDexEntry::
 
 	page "flickers bluish-"
 	next "white when it is"
-	next "charging energy.@"
+	next "charging energy."
 	dex
 
 _MagmarDexEntry::
@@ -515,7 +515,7 @@ _CleffaDexEntry::
 
 	page "#MON is certain"
 	next "to be within the"
-	next "immediate area.@"
+	next "immediate area."
 	dex
 
 _ElectabuzzDexEntry::
@@ -555,7 +555,7 @@ _IgglybuffDexEntry::
 
 	page "around by bouncing"
 	next "on its soft,"
-	next "tender body.@"
+	next "tender body."
 	dex
 
 _MankeyDexEntry::
@@ -605,7 +605,7 @@ _SmoochumDexEntry::
 
 	page "It uses them to"
 	next "try to identify"
-	next "unknown objects.@"
+	next "unknown objects."
 	dex
 	
 _BellossomDexEntry::
@@ -615,7 +615,7 @@ _BellossomDexEntry::
 
 	page "each other,"
 	next "making pretty,"
-	next "relaxing sounds.@"
+	next "relaxing sounds."
 	dex
 	
 _SteelixDexEntry::
@@ -625,7 +625,7 @@ _SteelixDexEntry::
 
 	page "#MON's body"
 	next "reflect bright"
-	next "light well.@"
+	next "light well."
 	dex
 
 _FarfetchdDexEntry::
@@ -665,7 +665,7 @@ _ScizorDexEntry::
 
 	page "crush any hard"
 	next "object it gets a"
-	next "hold of into bits.@"
+	next "hold of into bits."
 	dex
 _DoduoDexEntry::
 	text "A bird that makes"
