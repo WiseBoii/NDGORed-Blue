@@ -161,4 +161,5 @@ MonPartyData:
 	nybble ICON_MON       ; Steelix
 	nybble ICON_MON       ; Scizor
 	nybble ICON_MON       ; Politoed
+	nybble ICON_MON       ; Slowking
 	end_nybble_array NUM_POKEMON

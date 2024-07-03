@@ -678,6 +678,16 @@ _PolitoedDexEntry::
 	next "immediately."
 	dex
 	
+_SlowkingDexEntry::
+	text "Every time it ya-"
+	next "wns, SHELLDER"
+	next "injects more poi-"
+
+	page "son into it. The"
+	next "poison makes it"
+	next "more intelligent."
+	dex
+	
 _DoduoDexEntry::
 	text "A bird that makes"
 	next "up for its poor"

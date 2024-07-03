@@ -75,7 +75,7 @@
 	const DRAGONITE          ; $42
 	const SCIZOR             ; $43
 	const POLITOED           ; $44
-	const_skip               ; $45
+	const SLOWKING           ; $45
 	const DODUO              ; $46
 	const POLIWAG            ; $47
 	const JYNX               ; $48

@@ -68,7 +68,7 @@ PokedexEntryPointers:
 	dw DragoniteDexEntry
 	dw ScizorDexEntry
 	dw PolitoedDexEntry
-	dw MissingNoDexEntry
+	dw SlowkingDexEntry
 	dw DoduoDexEntry
 	dw PoliwagDexEntry
 	dw JynxDexEntry
@@ -671,6 +671,13 @@ PolitoedDexEntry:
 	db 3,7
 	dw 1190
 	text_far _PolitoedDexEntry
+	text_end
+
+SlowkingDexEntry:
+	db "ROYAL@"
+	db 5,6
+	dw 1730
+	text_far _SlowkingDexEntry
 	text_end
 
 DoduoDexEntry:

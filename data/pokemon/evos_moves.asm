@@ -78,7 +78,7 @@ EvosMovesPointerTable:
 	dw DragoniteEvosMoves
 	dw ScizorEvosMoves
 	dw PolitoedEvosMoves
-	dw MissingNo45EvosMoves
+	dw SlowkingEvosMoves
 	dw DoduoEvosMoves
 	dw PoliwagEvosMoves
 	dw JynxEvosMoves
@@ -304,6 +304,7 @@ NidokingEvosMoves:
 
 SlowbroEvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, KINGS_ROCK, 1, SLOWKING
 	db 0
 ; Learnset
 	db 40, AMNESIA
@@ -1200,10 +1201,14 @@ PolitoedEvosMoves:
 	db 42, HYDRO_PUMP
 	db 0
 
-MissingNo45EvosMoves:
+SlowkingEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 40, AMNESIA
+	db 44, HYDRO_PUMP
+	db 48, PSYCHIC_M
+	db 50, ICE_PUNCH
 	db 0
 
 DoduoEvosMoves:

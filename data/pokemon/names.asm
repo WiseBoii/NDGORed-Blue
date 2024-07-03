@@ -68,7 +68,7 @@ MonsterNames::
 	db "DRAGONITE@"
 	db "SCIZOR@@@@"
 	db "POLITOED@@"
-	db "MISSINGNO."
+	db "SLOWKING@@"
 	db "DODUO@@@@@"
 	db "POLIWAG@@@"
 	db "JYNX@@@@@@"
