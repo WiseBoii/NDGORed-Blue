@@ -88,7 +88,7 @@ EvosMovesPointerTable:
 	dw DittoEvosMoves
 	dw MeowthEvosMoves
 	dw KrabbyEvosMoves
-	dw MissingNo4FEvosMoves
+	dw Porygon2EvosMoves
 	dw MissingNo50EvosMoves
 	dw MissingNo51EvosMoves
 	dw VulpixEvosMoves
@@ -1331,10 +1331,16 @@ KrabbyEvosMoves:
 	db 45, AURORA_BEAM
 	db 0
 
-MissingNo4FEvosMoves:
+Porygon2EvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 20, CONFUSION
+	db 24, PSYBEAM
+	db 29, RECOVER
+	db 31, AGILITY
+	db 34, PSYCHIC_M
+	db 42, TRI_ATTACK
 	db 0
 
 MissingNo50EvosMoves:
@@ -2385,6 +2391,7 @@ GeodudeEvosMoves:
 
 PorygonEvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, UPGRADE, 1, PORYGON2
 	db 0
 ; Learnset
 	db 20, CONFUSION

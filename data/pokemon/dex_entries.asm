@@ -78,7 +78,7 @@ PokedexEntryPointers:
 	dw DittoDexEntry
 	dw MeowthDexEntry
 	dw KrabbyDexEntry
-	dw MissingNoDexEntry
+	dw Porygon2DexEntry
 	dw MissingNoDexEntry
 	dw MissingNoDexEntry
 	dw VulpixDexEntry
@@ -741,6 +741,13 @@ KrabbyDexEntry:
 	db 1,4
 	dw 140
 	text_far _KrabbyDexEntry
+	text_end
+	
+Porygon2DexEntry:
+	db "VIRTUAL@"
+	db 2,9
+	dw 800
+	text_far _Porygon2DexEntry
 	text_end
 
 VulpixDexEntry:

@@ -166,4 +166,5 @@
 	const DEX_SCIZOR     ; 160
 	const DEX_POLITOED	 ; 161
 	const DEX_SLOWKING   ; 162
+	const DEX_PORYGON2   ; 163
 DEF NUM_POKEMON EQU const_value - 1

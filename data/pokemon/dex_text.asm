@@ -777,6 +777,16 @@ _KrabbyDexEntry::
 	next "when walking"
 	next "sideways"
 	dex
+	
+_Porygon2DexEntry::
+	text "This manmade"
+	next "#MON evolved"
+	next "from the latest"
+
+	page "technology. It"
+	next "may have unprog-"
+	next "rammed reactions."
+	dex
 
 _VulpixDexEntry::
 	text "At the time of"

@@ -271,6 +271,8 @@ PolitoedPicFront::	   INCBIN "gfx/pokemon/front/politoed.pic"
 PolitoedPicBack::	   INCBIN "gfx/pokemon/back/politoedb.pic"
 SlowkingPicFront::	   INCBIN "gfx/pokemon/front/slowking.pic"
 SlowkingPicBack::      INCBIN "gfx/pokemon/back/slowkingb.pic"
+Porygon2PicFront::     INCBIN "gfx/pokemon/front/porygon2.pic"
+Porygon2PicBack::      INCBIN "gfx/pokemon/back/porygon2b.pic"
 
 SECTION "Pics 9", ROMX
 PersianPicFront::      INCBIN "gfx/pokemon/front/persian.pic"
