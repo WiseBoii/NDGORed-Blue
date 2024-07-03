@@ -69,7 +69,7 @@
 	const TAUROS             ; $3C
 	const SMOOCHUM           ; $3D
 	const BELLOSSOM          ; $3E
-	const_skip               ; $3F
+	const STEELIX            ; $3F
 	const FARFETCHD          ; $40
 	const VENONAT            ; $41
 	const DRAGONITE          ; $42

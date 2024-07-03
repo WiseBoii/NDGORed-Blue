@@ -62,7 +62,7 @@ MonsterNames::
 	db "TAUROS@@@@"
 	db "SMOOCHUM@@"
 	db "BELLOSSOM@"
-	db "MISSINGNO."
+	db "STEELIX@@@"
 	db "FARFETCH'D"
 	db "VENONAT@@@"
 	db "DRAGONITE@"

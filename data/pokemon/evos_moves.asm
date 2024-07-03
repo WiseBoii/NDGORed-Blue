@@ -72,7 +72,7 @@ EvosMovesPointerTable:
 	dw TaurosEvosMoves
 	dw SmoochumEvosMoves
 	dw BellossomEvosMoves
-	dw MissingNo3FEvosMoves
+	dw SteelixEvosMoves
 	dw FarfetchdEvosMoves
 	dw VenonatEvosMoves
 	dw DragoniteEvosMoves
@@ -713,6 +713,7 @@ GrowlitheEvosMoves:
 
 OnixEvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, METAL_COAT, 1, STEELIX
 	db 0
 ; Learnset
 	db 10, DIG
@@ -1109,10 +1110,22 @@ BellossomEvosMoves:
 	db 46, SOLARBEAM
 	db 0
 
-MissingNo3FEvosMoves:
+SteelixEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 10, DIG
+	db 15, BIND
+	db 17, TAKE_DOWN
+	db 20, ROCK_SLIDE
+	db 22, SLAM
+	db 24, SCREECH
+	db 26, ROCK_THROW
+	db 28, DOUBLE_EDGE
+	db 30, SKULL_BASH
+	db 33, BODY_SLAM
+	db 40, EARTHQUAKE
+	db 45, FISSURE
 	db 0
 
 FarfetchdEvosMoves:

@@ -78,7 +78,7 @@ KeyItemFlags:
 	dbit TRUE  ; OLD_ROD
 	dbit TRUE  ; GOOD_ROD
 	dbit TRUE  ; SUPER_ROD
-	dbit FALSE ; PP_UP
+	dbit FALSE ; METAL_COAT
 	dbit FALSE ; ETHER
 	dbit FALSE ; MAX_ETHER
 	dbit FALSE ; ELIXER

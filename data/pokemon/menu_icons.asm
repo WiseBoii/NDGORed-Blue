@@ -158,4 +158,5 @@ MonPartyData:
 	nybble ICON_MON       ; Igglybuff
 	nybble ICON_MON		  ; Smoochum
 	nybble ICON_MON		  ; Bellossom
+	nybble ICON_MON       ; Steelix
 	end_nybble_array NUM_POKEMON

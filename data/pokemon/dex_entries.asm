@@ -62,7 +62,7 @@ PokedexEntryPointers:
 	dw TaurosDexEntry
 	dw SmoochumDexEntry
 	dw BellossomDexEntry
-	dw MissingNoDexEntry
+	dw SteelixDexEntry
 	dw FarfetchdDexEntry
 	dw VenonatDexEntry
 	dw DragoniteDexEntry
@@ -629,6 +629,13 @@ BellossomDexEntry:
 	db 2,9
 	dw 390
 	text_far _BellossomDexEntry
+	text_end
+	
+SteelixDexEntry:
+	db "STEEL SNAKE@"
+	db 30,10
+	dw 563
+	text_far _SteelixDexEntry
 	text_end
 
 FarfetchdDexEntry:

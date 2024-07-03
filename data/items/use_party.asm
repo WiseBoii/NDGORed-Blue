@@ -32,7 +32,7 @@ UsableItems_PartyMenu:
 	db X_DEFEND
 	db X_SPEED
 	db X_SPECIAL
-	db PP_UP
+	db METAL_COAT
 	db ETHER
 	db MAX_ETHER
 	db ELIXER

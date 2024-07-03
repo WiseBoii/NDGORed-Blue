@@ -1,16 +1,16 @@
-	db DEX_ONIX ; pokedex id
+	db STEELIX ; 159
 
-	db  35,  45, 160,  70,  30
-	;   hp  atk  def  spd  spc
+	db  75,  85, 200,  30,  60
+	;   hp  atk  def  spd  sPC
 
-	db ROCK, GROUND ; type
-	db 45 ; catch rate
-	db 108 ; base exp
+	db STEEL, GROUND ; type
+	db 25 ; catch rate
+	db 196 ; base exp
+	
+	INCBIN "gfx/pokemon/front/steelix.pic", 0, 1 ; sprite dimensions
+	dw SteelixPicFront, SteelixPicBack
 
-	INCBIN "gfx/pokemon/front/onix.pic", 0, 1 ; sprite dimensions
-	dw OnixPicFront, OnixPicBack
-
-	db TACKLE, DEFENSE_CURL, BIND, NO_MOVE ; level 1 learnset
+	db TACKLE, DEFENSE_CURL, BIND, ROCK_THROW ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
@@ -20,4 +20,4 @@
 	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
 	; end
 
-	db BANK(OnixPicFront)
+	db BANK(SteelixPicFront)

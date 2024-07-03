@@ -617,6 +617,16 @@ _BellossomDexEntry::
 	next "making pretty,"
 	next "relaxing sounds.@"
 	dex
+	
+_SteelixDexEntry::
+	text  "The many small"
+	next "metal particles"
+	next "that cover this"
+
+	page "#MON's body"
+	next "reflect bright"
+	next "light well.@"
+	dex
 
 _FarfetchdDexEntry::
 	text "The sprig of"
