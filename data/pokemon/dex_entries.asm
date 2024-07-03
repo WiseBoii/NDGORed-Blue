@@ -80,7 +80,7 @@ PokedexEntryPointers:
 	dw KrabbyDexEntry
 	dw Porygon2DexEntry
 	dw KingdraDexEntry
-	dw MissingNoDexEntry
+	dw BlisseyDexEntry
 	dw VulpixDexEntry
 	dw NinetalesDexEntry
 	dw PikachuDexEntry
@@ -755,6 +755,13 @@ KingdraDexEntry:
 	db 4,5
 	dw 1550
 	text_far _KingdraDexEntry
+	text_end
+	
+BlisseyDexEntry:
+	db "EGG@"
+	db 4,11
+	dw 1030
+	text_far _BlisseyDexEntry
 	text_end
 
 VulpixDexEntry:

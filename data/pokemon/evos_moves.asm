@@ -90,7 +90,7 @@ EvosMovesPointerTable:
 	dw KrabbyEvosMoves
 	dw Porygon2EvosMoves
 	dw KingdraEvosMoves
-	dw MissingNo51EvosMoves
+	dw BlisseyEvosMoves
 	dw VulpixEvosMoves
 	dw NinetalesEvosMoves
 	dw PikachuEvosMoves
@@ -806,6 +806,7 @@ GravelerEvosMoves:
 
 ChanseyEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 45, BLISSEY
 	db 0
 ; Learnset
 	db 24, SING
@@ -1354,10 +1355,12 @@ KingdraEvosMoves:
 	db 50, BLIZZARD
 	db 0
 
-MissingNo51EvosMoves:
+BlisseyEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 48, LIGHT_SCREEN
+	db 54, EARTHQUAKE
 	db 0
 
 VulpixEvosMoves:

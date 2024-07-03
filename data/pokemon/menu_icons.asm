@@ -164,4 +164,5 @@ MonPartyData:
 	nybble ICON_MON       ; Slowking
 	nybble ICON_MON       ; Porygon2
 	nybble ICON_MON		  ; Kingdra
+	nybble ICON_MON		  ; Blissey
 	end_nybble_array NUM_POKEMON

@@ -87,7 +87,7 @@
 	const KRABBY             ; $4E
 	const PORYGON2           ; $4F
 	const KINGDRA            ; $50
-	const_skip               ; $51
+	const BLISSEY            ; $51
 	const VULPIX             ; $52
 	const NINETALES          ; $53
 	const PIKACHU            ; $54

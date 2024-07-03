@@ -798,6 +798,16 @@ _KingdraDexEntry::
 	next "survive."
 	dex
 	
+_BlisseyDexEntry::
+	text "Biting into one"
+	next "of the delicious"
+	next "eggs that BLISSEY"
+
+	page "provides will make"
+	next "everyone around"
+	next "smile with joy."
+	dex
+	
 _VulpixDexEntry::
 	text "At the time of"
 	next "birth, it has"
