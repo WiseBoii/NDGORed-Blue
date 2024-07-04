@@ -170,4 +170,6 @@
 	const DEX_KINGDRA	 ; 164
 	const DEX_BLISSEY    ; 165
 	const DEX_CROBAT     ; 166
+	const DEX_UMBREON    ; 167
+	const DEX_ESPEON     ; 168
 DEF NUM_POKEMON EQU const_value - 1

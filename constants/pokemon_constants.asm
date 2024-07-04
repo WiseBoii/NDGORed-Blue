@@ -93,14 +93,14 @@
 	const PIKACHU            ; $54
 	const RAICHU             ; $55
 	const CROBAT             ; $56
-	const_skip               ; $57
+	const UMBREON            ; $57
 	const DRATINI            ; $58
 	const DRAGONAIR          ; $59
 	const KABUTO             ; $5A
 	const KABUTOPS           ; $5B
 	const HORSEA             ; $5C
 	const SEADRA             ; $5D
-	const_skip               ; $5E
+	const ESPEON             ; $5E
 	const_skip               ; $5F
 	const SANDSHREW          ; $60
 	const SANDSLASH          ; $61

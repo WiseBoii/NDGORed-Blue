@@ -93,7 +93,7 @@ PokedexEntryPointers:
 	dw KabutopsDexEntry
 	dw HorseaDexEntry
 	dw SeadraDexEntry
-	dw MissingNoDexEntry
+	dw EspeonDexEntry
 	dw MissingNoDexEntry
 	dw SandshrewDexEntry
 	dw SandslashDexEntry
@@ -798,6 +798,13 @@ CrobatDexEntry:
 	dw 1650
 	text_far _CrobatDexEntry
 	text_end
+	
+UmbreonDexEntry:
+	db "MOONLIGHT@"
+	db 3,3
+	dw 600
+	text_far _UmbreonDexEntry
+	text_end
 
 DratiniDexEntry:
 	db "DRAGON@"
@@ -839,6 +846,13 @@ SeadraDexEntry:
 	db 3,11
 	dw 550
 	text_far _SeadraDexEntry
+	text_end
+
+EspeonDexEntry:
+	db "SUN@"
+	db 2,11
+	dw 580
+	text_far _EspeonDexEntry
 	text_end
 
 SandshrewDexEntry:

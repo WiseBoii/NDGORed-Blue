@@ -279,6 +279,10 @@ BlisseyPicFront::      INCBIN "gfx/pokemon/front/blissey.pic"
 BlisseyPicBack::       INCBIN "gfx/pokemon/back/blisseyb.pic"
 CrobatPicFront::       INCBIN "gfx/pokemon/front/crobat.pic"
 CrobatPicBack::		   INCBIN "gfx/pokemon/back/crobatb.pic"
+UmbreonPicFront::	   INCBIN "gfx/pokemon/front/umbreon.pic"
+UmbreonPicBack::       INCBIN "gfx/pokemon/back/umbreonb.pic"
+EspeonPicFront::	   INCBIN "gfx/pokemon/front/espeon.pic"
+EspeonPicBack::		   INCBIN "gfx/pokemon/back/espeonb.pic"
 
 SECTION "Pics 9", ROMX
 PersianPicFront::      INCBIN "gfx/pokemon/front/persian.pic"

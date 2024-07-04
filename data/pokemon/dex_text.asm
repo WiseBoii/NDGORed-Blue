@@ -855,7 +855,17 @@ _CrobatDexEntry::
 
 	page "flight, a new set"
 	next "of wings grew on"
-	next "its hind legs.@"
+	next "its hind legs."
+	dex
+	
+_UmbreonDexEntry::
+	text "On the night of a"
+	next "full moon, or when"
+	next "it gets excited,"
+
+	page "the ring patterns"
+	next "on its body glow"
+	next "yellow."
 	dex
 	
 _DratiniDexEntry::
@@ -918,6 +928,16 @@ _SeadraDexEntry::
 	next "stout tail"
 	dex
 
+_EspeonDexEntry::
+	text "The tip of its"
+	next "forked tail"
+	next "quivers when it is"
+
+	page "predicting its"
+	next "opponent's next"
+	next "move."
+	dex
+	
 _SandshrewDexEntry::
 	text "Burrows deep"
 	next "underground in"

@@ -166,4 +166,6 @@ MonPartyData:
 	nybble ICON_MON		  ; Kingdra
 	nybble ICON_MON		  ; Blissey
 	nybble ICON_MON       ; Crobat
+	nybble ICON_MON       ; Umbreon
+	nybble ICON_MON       ; Espeon
 	end_nybble_array NUM_POKEMON

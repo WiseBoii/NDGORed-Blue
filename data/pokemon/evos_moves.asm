@@ -96,14 +96,14 @@ EvosMovesPointerTable:
 	dw PikachuEvosMoves
 	dw RaichuEvosMoves
 	dw CrobatEvosMoves
-	dw MissingNo57EvosMoves
+	dw UmbreonEvosMoves
 	dw DratiniEvosMoves
 	dw DragonairEvosMoves
 	dw KabutoEvosMoves
 	dw KabutopsEvosMoves
 	dw HorseaEvosMoves
 	dw SeadraEvosMoves
-	dw MissingNo5EEvosMoves
+	dw EspeonEvosMoves
 	dw MissingNo5FEvosMoves
 	dw SandshrewEvosMoves
 	dw SandslashEvosMoves
@@ -1452,10 +1452,17 @@ CrobatEvosMoves:
 	db 40, SLUDGE
 	db 0
 
-MissingNo57EvosMoves:
+UmbreonEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 8, SAND_ATTACK
+	db 16, SLAM
+	db 23, QUICK_ATTACK
+	db 30, CONFUSE_RAY
+	db 36, DOUBLE_EDGE
+	db 40, BODY_SLAM
+	db 47, SCREECH
 	db 0
 
 DratiniEvosMoves:
@@ -1541,10 +1548,18 @@ SeadraEvosMoves:
 	db 50, BLIZZARD
 	db 0
 
-MissingNo5EEvosMoves:
+EspeonEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 8, SAND_ATTACK
+	db 11, CONFUSE_RAY
+	db 16, CONFUSION
+	db 23, QUICK_ATTACK
+	db 30, SWIFT
+	db 36, PSYBEAM
+	db 40, BODY_SLAM
+	db 47, PSYCHIC_M
 	db 0
 
 MissingNo5FEvosMoves:
@@ -1647,6 +1662,8 @@ EeveeEvosMoves:
 	db EVOLVE_ITEM, FIRE_STONE, 1, FLAREON
 	db EVOLVE_ITEM, THUNDER_STONE, 1, JOLTEON
 	db EVOLVE_ITEM, WATER_STONE, 1, VAPOREON
+	db EVOLVE_ITEM, MOON_STONE, 1, UMBREON
+	db EVOLVE_ITEM, SUN_STONE, 1, ESPEON
 	db 0
 ; Learnset
 	db 11, QUICK_ATTACK

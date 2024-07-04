@@ -167,4 +167,6 @@ MonsterPalettes:
 	db PAL_BLUEMON   ; Kingdra
 	db PAL_PINKMON   ; Blissey
 	db PAL_PURPLEMON ; Crobat
+	db PAL_GREYMON   ; Umbreon
+	db PAL_PINKMON   ; Espeon
 	assert_table_length NUM_POKEMON + 1

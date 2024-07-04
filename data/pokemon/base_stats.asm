@@ -166,4 +166,6 @@ INCLUDE "data/pokemon/base_stats/porygon2.asm"
 INCLUDE "data/pokemon/base_stats/kingdra.asm"
 INCLUDE "data/pokemon/base_stats/blissey.asm"
 INCLUDE "data/pokemon/base_stats/crobat.asm"
+INCLUDE "data/pokemon/base_stats/umbreon.asm"
+INCLUDE "data/pokemon/base_stats/espeon.asm"
 	assert_table_length NUM_POKEMON
