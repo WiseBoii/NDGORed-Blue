@@ -315,7 +315,7 @@ _MagbyDexEntry::
 
 	page "when many appear,"
 	next "it heralds a"
-	next "volcanic eruption."
+	next "volcanic eruption"
 	dex
 	
 _GrowlitheDexEntry::
