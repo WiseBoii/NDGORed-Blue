@@ -29,15 +29,17 @@ _Route17Biker2AfterBattleText::
 	cont "here!"
 	done
 
-_Route17Biker3BattleText::
-	text "You heading to"
-	line "FUCHSIA?"
+_Route17Biker3BattleText:: ; phyrexian
+	text "Noob Question:"
+	line "Are you ready"
+	cont "for our battle!?"
 	done
 
 _Route17Biker3EndBattleText::
-	text "Crash and"
-	line "burn!"
-	prompt
+	text "I thought I was"
+	line "a good trainer..."
+	cont "Maybe another day"
+	done
 
 _Route17Biker3AfterBattleText::
 	text "I love racing"

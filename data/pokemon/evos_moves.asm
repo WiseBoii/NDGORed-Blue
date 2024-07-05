@@ -1559,7 +1559,7 @@ EspeonEvosMoves:
 	db 30, SWIFT
 	db 36, PSYBEAM
 	db 40, BODY_SLAM
-	db 47, PSYCHIC_M
+	db 45, PSYCHIC_M
 	db 0
 
 MissingNo5FEvosMoves:
