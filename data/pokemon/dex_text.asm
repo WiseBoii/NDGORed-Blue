@@ -305,7 +305,7 @@ _PichuDexEntry::
 
 	page "shock causes it to"
 	next "discharge energy"
-	next "spontaneously."
+	next "spontaneously"
 	dex
 	
 _MagbyDexEntry::
@@ -495,7 +495,7 @@ _ElekidDexEntry::
 
 	page "flickers bluish-"
 	next "white when it is"
-	next "charging energy."
+	next "charging energy"
 	dex
 
 _MagmarDexEntry::
@@ -515,7 +515,7 @@ _CleffaDexEntry::
 
 	page "#MON is certain"
 	next "to be within the"
-	next "immediate area."
+	next "immediate area"
 	dex
 
 _ElectabuzzDexEntry::
@@ -555,7 +555,7 @@ _IgglybuffDexEntry::
 
 	page "around by bouncing"
 	next "on its soft,"
-	next "tender body."
+	next "tender body"
 	dex
 
 _MankeyDexEntry::
@@ -605,7 +605,7 @@ _SmoochumDexEntry::
 
 	page "It uses them to"
 	next "try to identify"
-	next "unknown objects."
+	next "unknown objects"
 	dex
 	
 _BellossomDexEntry::
@@ -615,7 +615,7 @@ _BellossomDexEntry::
 
 	page "each other,"
 	next "making pretty,"
-	next "relaxing sounds."
+	next "relaxing sounds"
 	dex
 	
 _SteelixDexEntry::
@@ -625,7 +625,7 @@ _SteelixDexEntry::
 
 	page "#MON's body"
 	next "reflect bright"
-	next "light well."
+	next "light well"
 	dex
 
 _FarfetchdDexEntry::
@@ -665,7 +665,7 @@ _ScizorDexEntry::
 
 	page "crush any hard"
 	next "object it gets a"
-	next "hold of into bits."
+	next "hold of into bits"
 	dex
 	
 _PolitoedDexEntry::
@@ -675,7 +675,7 @@ _PolitoedDexEntry::
 
 	page "nearby POLIWAG and"
 	next "POLIWHIRL gather"
-	next "immediately."
+	next "immediately"
 	dex
 	
 _SlowkingDexEntry::
@@ -685,7 +685,7 @@ _SlowkingDexEntry::
 
 	page "son into it. The"
 	next "poison makes it"
-	next "more intelligent."
+	next "more intelligent"
 	dex
 	
 _DoduoDexEntry::
@@ -785,7 +785,7 @@ _Porygon2DexEntry::
 
 	page "technology. It"
 	next "may have unprog-"
-	next "rammed reactions."
+	next "rammed reactions"
 	dex
 
 _KingdraDexEntry::
@@ -795,7 +795,7 @@ _KingdraDexEntry::
 
 	page "at which no other"
 	next "life forms can"
-	next "survive."
+	next "survive"
 	dex
 	
 _BlisseyDexEntry::
@@ -805,7 +805,7 @@ _BlisseyDexEntry::
 
 	page "provides will make"
 	next "everyone around"
-	next "smile with joy."
+	next "smile with joy"
 	dex
 	
 _VulpixDexEntry::
@@ -855,7 +855,7 @@ _CrobatDexEntry::
 
 	page "flight, a new set"
 	next "of wings grew on"
-	next "its hind legs."
+	next "its hind legs"
 	dex
 	
 _UmbreonDexEntry::
@@ -865,7 +865,7 @@ _UmbreonDexEntry::
 
 	page "the ring patterns"
 	next "on its body glow"
-	next "yellow."
+	next "yellow"
 	dex
 	
 _DratiniDexEntry::
@@ -935,7 +935,7 @@ _EspeonDexEntry::
 
 	page "predicting its"
 	next "opponent's next"
-	next "move."
+	next "move"
 	dex
 	
 _SandshrewDexEntry::
