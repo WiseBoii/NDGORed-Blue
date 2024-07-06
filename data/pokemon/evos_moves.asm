@@ -2537,8 +2537,10 @@ CharizardEvosMoves:
 ; Learnset
 	db 36, SLASH
 	db 38, FLAMETHROWER
+	db 40, WING_ATTACK
 	db 42, FIRE_SPIN
-	db 50, FIRE_BLAST
+	db 46, FIRE_BLAST
+	db 50, SKY_ATTACK
 	db 0
 
 MissingNoB5EvosMoves:
