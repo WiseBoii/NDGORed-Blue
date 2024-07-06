@@ -4,7 +4,7 @@ _LancesRoomLanceBeforeBattleText::
 
 	para "I lead the ELITE"
 	line "FOUR! You can"
-	cont "call me LANCE the"
+	cont "call me Scott the"
 	cont "dragon trainer!"
 
 	para "You know that"
