@@ -64,15 +64,15 @@ _CeladonCityGramps3TM41NoRoomText::
 
 _CeladonCityFisherText::
 	text "This is my trusted"
-	line "pal, POLIWRATH!"
+	line "pal, POLITOED!"
 
 	para "It evolved from"
 	line "POLIWHIRL when I"
-	cont "used WATER STONE!"
+	cont "used KINGS ROCK!"
 	done
 
 _CeladonCityPoliwrathText::
-	text "POLIWRATH: Ribi"
+	text "POLITOED: Ribi"
 	line "ribit!@"
 	text_end
 

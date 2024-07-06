@@ -1,34 +1,25 @@
 _BrunoBeforeBattleText::
-	text "I am BRUNO of"
-	line "the ELITE FOUR!"
+	text "Howdy! I'm Hagene"
+	line "Elite Four member"
+	cont "and Ribbon Lord!"
+	
+	para "I've trained my"
+	line "#MON to be both"
+	cont "Stylish & poweful!"
 
-	para "Through rigorous"
-	line "training, people"
-	cont "and #MON can"
-	cont "become stronger!"
-
-	para "I've weight"
-	line "trained with"
-	cont "my #MON!"
-
-	para "<PLAYER>!"
-
-	para "We will grind you"
-	line "down with our"
-	cont "superior power!"
-
-	para "Hoo hah!"
+	para "<PLAYER>! Prepare"
+	line "to be stunned by"
+	cont "our Award-Winning"
+	cont "might!"
 	done
 
 _BrunoEndBattleText::
-	text "Why?"
-	line "How could I lose?"
+	text "Need some ribbons?"
 	prompt
 
 _BrunoAfterBattleText::
-	text "My job is done!"
-	line "Go face your next"
-	cont "challenge!"
+	text "Welp, I gotta get"
+	line "back to my shop"
 	done
 
 _BrunosRoomBrunoDontRunAwayText::
