@@ -155,3 +155,5 @@ You will need to go in to `engine/battle/get_trainer_name.asm` and find the line
 ```
 
 And then delete all of them except for `ld a, [wTrainerClass]` which should stop the rival class from being treated differently.
+
+WRITTEN BY JustRegularLuna
