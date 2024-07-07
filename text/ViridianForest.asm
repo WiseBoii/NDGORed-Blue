@@ -63,18 +63,23 @@ _ViridianForestYoungster4AfterBattleText::
 	done
 
 _ViridianForestYellow1BattleText::
-	text "This is just a"
-	line "test!"
+	text "I've been waiting"
+	line "for you <PLAYER>!"
+	
+	para "Prepare to be"
+	line "defeated!"
 	done
 	
 _ViridianForestYellow1EndBattleText::
-	text "It Worked!"
+	text "I cant believe"
+	line "I lost to you!"
 	prompt
 
 	
 _ViridianForestYellow1AfterBattleText::
-	text "The test was"
-	line "successfull"
+	text "I'll get stronger"
+	line "and challenge you"
+	cont "again soon <PLAYER>"
 	done
 
 _ViridianForestYoungster5Text::
