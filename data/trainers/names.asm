@@ -26,7 +26,7 @@ TrainerNames::
 	li "BlackBelt"
 	li "RIVAL" ;rival 1
 	li "PROF.OAK"
-	li "Pkmn Trainer"
+	li "PkmnTrainer"
 	li "Scientist"
 	li "Boss" ;giovanni
 	li "Rocket"

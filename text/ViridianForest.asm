@@ -62,6 +62,21 @@ _ViridianForestYoungster4AfterBattleText::
 	cont "dropped!"
 	done
 
+_ViridianForestYellow1BattleText::
+	text "This is just a"
+	line "test!"
+	done
+	
+_ViridianForestYellow1EndBattleText::
+	text "It Worked!"
+	prompt
+
+	
+_ViridianForestYellow1AfterBattleText::
+	text "The test was"
+	line "successfull"
+	done
+
 _ViridianForestYoungster5Text::
 	text "I ran out of #"
 	line "BALLs to catch"
