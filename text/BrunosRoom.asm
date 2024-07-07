@@ -5,7 +5,7 @@ _BrunoBeforeBattleText::
 	
 	para "I've trained my"
 	line "#MON to be both"
-	cont "Stylish & poweful!"
+	cont "Stylish, powerful!"
 
 	para "<PLAYER>! Prepare"
 	line "to be stunned by"
