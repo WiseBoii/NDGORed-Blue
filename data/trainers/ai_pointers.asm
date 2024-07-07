@@ -30,7 +30,7 @@ TrainerAIPointers:
 	dbw 2, BlackbeltAI ; blackbelt
 	dbw 3, GenericAI ; rival1
 	dbw 3, GenericAI
-	dbw 1, GenericAI ; chief
+	dbw 3, GenericAI ; PKMN_TRAINER
 	dbw 3, GenericAI
 	dbw 1, GiovanniAI ; giovanni
 	dbw 3, GenericAI

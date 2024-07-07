@@ -26,7 +26,7 @@ TrainerDataPointers:
 	dw BlackbeltData
 	dw Green1Data
 	dw ProfOakData
-	dw ChiefData
+	dw PkmnTrainerData
 	dw ScientistData
 	dw GiovanniData
 	dw RocketData
@@ -1655,8 +1655,13 @@ ProfOakData:
 	db 85, ARTICUNO
 	db -1 ; end
 	
-ChiefData:
-; none
+PkmnTrainerData:
+	db "Yellow@", TRAINERTYPE_MOVES
+	db 6, PICHU,	THUNDER_WAVE, DIZZY_PUNCH, QUICK_ATTACK, THUNDERSHOCK
+	db 10, PIKACHU,	THUNDER_WAVE, QUICK_ATTACK, THUNDERSHOCK, NO_MOVE
+	db 10, BUTTERFREE,	CONFUSION, TACKLE, GUST, NO_MOVE
+	db 7, DODUO,	PECK, TACKLE, DOUBLE_KICK, GUST
+	db -1 ; end
 
 ScientistData:
 ; Unused
