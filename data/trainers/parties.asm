@@ -131,19 +131,19 @@ YoungsterData:
 
 BugCatcherData:
 ; Viridian Forest
-	db "Rukus@", TRAINERTYPE_NORMAL ; Bug Catcher Rukus, traine 1 viridian forest
-	db 5, CATERPIE
-	db 5, WEEDLE
+	db "Rukus@", TRAINERTYPE_MOVES ; Bug Catcher Rukus, traine 1 viridian forest
+	db 5, CATERPIE,	TACKLE, STRING_SHOT, NO_MOVE, NO_MOVE
+	db 5, WEEDLE,	POISON_STING, STRING_SHOT, NO_MOVE, NO_MOVE
 	db -1 ; end
 	
-	db "ElTee@", TRAINERTYPE_NORMAL ; Bug Catcher ElTee
-	db 5, WEEDLE
-	db 6, KAKUNA
+	db "ElTee@", TRAINERTYPE_MOVES ; Bug Catcher ElTee
+	db 5, WEEDLE,	POISON_STING, STRING_SHOT, NO_MOVE, NO_MOVE
+	db 7, KAKUNA,	POISON_STING, STRING_SHOT, HARDEN, NO_MOVE
 	db -1 ; end
 	
 	db "TaiChi@", TRAINERTYPE_NORMAL ; Bug Catcher TaiChi
-	db 7, PARAS
-	db 6, VENONAT
+	db 7, PARAS,	STUN_SPORE, SCRATCH, NO_MOVE, NO_MOVE
+	db 6, VENONAT,	DISABLE, TACKLE, SUPERSONIC, NO_MOVE
 	db -1 ; end
 	
 ; Route 3

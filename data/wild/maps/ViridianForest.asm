@@ -6,9 +6,9 @@ IF DEF(_RED)
 	db  3, CATERPIE
 	db  5, METAPOD
 	db  4, PIDGEY
-	db  6, PIDGEOTTO
+	db  5, VENONAT
 	db  4, EKANS
-	db  3, PARAS
+	db  4, PARAS
 ENDC
 IF DEF(_BLUE)
 	db  4, WEEDLE
@@ -16,9 +16,9 @@ IF DEF(_BLUE)
 	db  3, CATERPIE
 	db  5, METAPOD
 	db  4, PIDGEY
-	db  6, PIDGEOTTO
+	db  5, VENONAT
 	db  4, EKANS
-	db  3, PARAS
+	db  4, PARAS
 ENDC
 	db  5, PICHU
 	db  5, PIKACHU
