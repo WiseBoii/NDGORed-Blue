@@ -1,5 +1,5 @@
 _PewterGymBrockPreBattleText::
-	text "I'm BROCK!"
+	text "I'm Aidf!"
 	line "I'm PEWTER's GYM"
 	cont "LEADER!"
 
@@ -9,7 +9,7 @@ _PewterGymBrockPreBattleText::
 
 	para "That's why my"
 	line "#MON are all"
-	cont "the rock-type!"
+	cont "Normal type!"
 
 	para "Do you still want"
 	line "to challenge me?"

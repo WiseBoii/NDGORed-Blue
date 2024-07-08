@@ -131,17 +131,17 @@ YoungsterData:
 
 BugCatcherData:
 ; Viridian Forest
-	db "Rukus@", TRAINERTYPE_MOVES ; Bug Catcher Rukus, traine 1 viridian forest
+	db "Rukus@", TRAINERTYPE_MOVES ; Bug Catcher Rukus, trainer 1 viridian forest
 	db 5, CATERPIE,	TACKLE, STRING_SHOT, NO_MOVE, NO_MOVE
 	db 5, WEEDLE,	POISON_STING, STRING_SHOT, NO_MOVE, NO_MOVE
 	db -1 ; end
 	
-	db "ElTee@", TRAINERTYPE_MOVES ; Bug Catcher ElTee
+	db "ElTee@", TRAINERTYPE_MOVES ; Bug Catcher ElTee, trainer 2 viridian forest
 	db 5, WEEDLE,	POISON_STING, STRING_SHOT, NO_MOVE, NO_MOVE
 	db 7, KAKUNA,	POISON_STING, STRING_SHOT, HARDEN, NO_MOVE
 	db -1 ; end
 	
-	db "TaiChi@", TRAINERTYPE_NORMAL ; Bug Catcher TaiChi
+	db "TaiChi@", TRAINERTYPE_NORMAL ; Bug Catcher TaiChi, trainer 3 viridian forest
 	db 7, PARAS,	STUN_SPORE, SCRATCH, NO_MOVE, NO_MOVE
 	db 6, VENONAT,	DISABLE, TACKLE, SUPERSONIC, NO_MOVE
 	db -1 ; end
@@ -366,9 +366,9 @@ SailorData:
 
 JrTrainerMData:
 ; Pewter Gym
-	db "Dan@", TRAINERTYPE_NORMAL
-	db 9, DIGLETT
-	db 11, SANDSHREW
+	db "Ernest@", TRAINERTYPE_MOVES
+	db 9, DITTO,	TRANSFORM, NO_MOVE, NO_MOVE, NO_MOVE
+	db 11, JIGGLYPUFF,	SING, POUND, DOUBLESLAP, METRONOME
 	db -1 ; end
 	
 ; Route 24/Route 25
@@ -2139,10 +2139,11 @@ BrunoData: ; - give moves
 	db 60, ARTICUNO,	SKY_ATTACK, BLIZZARD, HYPER_BEAM, AGILITY
 	db -1 ; end
 	
-BrockData:
-	db "Brock@", TRAINERTYPE_NORMAL
-	db 13, GEODUDE
-	db 15, ONIX
+BrockData: ; normal gym
+	db "Aidf@", TRAINERTYPE_MOVES
+	db 13, MEOWTH,	FURY_SWIPES, PAY_DAY, TAIL_WHIP, SCRATCH
+	db 15, EEVEE,	DIG, HEADBUTT, SAND_ATTACK, BITE
+	db 12, FARFETCHD,	GUST, PECK,	SAND_ATTACK, DOUBLE_TEAM
 	db -1 ; end
 	
 MistyData:

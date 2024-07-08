@@ -85,7 +85,7 @@ _PewterGymCooltrainerMBattleText::
 
 	para "You're still light"
 	line "years from facing"
-	cont "BROCK!"
+	cont "Aidf!"
 	done
 
 _PewterGymCooltrainerMEndBattleText::
@@ -99,7 +99,7 @@ _PewterGymCooltrainerMEndBattleText::
 _PewterGymCooltrainerMAfterBattleText::
 	text "You're pretty hot,"
 	line "but not as hot"
-	cont "as BROCK!"
+	cont "as Aidf!"
 	done
 
 _PewterGymGuidePreAdviceText::

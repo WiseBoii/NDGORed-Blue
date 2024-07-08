@@ -16,7 +16,7 @@ _PewterCityCooltrainerMText::
 	para "They're all like"
 	line "BUG CATCHERs,"
 	cont "but PEWTER GYM's"
-	cont "BROCK is totally"
+	cont "Aidf is totally"
 	cont "into it!"
 	done
 
@@ -64,7 +64,7 @@ _PewterCitySuperNerd2ImSprayingRepelText::
 
 _PewterCityYoungsterYoureATrainerFollowMeText::
 	text "You're a trainer"
-	line "right? BROCK's"
+	line "right? Aidf's"
 	cont "looking for new"
 	cont "challengers!"
 	cont "Follow me!"
@@ -73,7 +73,7 @@ _PewterCityYoungsterYoureATrainerFollowMeText::
 _PewterCityYoungsterGoTakeOnBrockText::
 	text "If you have the"
 	line "right stuff, go"
-	cont "take on BROCK!"
+	cont "take on Aidf!"
 	done
 
 _PewterCityTrainerTipsText::
@@ -104,14 +104,14 @@ _PewterCityMuseumSignText::
 _PewterCityGymSignText::
 	text "PEWTER CITY"
 	line "#MON GYM"
-	cont "LEADER: BROCK"
+	cont "LEADER: Aidf"
 
-	para "The Rock Solid"
+	para "The Normal Type"
 	line "#MON Trainer!"
 	done
 
 _PewterCitySignText::
 	text "PEWTER CITY"
-	line "A Stone Gray"
-	cont "City"
+	line "The Festive City"
+	cont "of Opulent Charm"
 	done
