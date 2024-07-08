@@ -46,9 +46,9 @@ _ViridianForestYoungster4BattleText::
 	line "What's the hurry?"
 	done
 
-_ViridianForestYoungster4EndBattleText::
-	text "I"
-	line "give! You're good"
+_ViridianForestYoungster4EndBattleText:: ; TaiChi Text
+	text "What a battle!"
+	line "You're good"
 	cont "at this!"
 	prompt
 

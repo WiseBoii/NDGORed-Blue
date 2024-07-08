@@ -131,18 +131,19 @@ YoungsterData:
 
 BugCatcherData:
 ; Viridian Forest
-	db "Don@", TRAINERTYPE_NORMAL
-	db 6, CATERPIE
-	db 6, WEEDLE
+	db "Rukus@", TRAINERTYPE_NORMAL ; Bug Catcher Rukus, traine 1 viridian forest
+	db 5, CATERPIE
+	db 5, WEEDLE
 	db -1 ; end
 	
-	db "Cam@", TRAINERTYPE_NORMAL
-	db 7, WEEDLE
-	db 7, KAKUNA
+	db "ElTee@", TRAINERTYPE_NORMAL ; Bug Catcher ElTee
+	db 5, WEEDLE
+	db 6, KAKUNA
 	db -1 ; end
 	
-	db "Smith@", TRAINERTYPE_NORMAL
+	db "TaiChi@", TRAINERTYPE_NORMAL ; Bug Catcher TaiChi
 	db 7, PARAS
+	db 6, VENONAT
 	db -1 ; end
 	
 ; Route 3
