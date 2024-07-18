@@ -5,7 +5,7 @@ _BillsHouseBillImNotAPokemonText::
 
 	para "Call me BILL!"
 	line "I'm a true blue"
-	cont "#MANIAC! Hey!!"
+	cont "#MANIAC! Hey!"
 	cont "What's with that"
 	cont "skeptical look?"
 
