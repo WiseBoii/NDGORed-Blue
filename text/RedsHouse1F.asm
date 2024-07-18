@@ -27,9 +27,9 @@ _RedsHouse1FTVStandByMeMovieText::
 	text "#MON are by our"
 	line "side, always, I"
 	cont "hope you will"
-	cont" understand the"
+	cont "understand the"
 	cont "meaning of those"
-	cont "words."
+	cont "words.!"
 	
 	para "That was the"
 	line "comment left by"
