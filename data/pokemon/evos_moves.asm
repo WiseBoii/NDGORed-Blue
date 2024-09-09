@@ -228,6 +228,7 @@ NidoranMEvosMoves:
 	db EVOLVE_LEVEL, 16, NIDORINO
 	db 0
 ; Learnset
+	db 7, POISON_STING
 	db 8, SCRATCH
 	db 10, DOUBLE_KICK
 	db 15, FURY_SWIPES
@@ -408,6 +409,7 @@ NidoranFEvosMoves:
 	db EVOLVE_LEVEL, 16, NIDORINA
 	db 0
 ; Learnset
+	db 7, POISON_STING
 	db 8, SCRATCH
 	db 10, DOUBLE_KICK
 	db 15, FURY_SWIPES
@@ -1368,6 +1370,7 @@ VulpixEvosMoves:
 	db EVOLVE_ITEM, FIRE_STONE, 1, NINETALES
 	db 0
 ; Learnset
+	db 5, EMBER
 	db 8, QUICK_ATTACK
 	db 10, DISABLE
 	db 12, SMOKESCREEN
@@ -1575,7 +1578,7 @@ SandshrewEvosMoves:
 ; Learnset
 	db 6, POISON_STING
 	db 9, SAND_ATTACK
-	db `0, HEADBUTT
+	db 10, HEADBUTT
 	db 12, FURY_ATTACK
 	db 14, DIG
 	db 17, SLASH
