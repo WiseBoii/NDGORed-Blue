@@ -279,9 +279,11 @@ VoltorbEvosMoves:
 	db EVOLVE_LEVEL, 30, ELECTRODE
 	db 0
 ; Learnset
-	db 13, SCREECH
-	db 15, TAKE_DOWN
-	db 17, SONICBOOM
+	db 10, THUNDER_WAVE
+	db 12, SCREECH
+	db 14, THUNDERSHOCK
+	db 16, TAKE_DOWN
+	db 18, SONICBOOM
 	db 20, SWIFT
 	db 22, BODY_SLAM
 	db 27, THUNDERBOLT
@@ -686,6 +688,7 @@ MagbyEvosMoves:
 	db EVOLVE_LEVEL, 25, MAGMAR
 	db 0
 ; Learnset
+	db 5, EMBER
 	db 6, SMOG
 	db 8, QUICK_ATTACK
 	db 10, POISON_GAS
@@ -972,6 +975,7 @@ CleffaEvosMoves:
 ; Learnset
 	db 6, SING
 	db 8, DOUBLESLAP
+	db 10, DIZZY_PUNCH
 	db 14, BODY_SLAM
 	db 18, METRONOME
 	db 22, MINIMIZE
