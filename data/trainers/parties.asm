@@ -60,7 +60,7 @@ TrainerDataPointers:
 YoungsterData:
 ; Route 3
 	db "Wolf@", TRAINERTYPE_MOVES ; joey
-	db 10, VULPIX, QUICK_ATTACK, DISABLE, EMBER
+	db 10, VULPIX, QUICK_ATTACK, DISABLE, EMBER, NO_MOVE
 	db 10, IGGLYBUFF, POUND, SING, DEFENSE_CURL, NO_MOVE
 	db -1 ; end
 	
