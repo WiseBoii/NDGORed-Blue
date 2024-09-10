@@ -949,7 +949,8 @@ ElekidEvosMoves:
 ; Learnset
 	db 6, THUNDER_WAVE
 	db 10, THUNDERSHOCK
-	db 13, TAKE_DOWN
+	db 12, DIZZY_PUNCH
+	db 14, TAKE_DOWN
 	db 16, THUNDERPUNCH
 	db 18, KARATE_CHOP
 	db 20, SWIFT
@@ -2461,6 +2462,7 @@ MagnemiteEvosMoves:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0
 ; Learnset
+	db 10, THUNDERSHOCK
 	db 15, SUPERSONIC
 	db 17, THUNDER_WAVE
 	db 21, SONICBOOM
