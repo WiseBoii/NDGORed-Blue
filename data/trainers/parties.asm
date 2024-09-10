@@ -141,7 +141,7 @@ BugCatcherData:
 	db 7, KAKUNA,	POISON_STING, STRING_SHOT, HARDEN, NO_MOVE
 	db -1 ; end
 	
-	db "TaiChi@", TRAINERTYPE_NORMAL ; Bug Catcher TaiChi, trainer 3 viridian forest
+	db "TaiChi@", TRAINERTYPE_MOVES ; Bug Catcher TaiChi, trainer 3 viridian forest
 	db 7, PARAS,	STUN_SPORE, SCRATCH, NO_MOVE, NO_MOVE
 	db 6, VENONAT,	DISABLE, TACKLE, SUPERSONIC, NO_MOVE
 	db -1 ; end
@@ -366,7 +366,7 @@ SailorData:
 JrTrainerMData:
 ; Pewter Gym
 	db "Ernest@", TRAINERTYPE_MOVES
-	db 9, DITTO,	TRANSFORM, NO_MOVE, NO_MOVE, NO_MOVE
+	db 9, EEVEE, DOUBLE_KICK, SAND_ATTACK, TACKLE, QUICK_ATTACK
 	db 11, JIGGLYPUFF,	SING, POUND, DOUBLESLAP, METRONOME
 	db -1 ; end
 	
@@ -2140,7 +2140,7 @@ BrunoData: ; - give moves
 BrockData: ; normal gym
 	db "Aidf@", TRAINERTYPE_MOVES
 	db 13, MEOWTH,	FURY_SWIPES, PAY_DAY, TAIL_WHIP, SCRATCH
-	db 14, EEVEE,	DIG, HEADBUTT, SAND_ATTACK, BITE
+	db 14, DITTO,	TRANSFORM, NO_MOVE, NO_MOVE, NO_MOVE
 	db 12, FARFETCHD,	GUST, PECK,	SAND_ATTACK, DOUBLE_TEAM
 	db -1 ; end
 	
