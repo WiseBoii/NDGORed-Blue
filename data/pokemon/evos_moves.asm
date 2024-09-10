@@ -666,6 +666,7 @@ PichuEvosMoves:
 	db 0
 ; Learnset
 	db 6, THUNDERSHOCK
+	db 7, DIZZY_PUNCH
 	db 8, THUNDER_WAVE
 	db 10, DOUBLE_TEAM
 	db 12, THUNDERSHOCK
@@ -690,6 +691,7 @@ MagbyEvosMoves:
 ; Learnset
 	db 5, EMBER
 	db 6, SMOG
+	db 7, DIZZY_PUNCH
 	db 8, QUICK_ATTACK
 	db 10, POISON_GAS
 	db 13, SLAM
@@ -1101,7 +1103,7 @@ SmoochumEvosMoves:
 	db EVOLVE_LEVEL, 25, JYNX
 	db 0
 ; Learnset
-	db 6, POUND
+	db 6, DIZZY_PUNCH
 	db 10, CONFUSION
 	db 14, SING
 	db 20, SLAM
